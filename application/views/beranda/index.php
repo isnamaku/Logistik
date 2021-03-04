@@ -15,7 +15,7 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white; font-size: 16px;"> Masuk</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="">Admin </a>
+            <a class="dropdown-item" href="<?= base_url('Admin/login'); ?>">Admin </a>
             <a class="dropdown-item" href="#">Anggota</a>
         </div>
       </li>
