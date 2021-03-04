@@ -1,5 +1,4 @@
 <!-- Navbar -->
-<!-- Header Umum -->
 <nav class="navbar navbar-expand-sm fixed-top navbar-line" style="width: 100%; background-color: #000000;">
   <a class="navbar-brand"  href="#" style="color: white;font-size: 28px; font-size: 30px; margin-right: 50px">
     <img src="assets/img/logo.png" width="55" height="45" class="d-inline-block align-top">
@@ -23,6 +22,7 @@
   </ul>
 
 </nav>
+<!-- Akhir Navbar -->
 
 <!-- Gambar Beranda -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: 20px; ">
@@ -47,7 +47,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
 <!-- Akhir Gambar Beranda -->
 
 
