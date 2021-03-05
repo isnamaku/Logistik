@@ -102,7 +102,7 @@ public function login_Anggota()
                         'email' => $anggota['email'],
                     ];
                     $this->session->set_userdata($data);
-                    redirect('Admin/index');
+                    redirect('Anggota/index');
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
                 Password salah!</div>');
