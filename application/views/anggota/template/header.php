@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
+
     <?php 
     if(isset($judul)){ ?>
     <title><?= $judul ?> | Logistik BPBD DIY</title>
