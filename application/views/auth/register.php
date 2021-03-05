@@ -17,7 +17,7 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">DAFTAR</h1>
                                 </div>
-
+                                <?= $this->session->flashdata('message'); ?>
 
                                 <form class="user" method="POST" action="<?= base_url('Auth/register'); ?>">
                                     <div class="form-group">

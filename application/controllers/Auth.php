@@ -35,10 +35,12 @@ class Auth extends CI_Controller
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
                 Password salah!</div>');
+                redirect('Auth/login');
                 }
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
             Email belum terdaftar!</div>');
+            redirect('Auth/login');
             }
         }
     }
@@ -67,9 +69,9 @@ class Auth extends CI_Controller
             $this->load->model('Auth_model');
             $this->Auth_model->ambil($data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            Congratulations! Your account has been created. Please Login!
+            Selamat! Akun Anda telah terdaftar. Silahkan masuk!
             </div>');
-            redirect('Auth/login');
+            redirect('Auth/register');
         }
     }
 
