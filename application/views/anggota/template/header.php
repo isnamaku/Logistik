@@ -12,7 +12,7 @@
 
     <?php 
     if(isset($judul)){ ?>
-    <title><?= $judul ?> | Logistik BPBD DIY</title>
+    <title> <?= $judul ?> | Logistik BPBD DIY</title>
     <?php }  ?>
 
     <!-- Custom fonts for this template -->
