@@ -7,4 +7,9 @@ class Auth_model extends CI_Model
     {
         $this->db->insert('admin', $data);
     }
+
+    public  function ambil_Anggota($data)
+    {
+        $this->db->insert('anggota', $data);
+    }
 }
