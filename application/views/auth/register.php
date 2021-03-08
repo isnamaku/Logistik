@@ -23,7 +23,7 @@
                                 </div>
                                 <?= $this->session->flashdata('message'); ?>
 
-                                <form class="user" method="POST" action="<?= base_url('Auth/register_Anggota'); ?>">
+                                <form class="user" method="POST" action="<?= base_url('Auth/register'); ?>">
                                     <div class="form-group">
                                         <label style="color:#000000; font-weight:bold">Nama</label>
                                         <input type="text" style="background-color: #E5E5E5" class="form-control" name="nama" id="nama" <?= form_error('nama', '<small class="text-danger pl-3">', '</small'); ?>>
@@ -51,7 +51,7 @@
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a style="color:#000000; font-weight:bold">Sudah punya akun? </a><a href="<?= base_url('Auth/register'); ?>">Masuk</a>
+                                    <a style="color:#000000; font-weight:bold">Sudah punya akun? </a><a href="<?= base_url('Auth/login'); ?>">Masuk</a>
                                 </div>
                             </div>
                         </div>

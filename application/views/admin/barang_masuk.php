@@ -3,7 +3,7 @@
 
                 <!-- Page Heading -->
                 <h1 class="h3 mb-2 text-gray-800">Tabel Barang Masuk</h1>
-                <a href="<?= base_url('Logistik/tambah_barang_masuk'); ?>" class="btn btn-user" style="background-color: #F69133; color: #000000;">Tambah</a>
+                <a href="<?= base_url('admin/tambah_barang_masuk'); ?>" class="btn btn-user" style="background-color: #F69133; color: #000000;">Tambah</a>
 
                 <!-- DataTales Example -->
                 <div class="card shadow my-4 mb-4">
@@ -30,9 +30,9 @@
                                         <td>2011/04/25</td>
                                         <td>$320,800</td>
                                         <td>
-                                            <a href="<?= base_url('Logistik/info_barang_masuk'); ?>" class="btn btn-xs" style="background-color: #FFB800; color: #FFFFFF;"><span class="far fa-question-circle"></span></a>
-                                            <a href="<?= base_url('Logistik/edit_barang_masuk'); ?>" class="btn btn-xs" style="background-color: #FF0000; color: #FFFFFF"><span class="far fa-edit"></span></a>
-                                            <a href="" class="btn btn-xs" style="background-color: #2CB162; color: #FFFFFF" onclick="return confirm('Yakin ingin menghapus post?')"><span class="far fa-trash-alt"></span></a>
+                                            <a href="<?= base_url('admin/info_barang_masuk'); ?>" class="btn btn-xs" style="background-color: #FFB800; color: #FFFFFF;"><span class="far fa-question-circle"></span></a>
+                                            <a href="<?= base_url('admin/edit_barang_masuk'); ?>" class="btn btn-xs" style="background-color: #2CB162; color: #FFFFFF"><span class="far fa-edit"></span></a>
+                                            <a href="<?= base_url('admin/hapus_barang_masuk'); ?>" class="btn btn-xs" style="background-color: #FF0000; color: #FFFFFF" onclick="return confirm('Yakin ingin menghapus post?')"><span class="far fa-trash-alt"></span></a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -494,43 +494,3 @@
 
         </div>
         <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Your Website 2020</span>
-                </div>
-            </div>
-        </footer>
-        <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-</div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
-            </div>
-        </div>
-    </div>
-</div>
