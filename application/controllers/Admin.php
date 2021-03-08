@@ -9,4 +9,19 @@ class Admin extends CI_Controller
         $this->load->view('admin/index');
         $this->load->view('admin/template/footer');
     }
+
+    public function barang_masuk(){
+        $data['judul'] = "Barang Masuk";
+        $this->load->view('admin/template/header', $data);
+        $this->load->view('admin/barang_masuk');
+        $this->load->view('admin/template/footer');
+    }
+
+    public function barang_keluar(){
+        $data['judul'] = "Barang Keluar";
+        $this->load->view('admin/template/header', $data);
+        $this->load->view('admin/barang_keluar');
+        $this->load->view('admin/template/footer');
+    }
+
 }
