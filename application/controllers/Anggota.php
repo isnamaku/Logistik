@@ -5,7 +5,7 @@ class Anggota extends CI_Controller
 {
     public function index(){
         $data['judul'] = "Index";
-        $this->load->view('anggota/template/header');
+        $this->load->view('anggota/template/header' , $data);
         $this->load->view('anggota/index');
         $this->load->view('anggota/template/footer');
     }
