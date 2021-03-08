@@ -24,4 +24,42 @@ class Admin extends CI_Controller
         $this->load->view('admin/template/footer');
     }
 
+    public function tambah_barang_masuk(){
+        $data['judul'] = "Tambah Barang";
+        $this->load->view('admin/template/header_data', $data);
+        $this->load->view('admin/tambah_barang_masuk');
+    }
+
+    public function tambah_barang_keluar(){
+        $data['judul'] = "Tambah Barang";
+        $this->load->view('admin/template/header_data', $data);
+        $this->load->view('admin/tambah_barang_keluar');
+    }
+
+    public function edit_barang_masuk(){
+        $data['judul'] = "Edit Barang";
+        $this->load->view('admin/template/header_data', $data);
+        $this->load->view('admin/edit_barang_masuk');
+    }
+
+    public function edit_barang_keluar(){
+        $data['judul'] = "Barang Keluar";
+        $this->load->view('admin/template/header_data', $data);
+        $this->load->view('admin/edit_barang_keluar');
+    }
+
+    public function info_barang_masuk(){
+        $data['judul'] = "Info Barang";
+        $this->load->view('admin/template/header_data', $data);
+        $this->load->view('admin/info_barang_masuk');
+    }
+
+    public function info_barang_keluar(){
+        $data['judul'] = "Info Barang";
+        $this->load->view('admin/template/header_data', $data);
+        $this->load->view('admin/info_barang_keluar');
+    }
+
+
+
 }

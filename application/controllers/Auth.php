@@ -59,12 +59,12 @@ class Auth extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $this->load->view('auth/header');
-            $this->load->view('auth/register');
+            $this->load->view('auth/register',$data);
             $this->load->view('auth/footer');
         } else {
             $data = [
-                'nama' => htmlspecialchars($this->input->post('nama', true)),
                 'email' => htmlspecialchars($this->input->post('email', true)),
+                'nama' => htmlspecialchars($this->input->post('nama', true)),
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT)
             ];
             $this->load->model('Auth_model');
@@ -74,6 +74,14 @@ class Auth extends CI_Controller
             </div>');
             redirect('Auth/register');
         }
+    }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('email');
+        echo "sampai logout";
+        redirect('beranda');
+
     }
 
 
