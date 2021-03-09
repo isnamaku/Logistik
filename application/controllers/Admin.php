@@ -3,6 +3,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {
+    public function __construct()
+    {
+        Parent::__construct();
+        $this->load->model('Barang_model');
+    }
+
     public function index(){
         if (logged_in()){
             $data['judul'] = "Index";
@@ -18,6 +24,8 @@ class Admin extends CI_Controller
     public function barang_masuk(){
         if (logged_in()){
             $data['judul'] = "Barang Masuk";
+            $data['post'] = $this->Barang_model->ambilBarang();
+
             $this->load->view('admin/template/header', $data);
             $this->load->view('admin/barang_masuk');
             $this->load->view('admin/template/footer');
@@ -84,9 +92,11 @@ class Admin extends CI_Controller
         }
     }
 
-    public function info_barang_masuk(){
+    public function info_barang_masuk($id){
         if (logged_in()){
             $data['judul'] = "Info Barang";
+            $data['post'] = $this->Barang_model->ambilBarangById($id);
+
             $this->load->view('admin/template/header_data', $data);
             $this->load->view('admin/info_barang_masuk');
         }

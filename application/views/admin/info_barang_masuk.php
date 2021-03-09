@@ -5,37 +5,41 @@
     <a style="color: #000000; font-weight:bold;">Detail Barang Masuk</a>
     <hr>
     <form >
-        <div class="row">
+    <?php if(isset($post)) {
+         foreach($post as $post){ ?>
+          <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Tanggal</label>
-                    <input type="date" style="background-color: #E5E5E5" class="form-control" name="tanggal" id="tanggal">
+                    <input type="date" style="background-color: #E5E5E5" class="form-control" name="tanggal" id="tanggal" value="<?= $post['tanggal_masuk'] ?>">
                 </div>
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Kode Barang</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="kode" id="kode">
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="kode" id="kode"  value="<?= $post['barcode'] ?>">
                 </div>
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Barang</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="barang" id="barang">
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="barang" id="barang" value="<?= $post['nama_barang'] ?>" >
                 </div>
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Stock Masuk</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="jumlah" id="jumlah">
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="jumlah" id="jumlah" value="<?= $post['stock'] ?>">
                 </div>
             </div>
             <div class="col-md-6">
  
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Nama Pengirim</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="pengirim" id="pengirim">
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="pengirim" id="pengirim" value="<?= $post['sumber'] ?>">
                 </div>
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Perusahaan Pengirim</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="perusahaan" id="perusahaan">
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="perusahaan" id="perusahaan"value="<?= $post['sumber_2'] ?>">
                 </div>
             </div>
         </div>
         <a  href="<?= base_url('admin/barang_masuk') ?>" class="btn" style="background-color: #FF8C00; color:#000000; font-weight:bold; float:right;">Kembali</a>
+        <?php } 
+        } ?>
     </form>
 </div>
