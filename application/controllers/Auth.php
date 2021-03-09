@@ -9,6 +9,7 @@ class Auth extends CI_Controller
         $this->load->library('form_validation');
         $this->load->model('Auth_model');
         $this->load->helper('url');
+        $this->load->helper('auth');
     }
     public function login()
     {
@@ -150,7 +151,7 @@ public function login_Anggota()
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             Selamat! Akun Anda telah terdaftar. Silahkan masuk!
             </div>');
-            redirect('Auth/login_Anggota');
+            redirect('Auth/register_Anggota');
         }
     }
 

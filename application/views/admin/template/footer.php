@@ -25,12 +25,11 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Apakah Anda yakin akan keluar?</h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-size: 18px;">Apakah Anda yakin akan keluar?</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Apakah Anda yakin akan keluar?</div>
             <div class="modal-footer">
                 <button class="btn btn-success" type="button" data-dismiss="modal">Kembali</button>
                 <a class="btn btn-danger" href="<?= base_url("/auth/logout") ?>">Keluar</a>
