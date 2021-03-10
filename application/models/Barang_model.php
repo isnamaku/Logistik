@@ -47,5 +47,6 @@ class Barang_model extends CI_Model
         // ->get('transaksi_masuk')
         // ->result_array();
     }
+
     
 }

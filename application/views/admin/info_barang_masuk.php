@@ -22,7 +22,7 @@
                     <input type="text" style="background-color: #E5E5E5" class="form-control" name="barang" id="barang" value="<?= $post['nama_barang'] ?>" >
                 </div>
                 <div class="form-group">
-                    <label style="color:#000000; font-weight:bold">Stock Masuk</label>
+                    <label style="color:#000000; font-weight:bold">Stock</label>
                     <input type="text" style="background-color: #E5E5E5" class="form-control" name="jumlah" id="jumlah" value="<?= $post['stock'] ?>">
                 </div>
             </div>
