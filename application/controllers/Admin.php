@@ -12,6 +12,7 @@ class Admin extends CI_Controller
     public function index(){
         if (logged_in()){
             $data['judul'] = "Index";
+            $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
             $this->load->view('admin/template/header', $data);
             $this->load->view('admin/index');
             $this->load->view('admin/template/footer');
@@ -24,6 +25,7 @@ class Admin extends CI_Controller
     public function barang_masuk(){
         if (logged_in()){
             $data['judul'] = "Barang Masuk";
+            $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
             $data['post'] = $this->Barang_model->ambilBarang();
 
             $this->load->view('admin/template/header', $data);
@@ -38,6 +40,7 @@ class Admin extends CI_Controller
     public function barang_keluar(){
         if (logged_in()){
             $data['judul'] = "Barang Keluar";
+            $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
             $this->load->view('admin/template/header', $data);
             $this->load->view('admin/barang_keluar');
             $this->load->view('admin/template/footer');
