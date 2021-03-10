@@ -70,15 +70,24 @@ class Admin extends CI_Controller
 
     }
 
-    public function edit_barang_masuk(){
+    public function edit_barang_masuk($id){
         if (logged_in()){
             $data['judul'] = "Edit Barang";
+            $data['post'] = $this->Barang_model->ambilBarangById($id);
+
             $this->load->view('admin/template/header_data', $data);
-            $this->load->view('admin/edit_barang_masuk');
+            $this->load->view('admin/edit_barang_masuk', $data);
         }
         else {
             redirect('Beranda');
         }
+    }
+
+    public function update_barang_masuk($id){
+        $this->Barang_model->updateBarang($id);
+        echo "sampai sini";
+        // redirect(base_url() . "admin");
+
     }
 
     public function edit_barang_keluar(){
