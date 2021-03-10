@@ -61,6 +61,13 @@ class Admin extends CI_Controller
         }
     }
 
+    public function proses_tambah_barang_masuk()
+    {
+        $this->Barang_model->tambahBarangMasuk();
+        echo "sukses menambahkan";
+        redirect(base_url() . "admin/barang_masuk");
+    }
+
     public function tambah_barang_keluar(){
         if (logged_in()){
             $data['judul'] = "Tambah Barang";
@@ -144,6 +151,19 @@ class Admin extends CI_Controller
             redirect('admin/barang_masuk');
         }
     }
+
+    public function no_barang(){
+        if (logged_in()) {
+            $data['post'] = $this->Barang_model->ambilNoBarang();
+
+            redirect(base_url() . "admin/tambah_barang_masuk");
+        }
+        else {
+            redirect('admin/barang_masuk');
+        }
+    }
+
+
 
 
 }

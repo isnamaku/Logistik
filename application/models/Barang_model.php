@@ -75,5 +75,36 @@ class Barang_model extends CI_Model
         ->delete('transaksi_masuk');
     }
 
+    public function tambahBarangMasuk(){
+        $data = array(
+            'barcode'=> $this->input->post('barcode'),
+            'nama_barang'=> $this->input->post('nama_barang'),
+            'stock'=> $this->input->post('stock'),
+            'satuan'=> $this->input->post('satuan'),
+            'keterangan'=> $this->input->post('keterangan')
+        );
+        $this->db->insert('barang', $data);
+        $data = $this->db->get_where('barang', array('id_barang' => $id));
+
+        $data2 = array(
+            'sumber'=> $this->input->post('sumber'),
+            'sumber_2'=> $this->input->post('sumber_2'),
+            'column'=> $this->input->post('column'),
+            'kode'=> $this->input->post('kode')
+        );
+        $this->db->insert('pengirim', $data2);
+        $data2 = $this->db->get_where('barang', array('id' => $id), $limit, $offset);
+
+        // $data3 = get_where();
+
+        // $data3 = array(
+        //     'tanggal_masuk' => $this->input->post('tanggal_masuk'),
+        //     ....
+        // );
+        // $this->db->insert('transaksi_masuk', $data3);
+
+    }
+
+
     
 }
