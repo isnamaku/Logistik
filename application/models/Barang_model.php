@@ -40,12 +40,39 @@ class Barang_model extends CI_Model
         }
         return $this->db->get('transaksi_masuk')->result_array();
 
+    }
 
-        // return $this->db
-        // ->select('*')
-        // ->where('id_transaksi_masuk', $id)
-        // ->get('transaksi_masuk')
-        // ->result_array();
+    public function updateBarang($id){
+        //barang
+        $data = array(
+            'nama_barang' => $this->input->post('nama_barang'),
+            'barcode' => $this->input->post('barcode'),
+            'stock' => $this->input->post('stock')
+          );
+          $this->db->join('barang b', 'tm.id_barang=b.id_barang');
+          $this->db->update('barang', $data);
+          return $this->db->get('barang')->result_array();
+
+        //pengirim
+        //   $data2 = array(
+        //     'stock' => $this->input->post('stock'),
+        //     'sumber' => $this->input->post('sumber'),
+        //     'sumber_2' => $this->input->post('sumber_2')
+        //   )
+        //transaksii masuk
+        
+    //     $this->db->set($data);
+    //     $this->db->where('barang.id_barang', 'transaksi_masuk'.$id);
+    //     $this->db->where('pengirim.id', 'transaksi_masuk'.$id);
+    //     $this->db->update('transaksi_masuk', $data);
+
+
+    }
+
+    public function hapusBarangMasuk($id){
+        $this->db
+        ->where('id_transaksi_masuk', $id)
+        ->delete('transaksi_masuk');
     }
 
     

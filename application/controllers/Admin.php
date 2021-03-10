@@ -87,9 +87,14 @@ class Admin extends CI_Controller
     }
 
     public function update_barang_masuk($id){
-        $this->Barang_model->updateBarang($id);
-        echo "sampai sini";
-        // redirect(base_url() . "admin");
+
+        if (logged_in()){
+            $this->Barang_model->updateBarang($id);
+            redirect(base_url() . "admin/barang_masuk");
+        }
+        else {
+            redirect('Beranda');
+        }
 
     }
 
@@ -128,6 +133,17 @@ class Admin extends CI_Controller
         }
     }
 
+    public function hapus_barang_masuk($id)
+    {
+            if (logged_in()) {
+            $data['judul'] = "Hapus Barang";
+            $this->Barang_model->hapusBarangMasuk($id);
+            redirect(base_url() . "admin/barang_masuk");
+        }
+        else {
+            redirect('admin/barang_masuk');
+        }
+    }
 
 
 }
