@@ -115,7 +115,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="table" style="margin-top: 30px; color: #FFFFFF;">
-                                    <tr><span class="mr-2 d-none d-lg-inline text-white-700 medium">Halo! Douglas McGee</span></tr>
+                                    <tr><span class="mr-2 d-none d-lg-inline text-white-700 medium">Halo! <?= $anggota['nama']; ?></span></tr>
                                     <tr><p style="font-size: 12px; color: #F69133;">Anda masuk sebagai anggota</p></tr>
                                 </div>                                                              
                                 <img class="img-profile rounded-circle"
