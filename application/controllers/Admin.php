@@ -65,7 +65,8 @@ class Admin extends CI_Controller
     {
         $this->Barang_model->tambahBarangMasuk();
         echo "sukses menambahkan";
-        redirect(base_url() . "admin/barang_masuk");
+        echo $last;
+        // redirect(base_url() . "admin/barang_masuk");
     }
 
     public function tambah_barang_keluar(){
