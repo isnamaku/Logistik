@@ -40,11 +40,11 @@
                                     <input type="text" name="nama" id="nama" class="form-control" />
                                     <br />
                                     
-<label for="from">From</label> <input type="text" id="from" name="datetimes"/> <label for="to">to</label> <input type="text" id="to" name="to"/>
+<label for="from">From</label> <input type="text" id="from" name="from"/> <label for="datetimes">to</label> <input type="text" id="to" name="to"/>
                                     <a href="" class="btn btn-user" style="background-color: #F69133; color: #000000; float:right;">Cari</a>
                                 
-                                    <script>
-           
+                                    <script src="//code.jquery.com/jquery-1.11.3.min.js">
+
            var dateToday = new Date();
         var dates = $("#from, #to").datepicker({
             defaultDate: "+1w",

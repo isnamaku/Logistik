@@ -12,30 +12,30 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Tanggal</label>
-                    <input type="date" style="background-color: #E5E5E5" class="form-control" name="tanggal" id="tanggal" value="<?= $post['tanggal_masuk'] ?>">
+                    <input type="date" style="background-color: #E5E5E5" class="form-control" name="tanggal_masuk" id="tanggal_masuk" value="<?= $post['tanggal_masuk'] ?>">
                 </div>
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Kode Barang</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="kode" id="kode" value="<?= $post['barcode'] ?>">
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode" id="barcode" value="<?= $post['barcode'] ?>">
                 </div>
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Barang</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="barang" id="barang" value="<?= $post['nama_barang'] ?>">
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="nama_barang" id="nama_barang" value="<?= $post['nama_barang'] ?>">
                 </div>
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Stock</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="jumlah" id="jumlah" value="<?= $post['stock'] ?>">
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="stock" id="stock" value="<?= $post['stock'] ?>">
                 </div>
             </div>
             <div class="col-md-6">
  
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Nama Pengirim</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="pengirim" id="pengirim" value="<?= $post['sumber'] ?>">
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="sumber" id="sumber" value="<?= $post['sumber'] ?>">
                 </div>
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Perusahaan Pengirim</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="perusahaan" id="perusahaan" value="<?= $post['sumber_2'] ?>">
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="sumber_2" id="sumber_2" value="<?= $post['sumber_2'] ?>">
                 </div>
             </div>
         </div>
