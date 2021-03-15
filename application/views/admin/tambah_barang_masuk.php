@@ -13,7 +13,7 @@
                 </div>
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Kode Barang</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="kode" id="kode">
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode" id="barcode">
                 </div>
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Barang</label>
