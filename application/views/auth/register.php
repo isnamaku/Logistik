@@ -111,7 +111,7 @@
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a style="color:#000000; font-weight:bold">Sudah punya akun? </a><a href="<?= base_url('Auth/register_Anggota'); ?>">Masuk</a>
+                                <a style="color:#000000; font-weight:bold">Sudah punya akun? </a><a href="<?= base_url('Auth/login_Anggota'); ?>">Masuk</a>
                             </div>
                         </div>
                     </div>
