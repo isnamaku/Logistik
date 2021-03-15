@@ -9,7 +9,7 @@ class Barang_model extends CI_Model
         $this->db->select('*');
         $this->db->from('transaksi_masuk tm'); 
         $this->db->join('barang b', 'tm.id_barang=b.id_barang');
-        $this->db->join('pengirim p', 'tm.id_pengirim=p.id');  
+        $this->db->join('pengirim p', 'tm.id=p.id');  
         $query = $this->db->get(); 
         if($query->num_rows() != 0)
         {
@@ -27,7 +27,7 @@ class Barang_model extends CI_Model
         $this->db->select('*');
         $this->db->from('transaksi_masuk tm'); 
         $this->db->join('barang b', 'tm.id_barang=b.id_barang');
-        $this->db->join('pengirim p', 'tm.id_pengirim=p.id');  
+        $this->db->join('pengirim p', 'tm.id=p.id');  
         $this->db->where('id_transaksi_masuk', $id);
         $query = $this->db->get(); 
         if($query->num_rows() != 0)
@@ -41,6 +41,35 @@ class Barang_model extends CI_Model
         return $this->db->get('transaksi_masuk')->result_array();
 
     }
+
+    public function filterBarang ($tanggal_awal = null, $tanggal_akhir = null, $nama_barang = null, $sumber = null){
+       
+
+    $data = array(
+        'tanggal_awal'=> $this->input->post('tanggal_awal'),
+        'tanggal_akhir' => $this->input->post('tanggal_akhir'),
+        'nama_barang' => $this->input->post('nama_barang'),
+        'sumber' => $this->input->post('sumber')
+
+    );
+
+        $this->db->select('*');
+        $this->db->from('transaksi_masuk tm'); 
+        $this->db->join('barang b', 'tm.id_barang=b.id_barang');
+        $this->db->join('pengirim p', 'tm.id=p.id');  
+        $this->db->where('tm.tanggal_masuk >=',$data['tanggal_awal']);
+        $this->db->where('tm.tanggal_masuk <=',$data['tanggal_akhir']);
+        // $this->db->where('b.nama_barang',$data['nama_barang']);
+        // $this->db->where('p.sumber_2',$data['sumber']);
+        // $this->db->where('p.sumber',$data['sumber']);
+
+        $query = $this->db->get();
+        $result = $query->result_array();
+        return $result;
+
+    }
+
+    
 
     public function updateBarang($id)
     {

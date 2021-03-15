@@ -155,6 +155,14 @@ public function login_Anggota()
         }
     }
 
+    public function logoutAnggota()
+    {
+        $this->session->unset_userdata('email');
+        echo "sampai logout";
+        redirect('beranda');
+
+    }
+
 
 }
 

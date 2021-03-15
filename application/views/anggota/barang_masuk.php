@@ -3,11 +3,14 @@
  
                 <!-- Page Heading -->
                 <h1 class="h3 mb-2 text-gray-800">Tabel Barang Masuk</h1>
+
                 <div class="table-responsive">
                     <div align="left">
                         <button type="button" style="background-color: #FF8C00; color:#000000;" name="age" id="age" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-warning">Filter</button>
                     </div>
                 </div>
+                  <!-- Filter -->
+                <form action=" <?= base_url()?>anggota/barang_masuk" method="POST"> 
                 <div id="add_data_Modal" class="modal fade">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -23,27 +26,38 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Mulai</label>
-                                                <input type="date" class="form-control" name="tanggal" id="tanggal">
+                                                <input type="date" class="form-control" name="tanggal_awal" id="tanggal_awal">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Hingga</label>
-                                                <input type="date" class="form-control" name="tanggal" id="tanggal">
+                                                <input type="date" class="form-control" name="tanggal_akhir" id="tanggal_akhir">
                                             </div>
                                         </div>
                                     </div>
                                     <label>Nama Barang</label>
-                                    <input type="text" name="nama" id="nama" class="form-control" />
+                                    <input type="text" name="nama_barang" id="nama_barang" class="form-control" />
                                     <br />
                                     <label>Sumber Pengirim</label>
-                                    <input type="text" name="nama" id="nama" class="form-control" />
+                                    <input type="text" name="sumber" id="sumber" class="form-control" />
                                     <br />
+                                    <!-- <div class="form-group">
+                                    <label for="" class="col-sm-2 control-label">Country</label>
+                                    <div class="col-sm-4">
+                                        <?php //echo $form_country; ?>
+                                    </div>
+                                      </div>
+                                     -->
+<!-- <label for="from">From</label> <input type="text" id="from" name="from"/> <label for="datetimes">to</label> <input type="text" id="to" name="to"/>
+                                    -->
                                     
-<label for="from">From</label> <input type="text" id="from" name="from"/> <label for="datetimes">to</label> <input type="text" id="to" name="to"/>
-                                    <a href="" class="btn btn-user" style="background-color: #F69133; color: #000000; float:right;">Cari</a>
-                                
-                                    <script src="//code.jquery.com/jquery-1.11.3.min.js">
+                                     <button  class="btn btn-user" type="submit"  name="submit" style="background-color: #F69133; color: #000000; float:right;">Cari</button>
+                </form>
+                
+                                  
+                                   <!-- Akhir Filter -->
+                                    <script src="//code.jquery.com/jquery-1.11.3.min.js" type="text/javascript">
 
            var dateToday = new Date();
         var dates = $("#from, #to").datepicker({
