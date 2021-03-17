@@ -68,7 +68,7 @@
 
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
+            <!-- Nav Item - Pages Barang Keluar -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<?= base_url('admin/'); ?>barang_keluar"  data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
@@ -76,6 +76,16 @@
                     <span style="font-size: 16px; font-color: white;">Barang Keluar</span>
                 </a>
             </li>
+
+            <!-- Nav Item - Pages Laporan-->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?= base_url('admin/'); ?>berita_acara"  data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-file-alt"></i>
+                    <span style="font-size: 16px; font-color: white;">&nbsp;Berita Acara</span>
+                </a>
+            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider">

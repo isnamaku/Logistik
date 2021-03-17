@@ -22,6 +22,7 @@ class Admin extends CI_Controller
         }
     }
 
+    // Barang Masuk
     public function barang_masuk(){
         if (logged_in()){
             $data['judul'] = "Barang Masuk";
@@ -29,20 +30,7 @@ class Admin extends CI_Controller
             $data['post'] = $this->Barang_model->ambilBarang();
 
             $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/barang_masuk');
-            $this->load->view('admin/template/footer');
-        }
-        else {
-            redirect('Beranda');
-        }
-    }
-
-    public function barang_keluar(){
-        if (logged_in()){
-            $data['judul'] = "Barang Keluar";
-            $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
-            $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/barang_keluar');
+            $this->load->view('admin/barang_masuk', $data);
             $this->load->view('admin/template/footer');
         }
         else {
@@ -67,17 +55,6 @@ class Admin extends CI_Controller
         redirect(base_url() . "admin/barang_masuk");
     }
 
-    public function tambah_barang_keluar(){
-        if (logged_in()){
-            $data['judul'] = "Tambah Barang";
-            $this->load->view('admin/template/header_data', $data);
-            $this->load->view('admin/tambah_barang_keluar');
-        }
-        else {
-            redirect('Beranda');
-        }
-
-    }
 
     public function edit_barang_masuk($id){
         if (logged_in()){
@@ -105,17 +82,6 @@ class Admin extends CI_Controller
 
     }
 
-    public function edit_barang_keluar(){
-        if (logged_in()){
-            $data['judul'] = "Barang Keluar";
-            $this->load->view('admin/template/header_data', $data);
-            $this->load->view('admin/edit_barang_keluar');
-        }
-        else {
-            redirect('Beranda');
-        }
-    }
-
     public function info_barang_masuk($id){
         if (logged_in()){
             $data['judul'] = "Info Barang";
@@ -123,17 +89,6 @@ class Admin extends CI_Controller
 
             $this->load->view('admin/template/header_data', $data);
             $this->load->view('admin/info_barang_masuk');
-        }
-        else {
-            redirect('Beranda');
-        }
-    }
-
-    public function info_barang_keluar(){
-        if (logged_in()){
-            $data['judul'] = "Info Barang";
-            $this->load->view('admin/template/header_data', $data);
-            $this->load->view('admin/info_barang_keluar');
         }
         else {
             redirect('Beranda');
@@ -162,6 +117,89 @@ class Admin extends CI_Controller
             redirect('admin/barang_masuk');
         }
     }
+
+     // Barang Keluar
+
+     
+    public function barang_keluar()
+    {
+        if (logged_in()) {
+            $data['judul'] = "Barang Keluar";
+            $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
+            $data['post'] = $this->Barang_model->ambilBarangKeluar();
+ 
+            $this->load->view('admin/template/header', $data);
+            $this->load->view('admin/barang_keluar');
+            $this->load->view('admin/template/footer');
+        } else {
+            redirect('Beranda');
+        }
+    }
+
+    public function tambah_barang_keluar()
+    {
+        if (logged_in()) {
+            $data['judul'] = "Tambah Barang";
+            $this->load->view('admin/template/header_data', $data);
+            $this->load->view('admin/tambah_barang_keluar');
+        } else {
+            redirect('Beranda');
+        }
+    }
+
+
+    public function update_barang_keluar($id)
+    {
+ 
+        if (logged_in()) {
+            $this->Barang_model->updateBarangKeluar($id);
+ 
+            redirect(base_url() . "admin/barang_keluar");
+        } else {
+            redirect('Beranda');
+        }
+    }
+
+    public function info_barang_keluar($id)
+    {
+        if (logged_in()) {
+            $data['judul'] = "Info Barang";
+            $data['post'] = $this->Barang_model->ambilBarangKeluarById($id);
+            $this->load->view('admin/template/header_data', $data);
+            $this->load->view('admin/info_barang_keluar', $data);
+        } else {
+            redirect('Beranda');
+        }
+    }
+
+    public function edit_barang_keluar(){
+        if (logged_in()){
+            $data['judul'] = "Barang Keluar";
+            $this->load->view('admin/template/header_data', $data);
+            $this->load->view('admin/edit_barang_keluar');
+        }
+        else {
+            redirect('Beranda');
+        }
+    }
+
+    // Berita Acara
+
+    public function berita_acara(){
+        if (logged_in()){
+            $data['judul'] = "Berita Acara";
+            $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
+            $this->load->view('admin/template/header', $data);
+            $this->load->view('admin/berita_acara',$data);
+            $this->load->view('admin/template/footer' );
+        }
+        else {
+            redirect('Beranda');
+        }
+    }
+
+
+
 
 
 

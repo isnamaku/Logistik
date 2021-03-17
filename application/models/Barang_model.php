@@ -148,5 +148,117 @@ class Barang_model extends CI_Model
         );
         $this->db->insert('transaksi_masuk', $data3);
     }
+
+
+    public function ambilBarangKeluar()
+    {
+        $this->db->select('*');
+        $this->db->from('distribusi');
+        $this->db->join('penerima', 'distribusi.id_penerima = penerima.id_penerima');
+        $this->db->join('pengirim', 'distribusi.id = pengirim.id');
+        $this->db->join('barang', 'distribusi.id_barang = barang.id_barang');
+ 
+        $query = $this->db->get();
+        if ($query->num_rows() != 0) {
+            return $query->result_array();
+        } else {
+            return false;
+        }
+        return $this->db->get('distribusi')->result_array();
+    }
+
+
+public function ambilBarangKeluarById($id)
+    {
+        $this->db->select('*');
+        $this->db->from('distribusi');
+        $this->db->join('penerima', 'distribusi.id_penerima = penerima.id_penerima');
+        $this->db->join('pengirim', 'distribusi.id = pengirim.id');
+        $this->db->join('barang', 'distribusi.id_barang = barang.id_barang');
+        $this->db->where('id_distribusi', $id);
+        $query = $this->db->get();
+        if ($query->num_rows() != 0) {
+            return $query->result_array();
+        } else {
+            return false;
+        }
+        return $this->db->get('distribusi')->result_array();
+    }
+
+
+public function updateBarangKeluar($id)
+    {
+        $data = array(
+            'nama_barang'     => $this->input->post('nama_barang'),
+            'barcode'    => $this->input->post('barcode')
+        );
+ 
+        $data2 = array(
+            'sumber_2'      => $this->input->post('sumber_2')
+        );
+ 
+        $data3 = array(
+            'nama_penerima'      => $this->input->post('nama_penerima'),
+            'jabatan_penerima'      => $this->input->post('jabatan_penerima'),
+            'instansi_penerima'      => $this->input->post('instansi_penerima')
+        );
+ 
+        $data4 = array(
+            'tanggal_keluar'     => $this->input->post('tanggal_keluar'),
+            'jumlah_keluar' => $this->input->post('jumlah_keluar'),
+            'satuan' => $this->input->post('satuan'),
+            'keterangan' => $this->input->post('keterangan')
+        );
+ 
+        $last_row = $this->db->select('id_barang')->where('id_distribusi', $id)->get('distribusi')->row();
+        $last_row2 = $this->db->select('id')->where('id_distribusi', $id)->get('distribusi')->row();
+        $last_row3 = $this->db->select('id_penerima')->where('id_distribusi', $id)->get('distribusi')->row();
+ 
+        $this->db->where('id_barang', $last_row->id_barang);
+        $this->db->update('barang', $data);
+        $this->db->where('id', $last_row2->id);
+        $this->db->update('pengirim', $data2);
+        $this->db->where('id_penerima', $last_row3->id_penerima);
+        $this->db->update('penerima', $data3);
+        $this->db->where('id_distribusi', $id);
+        $this->db->update('distribusi', $data4);
+    }
+
+
+public function tambahBarangKeluar()
+    {
+        $data = array(
+            'nama_barang'     => $this->input->post('nama_barang'),
+            'barcode'    => $this->input->post('barcode')
+        );
+        $this->db->insert('barang', $data);
+        $last_row = $this->db->select('id_barang')->order_by('id_barang', "desc")->limit(1)->get('barang')->row();
+ 
+        $data2 = array(
+            'sumber_2'      => $this->input->post('sumber_2')
+        );
+        $this->db->insert('pengirim', $data2);
+        $last_row2 = $this->db->select('id')->order_by('id', "desc")->limit(1)->get('pengirim')->row();
+ 
+        $data3 = array(
+            'nama_penerima'      => $this->input->post('nama_penerima'),
+            'jabatan_penerima'      => $this->input->post('jabatan_penerima'),
+            'instansi_penerima'      => $this->input->post('instansi_penerima')
+        );
+        $this->db->insert('penerima', $data3);
+        $last_row3 = $this->db->select('id_penerima')->order_by('id_penerima', "desc")->limit(1)->get('penerima')->row();
+ 
+        $data4 = array(
+            'id_barang' => $last_row->id_barang,
+            'id' => $last_row2->id,
+            'id_penerima' => $last_row3->id_penerima,
+            'tanggal_keluar'     => $this->input->post('tanggal_keluar'),
+            'jumlah_keluar' => $this->input->post('jumlah_keluar'),
+            'satuan' => $this->input->post('satuan'),
+            'keterangan' => $this->input->post('keterangan')
+        );
+        $this->db->insert('distribusi', $data4);
+    }
+
     
 }
