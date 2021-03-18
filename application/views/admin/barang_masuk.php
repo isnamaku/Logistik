@@ -31,13 +31,12 @@
                                 <tbody>
                                 <?php if(isset($post)) {
                                     $i=1;
-                                    
                                     foreach ($post as $post) {  
                                         $jumlah = $post['harga'] * $post['stock'];
                                         ?>
-                                  
                                     <tr>
-                                    <td><?= $i++; ?></td>
+                                    <td>
+                                        <?= $i++; ?></td>
                                                 <td> <?= $post['tanggal_masuk'] ?></td>
                                                 <td> <?= $post['barcode'] ?> </td>
                                                 <td> <?= $post['nama_barang'] ?> </td>
