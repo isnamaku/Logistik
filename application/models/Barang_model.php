@@ -59,12 +59,9 @@ class Barang_model extends CI_Model
         $this->db->join('pengirim p', 'tm.id=p.id');  
         $this->db->where('tm.tanggal_masuk >=',$data['tanggal_awal']);
         $this->db->where('tm.tanggal_masuk <=',$data['tanggal_akhir']);
-        // $this->db->where('b.nama_barang',$data['nama_barang']);
-        // $this->db->where('p.sumber_2',$data['sumber']);
-        // $this->db->where('p.sumber',$data['sumber']);
-        $array = array('name' => $name, 'title' => $title, 'status' => $status);
+        $this->db->like('b.nama_barang',$data['nama_barang']);
+        $this->db->like('p.sumber',$data['sumber']);
 
-        $this->db->where($array); 
         
         $query = $this->db->get();
         $result = $query->result_array();
