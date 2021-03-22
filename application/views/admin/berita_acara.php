@@ -93,31 +93,30 @@
                             <hr>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">Tanggal Berita Acara</label>
-                                <input type="date" style="background-color: #E5E5E5" class="form-control" name="tanggal_masuk" id="tanggal_masuk">
+                                <input type="date" style="background-color: #E5E5E5" class="form-control" name="tanggal_BA" id="tanggal_masuk">
                             </div>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">Nama</label>
-                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode" id="barcode">
+                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="nama" id="nama">
                             </div>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">Jabatan</label>
-                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="nama_barang" id="nama_barang">
+                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="jabatan" id="jabatan">
                             </div>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">Instansi</label>
-                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="stock" id="stock">
+                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="instansi" id="instansi">
                             </div>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">NIP</label>
-                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="satuan" id="satuan">
+                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="nip" id="nip">
                             </div>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">Telepon</label>
-                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="keterangan" id="keterangan">
+                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="telp" id="telp">
                             </div>
                         </div>
-
-                        <button type="submit" href="<?= base_url() ?>admin/barang_masuk" class="btn" style="background-color: #FF8C00; color:#000000; font-weight:bold; float:right;">Tambah</button>
+                        <a href="<?= base_url('admin/print'); ?>" class="btn btn-user" style="background-color: #F69133; color: #000000;font-weight:bold; float:right;"><i class="fas fa-print"></i></i> Cetak</a>
                         <a href="<?= base_url() ?>admin/barang_masuk" class="btn mr-3" style="background-color: #FF8C00; color:#000000; font-weight:bold; float:right;">Batal</a>
                     </form>
 

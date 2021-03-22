@@ -198,6 +198,16 @@ class Admin extends CI_Controller
         }
     }
 
+        // Print Beirta Acara
+    public function print()
+    {  $data['judul'] = "Berita Acara";
+        $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
+        $data['distribusi'] = $this->Barang_model->ambilBarangKeluar();
+    
+        $this->load->view('admin/print_BA', $data);
+       
+    }
+
 
 
 
