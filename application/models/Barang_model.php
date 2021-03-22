@@ -257,5 +257,6 @@ public function tambahBarangKeluar()
         $this->db->insert('distribusi', $data4);
     }
 
+
     
 }
