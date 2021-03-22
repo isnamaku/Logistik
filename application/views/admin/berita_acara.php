@@ -93,7 +93,7 @@
                             <hr>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">Tanggal Berita Acara</label>
-                                <input type="date" style="background-color: #E5E5E5" class="form-control" name="tanggal_BA" id="tanggal_masuk">
+                                <input type="date" style="background-color: #E5E5E5" class="form-control" name="tanggal_BA" id="tanggal_BA">
                             </div>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">Nama</label>
@@ -113,7 +113,7 @@
                             </div>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">Telepon</label>
-                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="telp" id="telp">
+                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="telepon" id="telepon">
                             </div>
                         </div>
                         <button type="submit" href="<?= base_url('admin/print'); ?>" type= "submit" class="btn btn-user" style="background-color: #F69133; color: #000000;font-weight:bold; float:right;"><i class="fas fa-print"></i></i> Cetak</button>
