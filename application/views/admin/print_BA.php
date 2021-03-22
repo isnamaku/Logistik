@@ -27,7 +27,36 @@
                 <td colspan="3" height="270" valign="top">
                     <div align="justify">
                         <br>
-                        <span style="font-family:Arial, Helvetica, sans-serif;">&emsp; Pada hari ini Rabu tanggal Dua Puluh Bulan Januari tahun dua ribu dua puluh satu, kami yang bertanda tangan dibawah ini :
+
+                        <?php 
+                        $hari =  date('D');
+                        if ($hari == "Mon"){
+                            $hari = "Senin";
+                        } 
+                        else if ($hari == "Tue"){
+                            $hari = "Selasa";
+                        } 
+                        else if ($hari == "Wed"){
+                            $hari = "Rabu";
+                        } 
+                        else if ($hari == "Thu"){
+                            $hari = "Kamis";
+                        } 
+                        else if ($hari == "Fri"){
+                            $hari = "Jum'at";
+                        } 
+                        else if ($hari == "Sat"){
+                            $hari = "Sabtu";
+                        } 
+                        else if ($hari == "Sun"){
+                            $hari = "Minggu";
+                        } 
+                        
+                        
+                        
+                        ?> 
+
+                        <span style="font-family:Arial, Helvetica, sans-serif;">&emsp; Pada hari ini <?php echo $hari. ' ' ?>tanggal Dua Puluh Bulan Januari tahun dua ribu dua puluh satu, kami yang bertanda tangan dibawah ini :
                         </span><br><br>
                         <table border="0" style="width: 460px;">
                             <tbody>
@@ -72,35 +101,31 @@
                                     <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;">2.</span></td>
                                     <td width="200"><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">Nama</span></td>
                                     <td width="10"><span style="font-family:Arial, Helvetica, sans-serif;">:</span></td>
-                                    <?php if(isset($post)) {
-                                foreach($post as $post){ ?>
-                                <tr>
-                                    <td width="330"><span style="font-family:Arial, Helvetica, sans-serif;"><? echo $post['nama']?></span></td>
-                                </tr>
-                                <?php }} ?>
+                                    <td width="330"><span style="font-family:Arial, Helvetica, sans-serif;"><?php echo $nama; ?></span></td>
+                         
                                 <tr>
                                     <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;"> </span></td>
                                     <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">NIP</span></td>
                                     <td><span style="font-family:Arial, Helvetica, sans-serif;">:</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;">19681009 199603 1 003</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif;"><?php echo $nip; ?></span></td>
                                 </tr>
                                 <tr>
                                     <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;"> </span></td>
                                     <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">Jabatan</span></td>
                                     <td><span style="font-family:Arial, Helvetica, sans-serif;">:</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;">Kepala Pelaksana</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif;"><?php echo $jabatan; ?></span></td>
                                 </tr>
                                 <tr>
                                     <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;"> </span></td>
                                     <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">Instansi & Alamat</span></td>
                                     <td><span style="font-family:Arial, Helvetica, sans-serif;">:</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;">BPBD Gunungkidul</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif;"><?php echo $instansi; ?></span></td>
                                 </tr>
                                 <tr>
                                     <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;"> </span></td>
                                     <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">Telepon</span></td>
                                     <td><span style="font-family:Arial, Helvetica, sans-serif;">:</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;">(0274) 394091</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif;"><?php echo $telepon; ?></span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -183,15 +208,68 @@
                     </div>
                     <div align="center"><br><br>
                         <br><span style="font-family:Arial, Helvetica, sans-serif; text-decoration: underline;">
-                            EDY BASUKI, S.IP., M.Si
+                        <?php echo $nama; ?>
                         </span><br>
-                        <span style="font-family:Arial, Helvetica, sans-serif;">NIP. 19681009 199603 1 003</span>
+                        <span style="font-family:Arial, Helvetica, sans-serif;">NIP. <?php echo $nip; ?></span>
                     </div>
                 </td>
                 <td>
                 <td valign="top">
                     <div align="center">
-                        <span style="font-family:Arial, Helvetica, sans-serif;">Yogyakarta, 20 Januari 2021</span><br>
+                            <!-- explode date -->
+                            <?php 
+                            $date = $tanggal_BA ;
+                            $date = explode('-', $date);
+                            $hari = $date[2];
+                            $bulan  = $date[1];
+                            $tahun  = $date[0];
+
+                            if($bulan == '01'){
+                                $bulan='Januari';
+                            }
+                            else if($bulan == '02'){
+                                $bulan='Februari';
+                            }
+                            else if($bulan == '03'){
+                                $bulan='Maret';
+                            }
+                            else if($bulan == '04'){
+                                $bulan='April';
+                            }
+                            else if($bulan == '05'){
+                                $bulan='Mei';
+                            }
+                            else if($bulan == '06'){
+                                $bulan='Juni';
+                            }
+                            else if($bulan == '07'){
+                                $bulan='Juli';
+                            }
+                            else if($bulan == '08'){
+                                $bulan='Agustus';
+                            }
+                            else if($bulan == '08'){
+                                $bulan='Agustus';
+                            }
+                            else if($bulan == '09'){
+                                $bulan='September';
+                            }
+                            else if($bulan == '10'){
+                                $bulan='Oktober';
+                            }
+                            else if($bulan == '11'){
+                                $bulan='November';
+                            }
+                            else if($bulan == '12'){
+                                $bulan='Desember';
+                            }
+
+
+                            ?>
+                            
+
+
+                        <span style="font-family:Arial, Helvetica, sans-serif;">Yogyakarta, <?php echo $hari . ' ' .  $bulan . ' ' . $tahun ?></span><br>
                         <span style="font-family:Arial, Helvetica, sans-serif;">PIHAK PERTAMA</span>
                     </div>
                     <div align="center"><br><br>

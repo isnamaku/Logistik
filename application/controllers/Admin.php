@@ -206,17 +206,21 @@ class Admin extends CI_Controller
 
         // Print Beirta Acara
     public function print()
-    {  $data['judul'] = "Berita Acara";
-
-        // $data ['nama']= $this->input->post('nama');
-        $data = array(
-            'nama'      => $this->input->post('nama')
-        );
-
+    {   $data['judul'] = "Berita Acara";
         $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
 
-        // echo $data['nama'];
-        // $data['distribusi'] = $this->Barang_model->ambilBarangKeluar();
+        $data = array(
+            'tanggal_BA' => $this->input->post('tanggal_BA'),
+            'nama' => $this->input->post('nama'),
+            'nip' => $this->input->post('nip'),
+            'jabatan' => $this->input->post('jabatan'),
+            'instansi' => $this->input->post('instansi'),
+            'telepon' => $this->input->post('telepon')
+
+        );
+ 
+       
+
     
         $this->load->view('admin/print_BA', $data);
        
