@@ -68,12 +68,16 @@
                         </div>
                         <table border="0" style="width: 460px;">
                             <tbody>
-                                <tr>
+
                                     <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;">2.</span></td>
                                     <td width="200"><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">Nama</span></td>
                                     <td width="10"><span style="font-family:Arial, Helvetica, sans-serif;">:</span></td>
-                                    <td width="330"><span style="font-family:Arial, Helvetica, sans-serif;">EDY BASUKI, S.IP., M.Si.</span></td>
+                                    <?php if(isset($post)) {
+                                foreach($post as $post){ ?>
+                                <tr>
+                                    <td width="330"><span style="font-family:Arial, Helvetica, sans-serif;"><? echo $post['nama']?></span></td>
                                 </tr>
+                                <?php }} ?>
                                 <tr>
                                     <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;"> </span></td>
                                     <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">NIP</span></td>

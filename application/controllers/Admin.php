@@ -147,6 +147,12 @@ class Admin extends CI_Controller
         }
     }
 
+    public function proses_tambah_barang_keluar()
+    {
+        $this->Barang_model->tambahBarangKeluar();
+        redirect(base_url() . "admin/barang_keluar");
+    }
+
 
     public function update_barang_keluar($id)
     {
@@ -201,8 +207,16 @@ class Admin extends CI_Controller
         // Print Beirta Acara
     public function print()
     {  $data['judul'] = "Berita Acara";
+
+        // $data ['nama']= $this->input->post('nama');
+        $data = array(
+            'nama'      => $this->input->post('nama')
+        );
+
         $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
-        $data['distribusi'] = $this->Barang_model->ambilBarangKeluar();
+
+        // echo $data['nama'];
+        // $data['distribusi'] = $this->Barang_model->ambilBarangKeluar();
     
         $this->load->view('admin/print_BA', $data);
        

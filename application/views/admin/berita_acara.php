@@ -86,7 +86,7 @@
                 <!-- /.container-fluid -->
                 <div class="card shadow my-4 mb-4">
                     <div class="card-body">
-                    <form action="<?= base_url() ?>report/pdf" method="POST">
+                    <form action="<?= base_url() ?>admin/print" method="POST">
         
                         <div class="col-md-6">
                             <p style="color:black;">Data Penerima</p>
@@ -116,7 +116,7 @@
                                 <input type="text" style="background-color: #E5E5E5" class="form-control" name="telp" id="telp">
                             </div>
                         </div>
-                        <a href="<?= base_url('admin/print'); ?>" class="btn btn-user" style="background-color: #F69133; color: #000000;font-weight:bold; float:right;"><i class="fas fa-print"></i></i> Cetak</a>
+                        <button type="submit" href="<?= base_url('admin/print'); ?>" type= "submit" class="btn btn-user" style="background-color: #F69133; color: #000000;font-weight:bold; float:right;"><i class="fas fa-print"></i></i> Cetak</button>
                         <a href="<?= base_url() ?>admin/barang_masuk" class="btn mr-3" style="background-color: #FF8C00; color:#000000; font-weight:bold; float:right;">Batal</a>
                     </form>
 
