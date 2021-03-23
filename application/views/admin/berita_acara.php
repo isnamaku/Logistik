@@ -33,6 +33,29 @@
                 
             </div>
     </div>
+
+<script type="text/javascript">
+function showResult(str) {
+  if (str.length==0) {
+    document.getElementById("livesearch").innerHTML="";
+    document.getElementById("livesearch").style.border="0px";
+    return;
+  }
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("livesearch").innerHTML=this.responseText;
+      document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+    }
+  }
+  xmlhttp.open("GET","livesearch.php?q="+str,true);
+  xmlhttp.send();
+}
+
+
+ </script>
+
+
             
             <!-- /.container-fluid -->
             <div class="card shadow my-4 mb-4">
@@ -41,34 +64,57 @@
                             <div class="row">
                              <div class="col-md-6">
                                         <p style="color:black;">Data Barang</p>
+                                        <?php if(isset($_GET['barcode'])) {
+                                            $post = count($_GET['barcode']) ;
+                                           
+                                            for($i = 0; $i<$post;$i++){
+                                                $barcode = $_GET['barcode'];
+                                          ?> 
+                                           <p><?php echo $barcode[$i]; ?></p> 
+                                           <?php }  }  ?>
+                                   
                                         <hr>
-
-                                <?php if(isset($_GET['banyak_data'])) { 
+                                        <form  method="post" target="form-pilih">
+                                <?php if(isset($_GET['banyak_data'] )) { 
                                     $banyak_data = $_GET['banyak_data'];
-                                    
+                                    if($banyak_data>0){
                                         for ($i=0; $i<$banyak_data; $i++) {
                                             $urutan = 1+$i;
                                             ?>     
                                         <div class="card-body">                                                                             
                                             <div class="form-group" >
-                                                <p style="color:black;">Data ke- <?php echo $urutan; ?></p>
-                                                    <label style="color:#000000; font-weight:bold">Nama Barang</label>
-                                                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode" id="barcode">
-                                                    <label style="color:#000000; font-weight:bold">Merk/Type/Ukuran</label>
-                                                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode" id="barcode">
-                                                    <label style="color:#000000; font-weight:bold">Volume</label>
-                                                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode" id="barcode">
-                                                    <label style="color:#000000; font-weight:bold">Keterangan</label>
-                                                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode" id="barcode">
-                                                </div>
+                                               
+                                                    <p style="color:black;">Data ke- <?php echo $urutan; ?></p>
+                                                    <label style="color:#000000; font-weight:bold" onkeyup="showResult(this.value)" >Barcode</label>
+                                                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode[<?php $i?>]" id="barcode">
+                                                    
+                                                        <!-- <label style="color:#000000; font-weight:bold">Nama Barang</label>
+                                                        <p type="text" style="background-color: #E5E5E5" class="form-control" name="barcode" id="barcode"></p>
+                                                        <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode" id="barcode">
+                                                        <label style="color:#000000; font-weight:bold">Merk/Type/Ukuran</label>
+                                                        <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode" id="barcode">
+                                                        <label style="color:#000000; font-weight:bold">Volume</label>
+                                                        <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode" id="barcode">
+                                                        <label style="color:#000000; font-weight:bold">Keterangan</label>
+                                                        <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode" id="barcode"> -->
+
+                                             </div>
                                         </div>
                                         <hr width="100%">
+
                                     <?php
                                         } 
+                                    }else if ($banyak_data<=0) {
+                                       
+                                        echo '<span style="color:red;text-align:center;">Data barang yang dimasukkan minimal 1 data barang!</span>';
+                                    }
                                     } else{
                                         echo '<span style="color:red;text-align:center;">Isikan jumlah barang yang akan didistribusi terlebih dahulu!</span>';
                                     }
-                                        ?>  
+                                        ?> 
+                                        <button type="submit" class="tombol-simpan" >Pilih</button>
+                                                        </form> 
+                                   
                              </div>
                             
                             </div>

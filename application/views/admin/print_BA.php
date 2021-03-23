@@ -146,7 +146,7 @@
                        
                         ?> 
 
-                        <span style="font-family:Arial, Helvetica, sans-serif;">&emsp; Pada hari ini <?php echo $hari. ' ' ?>tanggal <?php echo ucwords(Dibaca($tanggal)). ' '?>bulan <?php echo $bulan. ' ' ?> tahun <?php echo ucwords(Dibaca($tahun)). ' '?>, kami yang bertanda tangan dibawah ini :
+                        <span style="font-family:Arial, Helvetica, sans-serif;">&emsp; Pada hari ini <?php echo $hari. ' ' ?>tanggal <?php echo ucwords(Dibaca($tanggal)). ' '?>bulan <?php echo $bulan. ' ' ?> tahun <?php echo ucwords(Dibaca($tahun))?>, kami yang bertanda tangan dibawah ini :
                         </span><br><br>
                         <table border="0" style="width: 460px;">
                             <tbody>
@@ -278,10 +278,6 @@
                             $hari = $date[2];
                             $bulan  = $date[1];
                             $tahun  = $date[0];
-
-
-
-
                             ?>
                             
 
