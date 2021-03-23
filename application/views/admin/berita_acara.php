@@ -112,7 +112,7 @@ function showResult(str) {
                                         echo '<span style="color:red;text-align:center;">Isikan jumlah barang yang akan didistribusi terlebih dahulu!</span>';
                                     }
                                         ?> 
-                                        <button type="submit" class="tombol-simpan" >Pilih</button>
+                                        <button type="submit" class="btn-primary" >Pilih</button>
                                                         </form> 
                                    
                              </div>
