@@ -27,7 +27,7 @@
                 <td colspan="3" height="270" valign="top">
                     <div align="justify">
                         <br>
-
+                    <!-- Konversi Hari Indonesia -->
                         <?php 
                         $hari =  date('D');
                         if ($hari == "Mon"){
@@ -51,12 +51,102 @@
                         else if ($hari == "Sun"){
                             $hari = "Minggu";
                         } 
+
+                        $date = $tanggal_BA ;
+                        $date = explode('-', $date);
+                        $tanggal = $date[2];
+                        $bulan  = $date[1];
+                        $tahun  = $date[0];
+
+                        // Koversi Tanggal dan Tahun
+                        function Dibaca($x) {
+                            $angkaBaca = array("", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan", "Sepuluh", "Sebelas");
+                            switch ($x) {
+                                case ($x < 12):
+                                    echo " " . $angkaBaca[$x];
+                                    break;
+                                case ($x < 20):
+                                    echo $result = Dibaca($x - 10) . " belas";
+                                    break;
+                                case ($x < 100):
+                                    echo Dibaca($x / 10);
+                                    echo " Puluh ";
+                                    echo Dibaca($x % 10);
+                                    break;
+                                case ($x < 200):
+                                    echo " Seratus ";
+                                    echo Dibaca($x - 100);
+                                    break;
+                                case ($x < 1000):
+                                    echo Dibaca($x / 100);
+                                    echo " Ratus";
+                                    echo Dibaca($x % 100);
+                                    break;
+                                case ($x < 2000):
+                                    echo " Seribu ";
+                                    echo Dibaca($x - 1000);
+                                    break;
+                                case ($x < 1000000):
+                                    echo Dibaca($x / 1000);
+                                    echo " Ribu ";
+                                    echo Dibaca($x % 1000);
+                                    break;
+                                case ($x < 1000000000):
+                                    echo Dibaca($x / 1000000);
+                                    echo " Juta ";
+                                    echo Dibaca($x % 1000000);
+                                    break;
+                            }
+                        }
+
+                         // Koversi Bulan
                         
-                        
-                        
+                        if($bulan == '01'){
+                            $bulan='Januari';
+                        }
+                        else if($bulan == '02'){
+                            $bulan='Februari';
+                        }
+                        else if($bulan == '03'){
+                            $bulan='Maret';
+                        }
+                        else if($bulan == '04'){
+                            $bulan='April';
+                        }
+                        else if($bulan == '05'){
+                            $bulan='Mei';
+                        }
+                        else if($bulan == '06'){
+                            $bulan='Juni';
+                        }
+                        else if($bulan == '07'){
+                            $bulan='Juli';
+                        }
+                        else if($bulan == '08'){
+                            $bulan='Agustus';
+                        }
+                        else if($bulan == '08'){
+                            $bulan='Agustus';
+                        }
+                        else if($bulan == '09'){
+                            $bulan='September';
+                        }
+                        else if($bulan == '10'){
+                            $bulan='Oktober';
+                        }
+                        else if($bulan == '11'){
+                            $bulan='November';
+                        }
+                        else if($bulan == '12'){
+                            $bulan='Desember';
+                        }
+                        // if ($hari) {;
+                        //     echo ucwords(Dibaca($hari2));
+                        // }
+                       
                         ?> 
 
-                        <span style="font-family:Arial, Helvetica, sans-serif;">&emsp; Pada hari ini <?php echo $hari. ' ' ?>tanggal Dua Puluh Bulan Januari tahun dua ribu dua puluh satu, kami yang bertanda tangan dibawah ini :
+                        <span style="font-family:Arial, Helvetica, sans-serif;">&emsp; Pada hari ini <?php echo $hari. ' ' ?>tanggal <?php echo ucwords(Dibaca($tanggal)). ' '?>bulan <?php echo $bulan. ' ' ?> tahun <?php echo ucwords(Dibaca($tahun))?>, kami yang bertanda tangan dibawah ini :
                         </span><br><br>
                         <table border="0" style="width: 460px;">
                             <tbody>
@@ -159,41 +249,6 @@
                                     <td>12,000 pcs</td>
                                     <td>510000101</td>
                                 </tr>
-                                <tr style="text-align: center;">
-                                    <td>2.</td>
-                                    <td>Paket Permakaman</td>
-                                    <td></td>
-                                    <td>50 paket</td>
-                                    <td>510000177</td>
-                                </tr>
-                                <tr style="text-align: center;">
-                                    <td>3.</td>
-                                    <td>Tikar</td>
-                                    <td></td>
-                                    <td>50 lembar</td>
-                                    <td>510000033</td>
-                                </tr>
-                                <tr style="text-align: center;">
-                                    <td>4.</td>
-                                    <td>Karung 45 X 75 cm</td>
-                                    <td></td>
-                                    <td>2000 lembar</td>
-                                    <td>510000039</td>
-                                </tr>
-                                <tr style="text-align: center;">
-                                    <td>5.</td>
-                                    <td>Masker sekali pakai</td>
-                                    <td>SOFTIES</td>
-                                    <td>2400 pcs</td>
-                                    <td>510000212</td>
-                                </tr>
-                                <tr style="text-align: center;">
-                                    <td>6.</td>
-                                    <td>Seng</td>
-                                    <td></td>
-                                    <td>50 lembar</td>
-                                    <td>510000048</td>
-                                </tr>
                             </tbody>
                         </table>
  
@@ -223,48 +278,6 @@
                             $hari = $date[2];
                             $bulan  = $date[1];
                             $tahun  = $date[0];
-
-                            if($bulan == '01'){
-                                $bulan='Januari';
-                            }
-                            else if($bulan == '02'){
-                                $bulan='Februari';
-                            }
-                            else if($bulan == '03'){
-                                $bulan='Maret';
-                            }
-                            else if($bulan == '04'){
-                                $bulan='April';
-                            }
-                            else if($bulan == '05'){
-                                $bulan='Mei';
-                            }
-                            else if($bulan == '06'){
-                                $bulan='Juni';
-                            }
-                            else if($bulan == '07'){
-                                $bulan='Juli';
-                            }
-                            else if($bulan == '08'){
-                                $bulan='Agustus';
-                            }
-                            else if($bulan == '08'){
-                                $bulan='Agustus';
-                            }
-                            else if($bulan == '09'){
-                                $bulan='September';
-                            }
-                            else if($bulan == '10'){
-                                $bulan='Oktober';
-                            }
-                            else if($bulan == '11'){
-                                $bulan='November';
-                            }
-                            else if($bulan == '12'){
-                                $bulan='Desember';
-                            }
-
-
                             ?>
                             
 
