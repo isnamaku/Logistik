@@ -86,7 +86,7 @@ function showResult(str) {
                                         <p style="color:black;">Data Barang</p>
                                         <?php if(isset($_GET['barcode'])) {
                                             $post = count($_GET['barcode']) ;
-                                           
+
                                             for($i = 0; $i<$post;$i++){
                                                 $barcode = $_GET['barcode'];
                                                 // redirect("admin/detail_barang/$barcode[$i]");
@@ -144,7 +144,7 @@ function showResult(str) {
                              </div>
                             
                             </div>
-
+                        </form>
                        
 <!-- if -->
                      <div >
