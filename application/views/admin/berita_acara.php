@@ -18,7 +18,7 @@
                                         <form action="" method="post" target="votar"  > <a style="color:black;"> Banyak barang yang didistribusikan : </a>
                                             <input name="banyak_data" id="banyak_data" style="color:black;" />  <a style="color:black;"> barang </a>
                                             <br />    
-                                            <input type="submit" class="btn-primary " value="Lanjut" data-target="#sumbitModal" style="margin-top:20px;"/>
+                                            <button type="submit2" class="btn-primary " value="Lanjut" data-target="#sumbitModal" style="margin-top:20px;">Lanjut</button>
                                         </form>
                                     </div>
                             
@@ -54,7 +54,27 @@ function showResult(str) {
 
 
  </script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+      $(function () {
 
+        $('form').on('submit2', function (e) {
+
+          e.preventDefault();
+
+          $.ajax({
+            type: 'post',
+            url: 'admin/berita_acara.php',
+            data: $('form').serialize(),
+            success: function () {
+              alert('form was submitted');
+            }
+          });
+
+        });
+
+      });
+    </script>
 
             
             <!-- /.container-fluid -->
@@ -69,8 +89,9 @@ function showResult(str) {
                                            
                                             for($i = 0; $i<$post;$i++){
                                                 $barcode = $_GET['barcode'];
-                                          ?> 
-                                           <p><?php echo $barcode[$i]; ?></p> 
+                                                // redirect("admin/detail_barang/$barcode[$i]");
+                                               ?>
+                                           <p><?=$barcode[$i];?></p> 
                                            <?php }  }  ?>
                                    
                                         <hr>
@@ -85,8 +106,8 @@ function showResult(str) {
                                             <div class="form-group" >
                                                
                                                     <p style="color:black;">Data ke- <?php echo $urutan; ?></p>
-                                                    <label style="color:#000000; font-weight:bold" onkeyup="showResult(this.value)" >Barcode</label>
-                                                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode[<?php $i?>]" id="barcode">
+                                                    <label style="color:#000000; font-weight:bold" onkeyup="showResult(this.value)">Barcode</label>
+                                                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode[<?php $i?>]" id="barcode" >
                                                     
                                                         <!-- <label style="color:#000000; font-weight:bold">Nama Barang</label>
                                                         <p type="text" style="background-color: #E5E5E5" class="form-control" name="barcode" id="barcode"></p>
@@ -100,11 +121,15 @@ function showResult(str) {
 
                                              </div>
                                         </div>
-                                        <hr width="100%">
+                                
 
                                     <?php
-                                        } 
-                                    }else if ($banyak_data<=0) {
+                                        } ?>
+                                        
+                                        <button type="submit2" class="btn-primary " value="Pilih" data-target="#sumbitModal" style="margin-top:20px;">Pilih</button>
+                                        </form>  
+
+                                   <?php }else if ($banyak_data<=0) {
                                        
                                         echo '<span style="color:red;text-align:center;">Data barang yang dimasukkan minimal 1 data barang!</span>';
                                     }
@@ -112,14 +137,16 @@ function showResult(str) {
                                         echo '<span style="color:red;text-align:center;">Isikan jumlah barang yang akan didistribusi terlebih dahulu!</span>';
                                     }
                                         ?> 
-                                        <button type="submit" class="btn-primary" >Pilih</button>
-                                                        </form> 
+
+
+                                     
                                    
                              </div>
                             
                             </div>
 
-                        </form>    
+                       
+<!-- if -->
                      <div >
                      
 
@@ -132,22 +159,22 @@ function showResult(str) {
                 <!-- /.container-fluid -->
                 <div class="card shadow my-4 mb-4">
                     <div class="card-body">
-                    <form action="<?= base_url() ?>admin/print" method="POST">
+                    <form action="<?= base_url()?>admin/print" method="POST">
         
                         <div class="col-md-6">
                             <p style="color:black;">Data Penerima</p>
                             <hr>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">Tanggal Berita Acara</label>
-                                <input type="date" style="background-color: #E5E5E5" class="form-control" name="tanggal_BA" id="tanggal_BA">
+                                <input type="date" style="background-color: #E5E5E5" class="form-control" name="tanggal_BA" id="tanggal_BA" required>
                             </div>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">Nama</label>
-                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="nama" id="nama">
+                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="nama" id="nama" required>
                             </div>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">Jabatan</label>
-                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="jabatan" id="jabatan">
+                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="jabatan" id="jabatan" >
                             </div>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">Instansi</label>
@@ -155,7 +182,7 @@ function showResult(str) {
                             </div>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">NIP</label>
-                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="nip" id="nip">
+                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="nip" id="nip" required>
                             </div>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">Telepon</label>

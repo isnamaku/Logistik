@@ -41,7 +41,16 @@ class Admin extends CI_Controller
     public function tambah_barang_masuk(){
         if (logged_in()){
             $data['judul'] = "Tambah Barang";
-            $this->load->view('admin/template/header_data', $data);
+
+            $last_row_barcode = $this->db->select('barcode')->order_by('barcode', "desc")->limit(1)->get('barang')->row();
+
+            $noUrut = (int)substr($last_row_barcode->barcode, 2, 6);
+            $noUrut++;
+
+            $str = '51';
+            $newKode = $str . sprintf('%04s', $noUrut);
+
+            $this->load->view('admin/template/header_data', $data, $newKode);
             $this->load->view('admin/tambah_barang_masuk');
         }
         else {
@@ -215,8 +224,9 @@ class Admin extends CI_Controller
             'nip' => $this->input->post('nip'),
             'jabatan' => $this->input->post('jabatan'),
             'instansi' => $this->input->post('instansi'),
-            'telepon' => $this->input->post('telepon')
-
+            'telepon' => $this->input->post('telepon'),
+            'barcode' => $this->input->post('barcode'),
+            'stock_keluar' => $this->input->post('stock_keluar')
         );
  
        
@@ -226,6 +236,20 @@ class Admin extends CI_Controller
        
     }
 
+    //Detail Barang BA
+
+	public function detail_barang($barcode)
+	{
+    // echo "sampai sini";
+    // echo $barcode;
+    $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
+            $data['post'] = $this->Barang_model->detailBarangById($barcode);
+		$data['judul'] = 'Detail Barang';
+
+        $this->load->view('admin/template/header', $data);
+		$this->load->view('admin/berita_acara', $data);
+		$this->load->view('admin/template/footer');	
+	}
 
 
 

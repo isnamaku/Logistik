@@ -12,10 +12,24 @@
             <tr>
                 <td colspan="3">
                     <div align="center">
-                        <span style="font-family: Arial; font-size:large; ">PEMERINTAH DAERAH ISTIMEWA YOGYAKARTA</span><br>
-                        <span style="font-family: Arial; font-size:x-large; "><b>BADAN PENANGGULANGAN BENCANA DAERAH</b></span><br>
-                        <span style="font-family: Arial; ">Alamat: Jl. Kenari No.14A, Telp (0274) 555836, Fax (0274) 554206</span><br>
-                        <span style="font-family: Arial; ">Website: bpbd.jogjaprov.go.id</span>
+                    <table border="0">
+                            <tbody>
+                            <tr>
+                            <td><span ><img src="<?=base_url()?>/assets/img/logo_pemda.png" alt="Italian Trulli" ></span></td>
+                            <td>
+                            
+                                <span style="font-family: Arial; font-size:large;">PEMERINTAH DAERAH ISTIMEWA YOGYAKARTA</span><br>
+                                <span style="font-family: Arial; font-size:16px; justify:center; "><b>BADAN PENANGGULANGAN BENCANA DAERAH</b></span><br>
+                                <span ><img src="<?=base_url()?>/assets/img/aksara.jpg" alt="Italian Trulli"></span><br>
+                                <span style="font-family: Arial; ">Alamat: Jl. Kenari No.14A, Telp (0274) 555836, Fax (0274) 554206</span><br>
+                                <span style="font-family: Arial; ">Website: bpbd.jogjaprov.go.id</span>
+                            </td>
+
+                            </tr>
+                            </tbody>
+                 </table>
+                    
+    
                         <!-- <hr style="width: 100%; color: black; height: 1px; background-color:black;" /> -->
                         <span style="font-family: Arial; "><b>___________________________________________________________________________________________________ </b></span><br><br>
                         <span style="font-family: Arial; "><b>BERITA ACARA SERAH TERIMA</b></span><br>
@@ -244,7 +258,7 @@
                             <tbody>
                                 <tr style="text-align: center;">
                                     <td>1.</td>
-                                    <td>Masker kain</td>
+                                    <td><?php echo $barcode ?></td>
                                     <td></td>
                                     <td>12,000 pcs</td>
                                     <td>510000101</td>
@@ -276,7 +290,6 @@
                             $date = $tanggal_BA ;
                             $date = explode('-', $date);
                             $hari = $date[2];
-                            $bulan  = $date[1];
                             $tahun  = $date[0];
                             ?>
                             

@@ -5,6 +5,9 @@
                 <h1 class="h3 mb-2 text-gray-800">Tabel Barang Masuk</h1>
                 <a href="<?= base_url('admin/tambah_barang_masuk'); ?>" class="btn btn-user" style="background-color: #F69133; color: #000000;">Tambah</a>
 
+
+
+
                 <!-- DataTales Example -->
                 <div class="card shadow my-4 mb-4">
                     <div class="card-body">
