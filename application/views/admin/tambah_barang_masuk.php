@@ -4,6 +4,33 @@
 <div class="container">
     <a style="color: #000000; font-weight:bold;">Tambah Barang Masuk</a>
     <hr>
+
+    <!-- Akhir dariProses Panggi Barcode -->
+    <div class="card shadow my-4 mb-4">
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="color:black;">Jenis Barang</p>
+                        <hr>
+                        <!-- Banyak Barang -->
+                        <iframe name="votar" style="display:none;"></iframe>
+                        <form action="" method="post" target="votar"> <a style="color:black;"> Pilih jenis barang yang akan dimasukkan : </a>
+
+                            <select name="test">
+                                <option value="1" name="1">Pangan</option>
+                                <option value="2" name="2">Non Pangan</option>
+                            </select>
+                            <br />
+                            <input type="submit" class="btn-primary " value="Lanjut" data-target="#sumbitModal" style="margin-top:20px;" />
+                        </form>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
     <form action="<?= base_url('admin/proses_tambah_barang_masuk'); ?>" method="POST">
 
     <!-- Proses Panggi Barcode -->
@@ -25,31 +52,6 @@
         }
         ?>
 
-        <!-- Akhir dariProses Panggi Barcode -->
-        <div class="card shadow my-4 mb-4">
-        <div class="card-body">
-            <form>
-                <div class="row">
-                    <div class="col-md-6">
-                        <p style="color:black;">Jenis Barang</p>
-                        <hr>
-                        <!-- Banyak Barang -->
-                        <iframe name="votar" style="display:none;"></iframe>
-                        <form action="" method="post" target="votar"> <a style="color:black;"> Pilih jenis barang yang akan dimasukkan : </a>
-
-                            <select name="test">
-                                <option value="1" name="1">Pangan</option>
-                                <option value="2" name="2">Non Pangan</option>
-                            </select>
-                            <br />
-                            <input type="submit" class="btn-primary " value="Lanjut" data-target="#sumbitModal" style="margin-top:20px;" />
-                        </form>
-                    </div>
-
-                </div>
-
-            </form>
-
         <br>
         <br>
     
@@ -62,7 +64,12 @@
                 </div>
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Kode Barang</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode" id="barcode">
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode" id="barcode" value=" <?php if (isset($_GET['test'])) {
+                                                                                                                                        echo $newKode;
+                                                                                                                                    } else {
+                                                                                                                                        echo  "Pilih jenis barang terlebih dahulu!";
+                                                                                                                                    }
+                                                                                                                                    ?>">
                 </div>
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Barang</label>
@@ -97,6 +104,10 @@
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Kode</label>
                     <input type="text" style="background-color: #E5E5E5" class="form-control" name="kode" id="kode">
+                </div>
+                <div class="form-group">
+                    <label style="color:#000000; font-weight:bold">Harga</label>
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="harga" id="harga">
                 </div>
             </div>
         </div>

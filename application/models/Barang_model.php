@@ -257,6 +257,17 @@ public function tambahBarangKeluar()
         $this->db->insert('distribusi', $data4);
     }
 
+    public function detailBarangById($id)
+    {	
+        $this->db->select('*');
+        $this->db->from('barang'); 
+        $this->db->where('barcode', $id);
+        $query = $this->db->get(); 
+        $result = $query->result_array();
+        return $result;
+
+
+    }
 
     
     
