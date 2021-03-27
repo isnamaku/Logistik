@@ -12,4 +12,10 @@ class Auth_model extends CI_Model
     {
         $this->db->insert('anggota', $data);
     }
+
+    public function tampilAnggota()
+    {
+        return $this->db->get('anggota')->result_array();
+    }
+
 }

@@ -163,6 +163,23 @@ public function login_Anggota()
 
     }
 
+        //Aktivasi Anggota
+        public function aktivasi_anggota()
+        {
+            if (logged_in()) {
+                $data['judul'] = "Aktivasi Anggota";
+                $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
+                $data['post'] = $this->Auth_model->tampilAnggota();
+    
+                $this->load->view('admin/template/header', $data);
+                $this->load->view('admin/aktivasi_anggota', $data);
+                $this->load->view('admin/template/footer');
+            } else {
+                redirect('Beranda');
+            }
+        }
+    
+
 
 }
 

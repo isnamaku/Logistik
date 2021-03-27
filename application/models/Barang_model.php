@@ -269,6 +269,49 @@ public function tambahBarangKeluar()
 
     }
 
+    public function countAllBarangMasuk()
+    {
+        return $this->db->get('transaksi_masuk')->num_rows();
+    }
+
+    public function countAnggota()
+    {
+        return $this->db->get('anggota')->num_rows();
+    }
+
+    public function countHarga()
+    {
+        $this->db->select('*');
+        $this->db->from('transaksi_masuk tm');
+        $this->db->join('barang b', 'tm.id_barang=b.id_barang');
+        $this->db->join('pengirim p', 'tm.id=p.id');
+        $query = $this->db->get();
+        if ($query->num_rows() != 0) {
+            return $query->result_array();
+        } else {
+            return false;
+        }
+        return $this->db->get('transaksi_masuk')->result_array();
+    }
+
+    public function countAllBarangKeluar()
+    {
+        return $this->db->get('distribusi')->num_rows();
+    }
+
+    public function ambilAnggota()
+    {
+        return $this->db->get('anggota')->result_array();
+    }
+
+    public function updateAnggota($id)
+    {
+        $this->db
+            ->set('active', '1')
+            ->where('id', $id)
+            ->update('anggota');
+    }
+
     
     
 }
