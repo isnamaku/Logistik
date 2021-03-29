@@ -7,39 +7,25 @@
 </head>
  
 <body>
-    <table align="center" border="0" cellpadding="1" style="width: 750px;">
+<table align="center" border="0" cellpadding="1" style="width: 750px;">
         <tbody>
             <tr>
                 <td colspan="3">
-                    <div align="center">
                     <table border="0">
-                            <tbody>
-                            <tr>
-                            <td><span ><img src="<?=base_url()?>/assets/img/logo_pemda.png" alt="Italian Trulli" ></span></td>
-                            <td>
-                            
-                                <span style="font-family: Arial; font-size:large;">PEMERINTAH DAERAH ISTIMEWA YOGYAKARTA</span><br>
-                                <span style="font-family: Arial; font-size:16px; justify:center; "><b>BADAN PENANGGULANGAN BENCANA DAERAH</b></span><br>
-                                <span ><img src="<?=base_url()?>/assets/img/aksara.jpg" alt="Italian Trulli"></span><br>
-                                <span style="font-family: Arial; ">Alamat: Jl. Kenari No.14A, Telp (0274) 555836, Fax (0274) 554206</span><br>
-                                <span style="font-family: Arial; ">Website: bpbd.jogjaprov.go.id</span>
-                            </td>
-
-                            </tr>
-                            </tbody>
-                 </table>
+                        <tr>
+                            <td><span><img src="<?= base_url() ?>/assets/img/kop.png" alt="Italian Trulli"></span></td>
+                        </tr>
+                    </table>
                     
-    
-                        <!-- <hr style="width: 100%; color: black; height: 1px; background-color:black;" /> -->
-                        <span style="font-family: Arial; "><b>___________________________________________________________________________________________________ </b></span><br><br>
-                        <span style="font-family: Arial; "><b>BERITA ACARA SERAH TERIMA</b></span><br>
-                        <span style="font-family: Arial; "><b>Nomor : _____________ </b></span><br>
+                    <div align="center">
+                        <span style="font-family: Arial; font-size:22px;"><b>BERITA ACARA SERAH TERIMA</b></span><br>
+                        <span style="font-family: Arial; font-size:20px;"><b>Nomor : _______________ </b></span><br>
                     </div>
                 </td>
             </tr>
             <tr>
                 <td colspan="3" height="270" valign="top">
-                    <div align="justify">
+                    <div align="justify" style="margin-left:160px; margin-right:120px;">
                         <br>
                     <!-- Konversi Hari Indonesia -->
                         <?php 
@@ -160,85 +146,85 @@
                        
                         ?> 
 
-                        <span style="font-family:Arial, Helvetica, sans-serif;">&emsp; Pada hari ini <?php echo $hari. ' ' ?>tanggal <?php echo ucwords(Dibaca($tanggal)). ' '?>bulan <?php echo $bulan. ' ' ?> tahun <?php echo ucwords(Dibaca($tahun))?>, kami yang bertanda tangan dibawah ini :
+                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">Pada hari ini <?php echo $hari. ' ' ?>tanggal <?php echo ucwords(Dibaca($tanggal)). ' '?>bulan <?php echo $bulan. ' ' ?> tahun <?php echo ucwords(Dibaca($tahun))?>, kami yang bertanda tangan dibawah ini :
                         </span><br><br>
-                        <table border="0" style="width: 460px;">
+                        <table border="0" style="width: 650px;">
                             <tbody>
                                 <tr>
-                                    <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;">1.</span></td>
-                                    <td width="200"><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">Nama</span></td>
-                                    <td width="10"><span style="font-family:Arial, Helvetica, sans-serif;">:</span></td>
-                                    <td width="330"><span style="font-family:Arial, Helvetica, sans-serif;">Drs. BIWARA YUSWANTANA, M.Si.</span></td>
+                                    <td width="20"><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">1.</span></td>
+                                    <td width="250"><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px; font-size:22px;">Nama</span></td>
+                                    <td width="10"><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">:</span></td>
+                                    <td width="400"><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">Drs. BIWARA YUSWANTANA, M.Si.</span></td>
                                 </tr>
                                 <tr>
                                     <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;"> </span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">NIP</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;">:</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;">19630817 198909 1 001</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px; font-size:22px;">NIP</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">:</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">19630817 198909 1 001</span></td>
                                 </tr>
                                 <tr>
                                     <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;"> </span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">Jabatan</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;">:</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;">Kepala Pelaksana BPBD DIY</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px; font-size:22px;">Jabatan</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">:</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">Kepala Pelaksana BPBD DIY</span></td>
                                 </tr>
                                 <tr>
                                     <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;"> </span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">Alamat</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;">:</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;">Jl. Kenari No. 14.A, Yogyakarta</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;font-size:22px;">Alamat</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">:</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">Jl. Kenari No. 14.A, Yogyakarta</span></td>
                                 </tr>
                                 <tr>
                                     <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;"> </span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">Telepon</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;">:</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;">(0274) 555585</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px; font-size:22px;">Telepon</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">:</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">(0274) 555585</span></td>
                                 </tr>
                             </tbody>
                         </table>
                         <div align="justify">
-                            <span style="font-family:Arial, Helvetica, sans-serif; margin-left:50px;">Selanjutnya disebut sebagai <b>PIHAK KESATU</b></span><br><br>
+                            <span style="font-family:Arial, Helvetica, sans-serif; margin-left:50px; font-size:22px;">Selanjutnya disebut sebagai <b>PIHAK KESATU</b></span><br><br>
                         </div>
-                        <table border="0" style="width: 460px;">
+                        <table border="0" style="width: 650px;">
                             <tbody>
 
-                                    <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;">2.</span></td>
-                                    <td width="200"><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">Nama</span></td>
-                                    <td width="10"><span style="font-family:Arial, Helvetica, sans-serif;">:</span></td>
-                                    <td width="330"><span style="font-family:Arial, Helvetica, sans-serif;"><?php echo $nama; ?></span></td>
+                                    <td width="20"><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">2.</span></td>
+                                    <td width="250"><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px; font-size:22px;">Nama</span></td>
+                                    <td width="10"><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">:</span></td>
+                                    <td width="400"><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;"><?php echo $nama; ?></span></td>
                          
                                 <tr>
                                     <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;"> </span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">NIP</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;">:</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;"><?php echo $nip; ?></span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px; font-size:22px;">NIP</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">:</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;"><?php echo $nip; ?></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="20"><span style="font-family:Arial, Helvetica, sans-serif; "> </span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px; font-size:22px;">Jabatan</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">:</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;"><?php echo $jabatan; ?></span></td>
                                 </tr>
                                 <tr>
                                     <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;"> </span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">Jabatan</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;">:</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;"><?php echo $jabatan; ?></span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px; font-size:22px;">Instansi & Alamat</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">:</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;"><?php echo $instansi; ?></span></td>
                                 </tr>
                                 <tr>
                                     <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;"> </span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">Instansi & Alamat</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;">:</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;"><?php echo $instansi; ?></span></td>
-                                </tr>
-                                <tr>
-                                    <td width="20"><span style="font-family:Arial, Helvetica, sans-serif;"> </span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px;">Telepon</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;">:</span></td>
-                                    <td><span style="font-family:Arial, Helvetica, sans-serif;"><?php echo $telepon; ?></span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; margin-left:30px; font-size:22px;">Telepon</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">:</span></td>
+                                    <td><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;"><?php echo $telepon; ?></span></td>
                                 </tr>
                             </tbody>
                         </table>
                         <div align="justify">
-                            <span style="font-family:Arial, Helvetica, sans-serif; margin-left:50px;">Selanjutnya disebut sebagai <b>PIHAK KEDUA</b></span><br><br>
+                            <span style="font-family:Arial, Helvetica, sans-serif; margin-left:50px; font-size:22px;">Selanjutnya disebut sebagai <b>PIHAK KEDUA</b></span><br><br>
                         </div>
-                        <span style="font-family: Arial;">&emsp; Dengan ini <b>PIHAK KESATU</b> telah menyerahkan barang sesuai dengan list dalam tabel di bawah ini kepada <b>PIHAK KEDUA</b>, sebagai bantuan dalam rangka penanganan Covid-19 di DIY.</span>
+                        <span style="font-family: Arial; font-size:22px;">&emsp; Dengan ini <b>PIHAK KESATU</b> telah menyerahkan barang sesuai dengan list dalam tabel di bawah ini kepada <b>PIHAK KEDUA</b>, sebagai bantuan dalam rangka penanganan bencana di DIY.</span>
  
-                        <table class="table table-bordered mt-3" style="color: black;">
+                        <table class="table table-bordered mt-3" style="color: black; font-size:22px;">
                             <thead>
                                 <tr>
                                     <th scope="col" style="text-align: center;">No</th>
@@ -255,31 +241,44 @@
                                     <th scope="col" style="text-align: center;">5</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr style="text-align: center;">
-                                    <td>1.</td>
-                                    <td><?php echo $barcode ?></td>
+                            <tbody style="font-family:Arial, Helvetica, sans-serif; font-size:22px; text-align:center;">
+
+                                <?php 
+                             
+                                foreach($barcode as $i=>$b):
+                        
+                                    ?>
+                               <td><?= $i+1 ?></td>
+                              
+                                   
+                                    <td><?php echo $b ?></td>
                                     <td></td>
-                                    <td>12,000 pcs</td>
-                                    <td>510000101</td>
-                                </tr>
+                                    <td></td>
+                                    <td></td>
+                                   
+                                    </tr>
+                                <?php endforeach ?>
+
+                       
+                
+                               
                             </tbody>
                         </table>
  
-                        <span style="font-family:Arial, Helvetica, sans-serif;">&emsp; Dengan ditandatanganinya berita acara ini, pengelolaan, penggunaan, dan pendistribusian barang selanjutnya menjadi tanggung jawab <b>PIHAK KEDUA</b>.</span><br>
+                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">&emsp; Dengan ditandatanganinya berita acara ini, pengelolaan, penggunaan, dan pendistribusian barang selanjutnya menjadi tanggung jawab <b>PIHAK KEDUA</b>.</span><br>
  
-                        <br><span style="font-family:Arial, Helvetica, sans-serif;"> &emsp;Demikian Berita Acara Serah Terima ini dibuat dan ditandatangani kedua belah pihak untuk digunakan sebagaimana mestinya.</span><br><br>
+                        <br><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;"> &emsp;Demikian Berita Acara Serah Terima ini dibuat dan ditandatangani kedua belah pihak untuk digunakan sebagaimana mestinya.</span><br><br>
             <tr>
                 <td>
                     <div align="center">
-                        <span style="font-family:Arial, Helvetica, sans-serif;"> </span><br>
-                        <span style="font-family:Arial, Helvetica, sans-serif;">PIHAK KEDUA</span>
+                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;"> </span><br>
+                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">PIHAK KEDUA</span>
                     </div>
                     <div align="center"><br><br>
-                        <br><span style="font-family:Arial, Helvetica, sans-serif; text-decoration: underline;">
+                        <br><span style="font-family:Arial, Helvetica, sans-serif; text-decoration: underline; font-size:22px;">
                         <?php echo $nama; ?>
                         </span><br>
-                        <span style="font-family:Arial, Helvetica, sans-serif;">NIP. <?php echo $nip; ?></span>
+                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">NIP. <?php echo $nip; ?></span>
                     </div>
                 </td>
                 <td>
@@ -295,12 +294,12 @@
                             
 
 
-                        <span style="font-family:Arial, Helvetica, sans-serif;">Yogyakarta, <?php echo $hari . ' ' .  $bulan . ' ' . $tahun ?></span><br>
-                        <span style="font-family:Arial, Helvetica, sans-serif;">PIHAK PERTAMA</span>
+                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">Yogyakarta, <?php echo $hari . ' ' .  $bulan . ' ' . $tahun ?></span><br>
+                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">PIHAK PERTAMA</span>
                     </div>
                     <div align="center"><br><br>
-                        <br><span style="font-family:Arial, Helvetica, sans-serif; text-decoration:underline;">Drs. BIWARA YUSWANTAR</span><br>
-                        <span style="font-family:Arial, Helvetica, sans-serif;">NIP. 19681009 199603 1 003</span>
+                        <br><span style="font-family:Arial, Helvetica, sans-serif; text-decoration:underline; font-size:22px;">Drs. BIWARA YUSWANTAR</span><br>
+                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">NIP. 19681009 199603 1 003</span>
                     </div>
                 </td>
             </tr>

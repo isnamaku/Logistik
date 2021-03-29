@@ -7,7 +7,6 @@
 
 
 
-
                 <!-- DataTales Example -->
                 <div class="card shadow my-4 mb-4">
                     <div class="card-body">
