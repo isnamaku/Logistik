@@ -12,7 +12,8 @@
 	},
 	"require": {
 		"php": ">=5.3.7",
-		"dompdf/dompdf" : "0.6.*"
+		"dompdf/dompdf" : "0.6.*",
+		"picqer/php-barcode-generator": "^2.2"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
@@ -22,4 +23,3 @@
 		"phpunit/phpunit": "4.* || 5.*"
 	}
 }
-
