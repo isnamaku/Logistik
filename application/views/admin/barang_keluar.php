@@ -31,10 +31,14 @@
                         <?php if(isset($post)) {
                             $i = 1;
                             $instansi = "BPBD DIY";
-                                    foreach ($post as $post) {  ?>
+                                    foreach ($post as $post) { 
+                                        $date = $post['tanggal_keluar'];
+                                        $date = explode('-', $date);
+                                        $date =$date[2].'-'.$date[1].'-'.$date[0];   
+                                        ?>
                              <tr>
                                  <td><?= $i++; ?></td>
-                                 <td> <?= $post['tanggal_keluar'] ?></td>
+                                 <td> <?= $date; ?></td>
                                  <td> <?= $post['sumber_2'] ?> </td>
                                  <td><?= $instansi; ?></td>
                                  <td> <?= $post['nama_penerima'] ?> </td>

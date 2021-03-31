@@ -60,7 +60,7 @@
 
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Tanggal</label>
-                    <input type="date" style="background-color: #E5E5E5" class="form-control" name="tanggal_masuk" id="tanggal_masuk">
+                    <input type="date" style="background-color: #E5E5E5" class="form-control" name="tanggal_masuk" id="tanggal_masuk" required>
                 </div>
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Kode Barang</label>

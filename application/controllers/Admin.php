@@ -17,7 +17,8 @@ class Admin extends CI_Controller
             $data['total_barangkeluar'] = $this->Barang_model->countAllBarangKeluar();
             $data['total_anggota'] = $this->Barang_model->countAnggota();
             $data['post'] = $this->Barang_model->countHarga();
-
+            // $data['post2'] = $this->Barang_model->countTotalHargaDistribusi();
+            
             $this->load->view('admin/template/header', $data);
             $this->load->view('admin/index');
             $this->load->view('admin/template/footer');

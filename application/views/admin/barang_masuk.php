@@ -31,15 +31,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php if(isset($post)) {
+                                <?php if(isset($post)) {                                                                          
                                     $i=1;
                                     foreach ($post as $post) {  
                                         $jumlah = $post['harga'] * $post['stock'];
+                                        $date = $post['tanggal_masuk'];
+                                        $date = explode('-', $date);
+                                        $date =$date[2].'-'.$date[1].'-'.$date[0];
                                         ?>
                                     <tr>
                                     <td>
                                         <?= $i++; ?></td>
-                                                <td> <?= $post['tanggal_masuk'] ?></td>
+                                                <td><?= $date;?></td>
                                                 <td> <?= $post['barcode'] ?> </td>
                                                 <td> <?= $post['nama_barang'] ?> </td>
                                                 <td> <?= $post['stock'] ?> </td>
