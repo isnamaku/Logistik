@@ -9,15 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
-
     <?php 
     if(isset($judul)){ ?>
-    <title> <?= $judul ?> | Logistik BPBD DIY</title>
+    <title><?= $judul ?> | Logistik BPBD DIY</title>
     <?php }  ?>
 
     <!-- Custom fonts for this template -->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="<?= base_url('assets/'); ?>https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
@@ -25,12 +24,8 @@
     <!-- Custom styles for this page -->
     <link href="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-    <!-- filter tanggal -->
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" type="text/css" media="all">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
-
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -50,7 +45,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="<?= base_url('anggota/index'); ?>">
+                <a class="nav-link" href="<?= base_url('admin/'); ?>index">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span style="font-size: 16px; font-color: white;">Dashboard</span></a>
             </li>
@@ -65,7 +60,7 @@
 
             <!-- Nav Item - Pages Barang Masuk -->
             <li class="nav-item" >
-                <a class="nav-link collapsed" href="<?= base_url('anggota/barang_masuk'); ?>" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="<?= base_url('admin/'); ?>barang_masuk" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo" >
                     <i class="fas fa-fw fa-table"></i>
                     <span style="font-size: 16px; font-color: white;">Barang Masuk</span>
@@ -73,14 +68,24 @@
 
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
+            <!-- Nav Item - Pages Barang Keluar -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="<?= base_url('anggota/barang_keluar'); ?>"  data-target="#collapseUtilities"
+                <a class="nav-link collapsed" href="<?= base_url('admin/'); ?>barang_keluar"  data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-table"></i>
                     <span style="font-size: 16px; font-color: white;">Barang Keluar</span>
                 </a>
             </li>
+
+            <!-- Nav Item - Pages Laporan-->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="<?= base_url('admin/'); ?>berita_acara"  data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-file-alt"></i>
+                    <span style="font-size: 16px; font-color: white;">&nbsp;Berita Acara</span>
+                </a>
+            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -112,15 +117,14 @@
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-     
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="table" style="margin-top: 30px; color: #FFFFFF;">
-                                    <tr><span class="mr-2 d-none d-lg-inline text-white-700 medium">Halo! <?= $anggota['nama']; ?></span></tr>
-                                    <tr><p style="font-size: 12px; color: #F69133;">Anda masuk sebagai anggota</p></tr>
-                                </div>                                                              
+                                    <tr><span class="mr-2 d-none d-lg-inline text-white-700 medium">Halo! <?= $admin['nama']; ?></span></tr>
+                                    <tr><p style="font-size: 12px; color: #F69133;">Anda masuk sebagai admin</p></tr>
+                                </div>                               
                                 <img class="img-profile rounded-circle"
                                     src="<?= base_url('assets/'); ?>img/undraw_profile.svg">
                             </a>
@@ -132,12 +136,8 @@
                                     Profile
                                 </a>
                                 <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400" href=""></i>
+                                    Pengaturan Anggota
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -151,3 +151,4 @@
 
                 </nav>
                 <!-- End of Topbar -->
+

@@ -13,6 +13,11 @@ class Admin extends CI_Controller
         if (logged_in()){
             $data['judul'] = "Index";
             $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
+            $data['total_barangmasuk'] = $this->Barang_model->countAllBarangMasuk();
+            $data['total_barangkeluar'] = $this->Barang_model->countAllBarangKeluar();
+            $data['total_anggota'] = $this->Barang_model->countAnggota();
+            $data['post'] = $this->Barang_model->countHarga();
+
             $this->load->view('admin/template/header', $data);
             $this->load->view('admin/index');
             $this->load->view('admin/template/footer');
@@ -95,8 +100,17 @@ class Admin extends CI_Controller
         if (logged_in()){
             $data['judul'] = "Info Barang";
             $data['post'] = $this->Barang_model->ambilBarangById($id);
+            $last_row_barcode = $this->db->select('barcode')->order_by('barcode', "desc")->limit(1)->get('barang')->row();
 
-            $this->load->view('admin/template/header_data', $data);
+            $noUrut = (int)substr($last_row_barcode->barcode, 2, 6);
+            $noUrut++;
+
+            $str = '51';
+            $newKode = $str . sprintf('%04s', $noUrut);
+
+            $generator = new \Picqer\Barcode\BarcodeGeneratorPNG();
+
+            $this->load->view('admin/template/header_data', $data. $generator);
             $this->load->view('admin/info_barang_masuk');
         }
         else {
@@ -213,9 +227,10 @@ class Admin extends CI_Controller
         }
     }
 
-        // Print Beirta Acara
-    public function print()
-    {   $data['judul'] = "Berita Acara";
+    //     // Print Beirta Acara
+    public function a_print()
+    { 
+        $data['judul'] = "Berita Acara";
         $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
 
         $data = array(
@@ -228,10 +243,6 @@ class Admin extends CI_Controller
             'barcode' => $this->input->post('barcode'),
             'stock_keluar' => $this->input->post('stock_keluar')
         );
- 
-       
-
-    
         $this->load->view('admin/print_BA', $data);
        
     }
@@ -251,9 +262,15 @@ class Admin extends CI_Controller
 		$this->load->view('admin/template/footer');	
 	}
 
+    public function getDataBarcode()
+    {
+        $barcode = $this->input->post('barcode');
 
-
-
-
-
+        if ($barcode != null) {
+            $data= $this->Barang_model->detailBarangById($barcode);
+            echo json_encode($data);
+        }else {
+            echo json_encode('kosong');
+        }
+    }
 }
