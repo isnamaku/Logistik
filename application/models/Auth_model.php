@@ -18,4 +18,12 @@ class Auth_model extends CI_Model
         return $this->db->get('anggota')->result_array();
     }
 
+
+ public function updateStatusAnggota($id)
+    {
+        $this->db
+            ->set('active', '1')
+            ->where('id', $id)
+            ->update('anggota');
+    }
 }
