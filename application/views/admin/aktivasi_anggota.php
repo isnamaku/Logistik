@@ -12,7 +12,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Anggota</th>
+                        <th>Nama</th>
                         <th>Email</th>
                         <th>Status</th>
                         <th>Action</th>
