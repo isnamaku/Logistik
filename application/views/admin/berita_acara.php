@@ -182,6 +182,7 @@ xmlhttp.send();
 
                                     </tr>
                                     <tr>
+                                    <input type="hidden" name="barcode[]" value="${response[0].nama_barang}">
                                         <td>Nama Barang</td>
                                         <td>&nbsp:&nbsp</td>
 

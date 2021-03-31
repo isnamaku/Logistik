@@ -43,14 +43,14 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-size: 18px;">Apakah Anda yakin akan keluar?</h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-size: 18px;">Ingin ke Pengaturan Anggota?</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-success" type="button" data-dismiss="modal">Kembali</button>
-                <a class="btn btn-danger" href="<?= base_url("/admin/aktivasi_anggota") ?>">Keluar</a>
+                <button class="btn btn-danger" type="button" data-dismiss="modal">Tidak</button>
+                <a class="btn btn-success" href="<?= base_url("/admin/aktivasi_anggota") ?>">Ya</a>
             </div>
         </div>
     </div>

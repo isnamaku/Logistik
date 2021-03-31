@@ -30,7 +30,7 @@
 
                                 <td>
 
-                                    <a href="<?= base_url() ?>admin/update_anggota/<?= $post['id'] ?>" class="switch">
+                                    <a href="<?= base_url() ?>admin/update_status_anggota/<?= $post['id'] ?>" class="switch">
                                         <input type="checkbox" <?php if ($post['active'] == '0') {
                                                                 ?> checked <?php
                                                                         }   ?>>

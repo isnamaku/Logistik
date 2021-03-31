@@ -241,27 +241,20 @@
                                     <th scope="col" style="text-align: center;">5</th>
                                 </tr>
                             </thead>
-                            <tbody style="font-family:Arial, Helvetica, sans-serif; font-size:22px; text-align:center;">
+                            <tbody style="font-family:Arial, Helvetica, sans-serif; font-size:22px; text-align:center;" id='#add-item-barcode'>
 
                                 <?php 
-                             
-                                foreach($barcode as $i=>$b):
-                        
+                                foreach($nama_barang as $i=>$b):
                                     ?>
                                <td><?= $i+1 ?></td>
                               
                                    
                                     <td><?php echo $b ?></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                   
-                                    </tr>
-                                <?php endforeach ?>
 
-                       
-                
-                               
+                                    
+                                <?php endforeach ?>
+                        
+                                </tr>
                             </tbody>
                         </table>
  

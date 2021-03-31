@@ -7,6 +7,7 @@ class Admin extends CI_Controller
     {
         Parent::__construct();
         $this->load->model('Barang_model');
+        $this->load->model('Auth_model');
     }
 
     public function index(){
@@ -17,7 +18,8 @@ class Admin extends CI_Controller
             $data['total_barangkeluar'] = $this->Barang_model->countAllBarangKeluar();
             $data['total_anggota'] = $this->Barang_model->countAnggota();
             $data['post'] = $this->Barang_model->countHarga();
-
+            // $data['post2'] = $this->Barang_model->countTotalHargaDistribusi();
+            
             $this->load->view('admin/template/header', $data);
             $this->load->view('admin/index');
             $this->load->view('admin/template/footer');
@@ -273,4 +275,33 @@ class Admin extends CI_Controller
             echo json_encode('kosong');
         }
     }
+
+
+    public function aktivasi_anggota()
+    {
+        $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
+        if (logged_in()){
+        $data['judul'] = "Aktivasi Anggota";
+        $data['post'] = $this->Barang_model->ambilAnggota();
+        $this->load->view('admin/template/header', $data);
+        $this->load->view('admin/aktivasi_anggota');
+        $this->load->view('admin/template/footer' );
+    }else{
+        redirect('Beranda');
+    }
+    }
+
+    public function update_status_anggota($id)
+    {
+
+        if (logged_in()) {
+            $this->Auth_model->updateStatusAnggota($id);
+
+            redirect(base_url() . "admin/aktivasi_anggota");
+        } else {
+            redirect('Beranda');
+        }
+    }
+    
+
 }
