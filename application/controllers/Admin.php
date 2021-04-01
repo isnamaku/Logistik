@@ -266,8 +266,10 @@ class Admin extends CI_Controller
 
 	public function detail_barang($barcode)
 	{
-    $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
-            $data['post'] = $this->Barang_model->detailBarangById($barcode);
+
+        $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
+        $data['post'] = $this->Barang_model->detailBarangById($barcode);
+
 		$data['judul'] = 'Detail Barang';
 
         $this->load->view('admin/template/header', $data);
