@@ -63,7 +63,44 @@
                             $angkaBaca = array("", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan", "Sepuluh", "Sebelas");
                             switch ($x) {
                                 case ($x < 12):
-                                    echo " " . $angkaBaca[$x];
+                                    if($x == '01' || $x=='1' ){
+                                        echo 'Satu';
+                                    }
+                                    else if($x == '02' || $x=='2'){
+                                        echo 'Dua';
+                                    }
+                                    else if($x == '03' || $x=='3'){
+                                        echo 'Tiga';
+                                    }
+                                    else if($x == '04' || $x =='5'){
+                                        echo 'Empat';
+                                    }
+                                    else if($x == '05' || $x == '6'){
+                                        echo 'Lima';
+                                    }
+                                    else if($x == '06' || $x == '6'){
+                                        echo 'Enam';
+                                    }
+                                    else if($x == '07' || $x == '7'){
+                                        echo 'Tujuh';
+                                    }
+                                    else if($x == '08' || $x == '8'){
+                                        echo 'Delapan';
+                                    }
+                                    else if($x == '09'|| $x == '9'){
+                                        echo 'Agustus';
+                                    }
+                                    else if($x == '09' || $x == '9'){
+                                        echo 'Sembilan';
+                                    }
+                                    else if($x == '10' ){
+                                        echo 'Sepuluh';
+                                    }
+                                    else if($x == '11'){
+                                        echo 'Sebelas';
+                                    }else{
+                                        echo " " . $angkaBaca[$x];
+                                    }
                                     break;
                                 case ($x < 20):
                                     echo $result = Dibaca($x - 10) . " belas";
@@ -98,6 +135,8 @@
                                     break;
                             }
                         }
+
+
 
                          // Koversi Bulan
                         
