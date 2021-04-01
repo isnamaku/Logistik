@@ -10,8 +10,7 @@
                 <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
-                            <input type="text" id="input-barcode" class="form-group">
-                            
+                            <input type="text" id="input-barcode" class="form-group">  
                             <button class="btn-primary" type="button" id="submit-barcode">Pilih</button>
                             </div>
                         </div> 
