@@ -244,17 +244,22 @@
                             <tbody style="font-family:Arial, Helvetica, sans-serif; font-size:22px; text-align:center;" id='#add-item-barcode'>
 
                                 <?php 
-                                foreach($nama_barang as $i=>$b):
-                                    ?>
-                               <td><?= $i+1 ?></td>
-                              
-                                   
-                                    <td><?php echo $b ?></td>
+                                $count = count($barcode);
+                          
+                                    foreach($barcode as $i=>$b): ?>
+                                    <tr>
+                                        <td><?= $i+1 ?></td>
+                                        
+                                        <td><?php echo $b[0]['nama_barang'] ?></td>
+                                        <td></td>
+                                        <td><?php echo $stock_keluar[$i] ?> <?php echo $b[0]['satuan'] ?></td>
+                                        <td><?php echo $b[0]['barcode'] ?></td>
+                                        
+                                        </tr>
+                                    <?php endforeach ?>
 
-                                    
-                                <?php endforeach ?>
-                        
-                                </tr>
+                          
+                          
                             </tbody>
                         </table>
  
