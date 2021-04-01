@@ -254,7 +254,8 @@ class Admin extends CI_Controller
                 'instansi' => $this->input->post('instansi'),
                 'telepon' => $this->input->post('telepon'),
                 'barcode' => $dataBarcode,
-                'stock_keluar' => $this->input->post('stock_keluar')
+                'stock_keluar' => $this->input->post('stock_keluar'),
+                'merk'=>$this->input->post('merk')
             );
 
        $this->load->view('admin/print_BA', $data);
@@ -265,10 +266,10 @@ class Admin extends CI_Controller
 
 	public function detail_barang($barcode)
 	{
-//   echo "sampai sini";
-//   echo $barcode;
+
         $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
         $data['post'] = $this->Barang_model->detailBarangById($barcode);
+
 		$data['judul'] = 'Detail Barang';
 
         $this->load->view('admin/template/header', $data);

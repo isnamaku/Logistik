@@ -179,10 +179,6 @@
                         else if($bulan == '12'){
                             $bulan='Desember';
                         }
-                        // if ($hari) {;
-                        //     echo ucwords(Dibaca($hari2));
-                        // }
-                       
                         ?> 
 
                         <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">Pada hari ini <?php echo $hari. ' ' ?>tanggal <?php echo ucwords(Dibaca($tanggal)). ' '?>bulan <?php echo $bulan. ' ' ?> tahun <?php echo ucwords(Dibaca($tahun))?>, kami yang bertanda tangan dibawah ini :
@@ -290,7 +286,7 @@
                                         <td><?= $i+1 ?></td>
                                         
                                         <td><?php echo $b[0]['nama_barang'] ?></td>
-                                        <td></td>
+                                        <td><?php echo $merk[$i] ?></td>
                                         <td><?php echo $stock_keluar[$i] ?> <?php echo $b[0]['satuan'] ?></td>
                                         <td><?php echo $b[0]['barcode'] ?></td>
                                         
