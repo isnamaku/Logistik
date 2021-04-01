@@ -287,7 +287,7 @@
                                         
                                         <td><?php echo $b[0]['nama_barang'] ?></td>
                                         <td><?php echo $merk[$i] ?></td>
-                                        <td><?php echo $stock_keluar[$i] ?> <?php echo $b[0]['satuan'] ?></td>
+                                        <td><?php echo $jumlah_keluar[$i] ?> <?php echo $b[0]['satuan'] ?></td>
                                         <td><?php echo $b[0]['barcode'] ?></td>
                                         
                                         </tr>
@@ -311,7 +311,7 @@
                         <br><span style="font-family:Arial, Helvetica, sans-serif; text-decoration: underline; font-size:22px;">
                         <?php echo $nama; ?>
                         </span><br>
-                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">NIP. <?php echo $nip; ?></span>
+                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;"><?php if($nip!=''){ echo "NIP. ".$nip;} ?></span>
                     </div>
                 </td>
                 <td>
@@ -331,7 +331,7 @@
                         <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">PIHAK PERTAMA</span>
                     </div>
                     <div align="center"><br><br>
-                        <br><span style="font-family:Arial, Helvetica, sans-serif; text-decoration:underline; font-size:22px;">Drs. BIWARA YUSWANTAR</span><br>
+                        <br><span style="font-family:Arial, Helvetica, sans-serif; text-decoration:underline; font-size:22px;">Drs. BIWARA YUSWANTANA, M.Si.</span><br>
                         <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">NIP. 19681009 199603 1 003</span>
                     </div>
                 </td>

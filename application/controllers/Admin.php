@@ -229,22 +229,19 @@ class Admin extends CI_Controller
         }
     }
 
-    //     // Print Beirta Acara
+ // Print Beirta Acara
     public function a_print()
     { 
         $data['judul'] = "Berita Acara";
         $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
-
+     //   $this->Barang_model->tambahBarangKeluar();
         $dataBarcode = [];
         $barcode = $this->input->post('barcode');
-
+        $data['pihak_pertama'] = $this->Barang_model->ambilPihakPertama();
         for ($i=0; $i < count($barcode); $i++) { 
             $getBarcode = $this->Barang_model->detailBarangById($barcode[$i]);
             array_push($dataBarcode, $getBarcode);
         }
-
-
-            
 
             $data = array(
                 'tanggal_BA' => $this->input->post('tanggal_BA'),
@@ -254,7 +251,7 @@ class Admin extends CI_Controller
                 'instansi' => $this->input->post('instansi'),
                 'telepon' => $this->input->post('telepon'),
                 'barcode' => $dataBarcode,
-                'stock_keluar' => $this->input->post('stock_keluar'),
+                'jumlah_keluar' => $this->input->post('jumlah_keluar'),
                 'merk'=>$this->input->post('merk')
             );
 
@@ -266,8 +263,8 @@ class Admin extends CI_Controller
 
 	public function detail_barang($barcode)
 	{
-    $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
-            $data['post'] = $this->Barang_model->detailBarangById($barcode);
+       $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
+        $data['post'] = $this->Barang_model->detailBarangById($barcode);
 		$data['judul'] = 'Detail Barang';
 
         $this->load->view('admin/template/header', $data);
@@ -312,6 +309,24 @@ class Admin extends CI_Controller
         } else {
             redirect('Beranda');
         }
+    }
+
+    public function pihak_pertama()
+    {
+        if (logged_in()) {
+            $data['judul'] = "Pihak Pertama";
+            $data['pihak_pertama'] = $this->Barang_model->ambilPihakPertama();
+            $this->load->view('admin/template/header_data', $data);
+            $this->load->view('admin/pihak_pertama', $data);
+        } else {
+            redirect('Beranda');
+        }
+    }
+
+    public function updatePihakPertama()
+    {
+        $this->Barang_model->updatePihakPertama();
+        redirect(base_url() . "admin/pihak_pertama");
     }
     
 

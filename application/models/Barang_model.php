@@ -312,6 +312,26 @@ public function tambahBarangKeluar()
             ->update('anggota');
     }
 
+    public function ambilPihakPertama()
+    {
+        return $this->db->get('pihak_pertama')->result_array();
+    }
+
+    public function updatePihakPertama()
+    {
+        $data = array(
+            'nama'     => $this->input->post('nama'),
+            'NIP'    => $this->input->post('NIP'),
+            'jabatan'      => $this->input->post('jabatan'),
+            'alamat'   => $this->input->post('alamat'),
+            'telepon'      => $this->input->post('telepon')
+        );
+
+        $this->db
+            ->where('id_pihak_pertama', '1')
+            ->update('pihak_pertama', $data);
+    }
+
     
     
 }
