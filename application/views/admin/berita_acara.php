@@ -182,7 +182,6 @@ xmlhttp.send();
 
                                     </tr>
                                     <tr>
-                                    <input type="hidden" name="barcode[]" value="${response[0].nama_barang}">
                                         <td>Nama Barang</td>
                                         <td>&nbsp:&nbsp</td>
 
@@ -201,7 +200,16 @@ xmlhttp.send();
                                         <td>Stock Keluar</td>
                                         <td>&nbsp:&nbsp</td>
 
-                                        <td><input type="text" name="stock_keluar" id="stock_keluar"> ${response[0].satuan} </td>
+                                        <td><input type="text" name="stock_keluar[]" > ${response[0].satuan} </td>
+                                    </tr>
+                                    <tr>
+                                    <td>&nbsp</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Merk/Type/Ukuran</td>
+                                        <td>&nbsp:&nbsp</td>
+                                        <td><input type="text" name="merk[]" ></td>
+
                                     </tr>
                                     </table>
                     

@@ -235,17 +235,29 @@ class Admin extends CI_Controller
         $data['judul'] = "Berita Acara";
         $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
 
-        $data = array(
-            'tanggal_BA' => $this->input->post('tanggal_BA'),
-            'nama' => $this->input->post('nama'),
-            'nip' => $this->input->post('nip'),
-            'jabatan' => $this->input->post('jabatan'),
-            'instansi' => $this->input->post('instansi'),
-            'telepon' => $this->input->post('telepon'),
-            'barcode' => $this->input->post('barcode'),
-            'stock_keluar' => $this->input->post('stock_keluar')
-        );
-        $this->load->view('admin/print_BA', $data);
+        $dataBarcode = [];
+        $barcode = $this->input->post('barcode');
+
+        for ($i=0; $i < count($barcode); $i++) { 
+            $getBarcode = $this->Barang_model->detailBarangById($barcode[$i]);
+            array_push($dataBarcode, $getBarcode);
+        }
+
+
+            
+
+            $data = array(
+                'tanggal_BA' => $this->input->post('tanggal_BA'),
+                'nama' => $this->input->post('nama'),
+                'nip' => $this->input->post('nip'),
+                'jabatan' => $this->input->post('jabatan'),
+                'instansi' => $this->input->post('instansi'),
+                'telepon' => $this->input->post('telepon'),
+                'barcode' => $dataBarcode,
+                'stock_keluar' => $this->input->post('stock_keluar')
+            );
+
+       $this->load->view('admin/print_BA', $data);
        
     }
 

@@ -73,9 +73,8 @@ class Barang_model extends CI_Model
     }
 
     public function filterBarang ($tanggal_awal = null, $tanggal_akhir = null, $nama_barang = null, $sumber = null){
-       
-
-    $data = array(
+    
+        $data = array(
         'tanggal_awal'=> $this->input->post('tanggal_awal'),
         'tanggal_akhir' => $this->input->post('tanggal_akhir'),
         'nama_barang' => $this->input->post('nama_barang'),
@@ -193,6 +192,7 @@ class Barang_model extends CI_Model
         }
         return $this->db->get('distribusi')->result_array();
     }
+
 
 
 public function ambilBarangKeluarById($id)
