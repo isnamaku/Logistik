@@ -45,7 +45,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="<?= base_url('admin/'); ?>index">
+                <a class="nav-link" href="<?= base_url('anggota/'); ?>index">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span style="font-size: 16px; font-color: white;">Dashboard</span></a>
             </li>
@@ -60,7 +60,7 @@
 
             <!-- Nav Item - Pages Barang Masuk -->
             <li class="nav-item" >
-                <a class="nav-link collapsed" href="<?= base_url('admin/'); ?>barang_masuk" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="<?= base_url('anggota/'); ?>barang_masuk" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo" >
                     <i class="fas fa-fw fa-table"></i>
                     <span style="font-size: 16px; font-color: white;">Barang Masuk</span>
@@ -70,19 +70,10 @@
 
             <!-- Nav Item - Pages Barang Keluar -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="<?= base_url('admin/'); ?>barang_keluar"  data-target="#collapseUtilities"
+                <a class="nav-link collapsed" href="<?= base_url('anggota/'); ?>barang_keluar"  data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-table"></i>
                     <span style="font-size: 16px; font-color: white;">Barang Keluar</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Pages Laporan-->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="<?= base_url('admin/'); ?>berita_acara"  data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-file-alt"></i>
-                    <span style="font-size: 16px; font-color: white;">&nbsp;Berita Acara</span>
                 </a>
             </li>
 
@@ -122,9 +113,9 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="table" style="margin-top: 30px; color: #FFFFFF;">
-                                    <tr><span class="mr-2 d-none d-lg-inline text-white-700 medium">Halo! <?= $admin['nama']; ?></span></tr>
-                                    <tr><p style="font-size: 12px; color: #F69133;">Anda masuk sebagai admin</p></tr>
-                                </div>                               
+                                    <tr><span class="mr-2 d-none d-lg-inline text-white-700 medium">Halo! <?= $anggota['nama']; ?></span></tr>
+                                    <tr><p style="font-size: 12px; color: #F69133; margin-right:15px;">Anda masuk sebagai anggota</p></tr>
+                                </div>                             
                                 <img class="img-profile rounded-circle"
                                     src="<?= base_url('assets/'); ?>img/undraw_profile.svg">
                             </a>
@@ -134,10 +125,6 @@
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400" href=""></i>
-                                    Aktivasi Anggota
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">

@@ -6,7 +6,6 @@
  <div class="table-responsive">
      <div>
          <a style="background-color: #F69133; color:#000000;" name="age" id="age" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-warning"><i class="fas fa-filter"></i> Filter</a>
-         <a href="<?= base_url('anggota/print'); ?>" class="btn btn-user" style="background-color: #F69133; color: #000000;"><i class="fas fa-print"></i></i> Cetak</a>
      </div>
  </div>
 
@@ -124,10 +123,14 @@
                  <?php if (isset($post)) {
                      $i = 1;
                      $instansi = "BPBD DIY";
-                     foreach ($post as $post) {  ?>
+                     foreach ($post as $post) { 
+                        $jumlah = $post['harga'] * $post['stock'];
+                        $date = $post['tanggal_keluar'];
+                        $date = explode('-', $date);
+                        $date =$date[2].'-'.$date[1].'-'.$date[0]; ?>
                          <tr>
                              <td><?= $i++; ?></td>
-                             <td> <?= $post['tanggal_keluar'] ?></td>
+                             <td> <?= $data; ?></td>
                              <td> <?= $post['sumber_2'] ?> </td>
                              <td><?= $instansi; ?></td>
                              <td> <?= $post['nama_penerima'] ?> </td>

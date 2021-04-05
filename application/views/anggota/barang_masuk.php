@@ -7,7 +7,6 @@
  <div class="table-responsive">
      <div>
          <a style="background-color: #F69133; color:#000000;" name="age" id="age" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-warning"><i class="fas fa-filter"></i> Filter</a>
-         <a href="<?= base_url('anggota/print'); ?>" class="btn btn-user" style="background-color: #F69133; color: #000000;"><i class="fas fa-print"></i></i> Cetak</a>
      </div>
  </div>
 
@@ -104,7 +103,7 @@
 <div class="card shadow my-4 mb-4">
  <div class="card-body">
      <div class="table-responsive">
-         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+         <table class="table table-bordered" id="dataTable" width="150%" cellspacing="0">
              <thead>
                  <tr>
                      <th>No</th>
@@ -123,15 +122,19 @@
                  </tr>
              </thead>
              <tbody>
-                 <?php if (isset($post)) {
+                 <?php if (isset($post)) {         
                      $i = 1;
                      foreach ($post as $post) {
+                        $jumlah = $post['harga'] * $post['stock'];
+                        $date =  $post['tanggal_masuk'];
+                        $date = explode('-', $date);
+                        $date =$date[2].'-'.$date[1].'-'.$date[0];    
                          $jumlah = $post['harga'] * $post['stock'];
                  ?>
                          <tr>
                              <td>
                                  <?= $i++; ?></td>
-                             <td> <?= $post['tanggal_masuk'] ?></td>
+                             <td> <?= $date;?></td>
                              <td> <?= $post['barcode'] ?> </td>
                              <td> <?= $post['nama_barang'] ?> </td>
                              <td> <?= $post['stock'] ?> </td>
