@@ -44,7 +44,7 @@
                             </div>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">NIP</label>
-                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="nip" id="nip" required>
+                                <input type="text" style="background-color: #E5E5E5" class="form-control" name="nip" id="nip">
                             </div>
                             <div class="form-group">
                                 <label style="color:#000000; font-weight:bold">Telepon</label>
@@ -199,7 +199,8 @@ xmlhttp.send();
                                         <td>Stock Keluar</td>
                                         <td>&nbsp:&nbsp</td>
 
-                                        <td><input type="text" name="stock_keluar[]" > ${response[0].satuan} </td>
+                                        <td><input type="text" name="jumlah_keluar[]" > ${response[0].satuan} </td>
+
                                     </tr>
                                     <tr>
                                     <td>&nbsp</td>

@@ -123,7 +123,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="table" style="margin-top: 30px; color: #FFFFFF;">
                                     <tr><span class="mr-2 d-none d-lg-inline text-white-700 medium">Halo! <?= $admin['nama']; ?></span></tr>
-                                    <tr><p style="font-size: 12px; color: #F69133;">Anda masuk sebagai admin</p></tr>
+                                    <tr><p style="font-size: 12px; color: #F69133; margin-right:15px;">Anda masuk sebagai admin</p></tr>
                                 </div>                               
                                 <img class="img-profile rounded-circle"
                                     src="<?= base_url('assets/'); ?>img/undraw_profile.svg">
@@ -136,9 +136,13 @@
                                     Profile
                                 </a>
 
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#activationModal">
+                                <a class="dropdown-item" href="<?= base_url("/admin/aktivasi_anggota") ?>">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Pengaturan Anggota
+                                    Aktivasi Anggota
+                                </a>
+                                <a class="dropdown-item" href="<?= base_url("/admin/pihak_pertama") ?>">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Pengaturan Pihak Pertama
 
                                 </a>
                                 <div class="dropdown-divider"></div>

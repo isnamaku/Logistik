@@ -287,7 +287,7 @@
                                         
                                         <td><?php echo $b[0]['nama_barang'] ?></td>
                                         <td><?php echo $merk[$i] ?></td>
-                                        <td><?php echo $stock_keluar[$i] ?> <?php echo $b[0]['satuan'] ?></td>
+                                        <td><?php echo $jumlah_keluar[$i] ?> <?php echo $b[0]['satuan'] ?></td>
                                         <td><?php echo $b[0]['barcode'] ?></td>
                                         
                                         </tr>
@@ -303,20 +303,20 @@
                         <br><span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;"> &emsp;Demikian Berita Acara Serah Terima ini dibuat dan ditandatangani kedua belah pihak untuk digunakan sebagaimana mestinya.</span><br><br>
             <tr>
                 <td>
-                    <div align="center">
+                    <div >
                         <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;"> </span><br>
-                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">PIHAK KEDUA</span>
+                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;margin-left:295px;">PIHAK KEDUA</span>
                     </div>
                     <div align="center"><br><br>
                         <br><span style="font-family:Arial, Helvetica, sans-serif; text-decoration: underline; font-size:22px;">
                         <?php echo $nama; ?>
                         </span><br>
-                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">NIP. <?php echo $nip; ?></span>
+                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;"><?php if($nip!=''){ echo "NIP. ".$nip;} ?></span>
                     </div>
                 </td>
                 <td>
                 <td valign="top">
-                    <div align="center">
+                    <div>
                             <!-- explode date -->
                             <?php 
                             $date = $tanggal_BA ;
@@ -327,12 +327,12 @@
                             
 
 
-                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">Yogyakarta, <?php echo $hari . ' ' .  $bulan . ' ' . $tahun ?></span><br>
-                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">PIHAK PERTAMA</span>
+                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px; margin-left:100px;">Yogyakarta, <?php echo $hari . ' ' .  $bulan . ' ' . $tahun ?></span><br>
+                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px; margin-left:140px;">PIHAK PERTAMA</span>
                     </div>
-                    <div align="center"><br><br>
-                        <br><span style="font-family:Arial, Helvetica, sans-serif; text-decoration:underline; font-size:22px;">Drs. BIWARA YUSWANTAR</span><br>
-                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;">NIP. 19681009 199603 1 003</span>
+                    <div ><br><br>
+                        <br><span style="font-family:Arial, Helvetica, sans-serif; text-decoration:underline; font-size:22px;margin-left:70px;">Drs. BIWARA YUSWANTANA, M.Si.</span><br>
+                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;margin-left:100px;">NIP. 19681009 199603 1 003</span>
                     </div>
                 </td>
             </tr>
