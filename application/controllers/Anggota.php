@@ -10,22 +10,16 @@ class Anggota extends CI_Controller
     }
 
     public function index(){
-        if (logged_in()) {
-            $anggota['post'] = $this->Barang_model->ambilAnggota();
+        if (logged_in()){
+            $data['judul'] = "Index";
+            $data['anggota'] = $this->db->get_where('anggota', ['email' => $this->session->userdata('email')])->row_array();
 
-            $anggota = $this->db->select('active')->get_where('anggota', ['email' => $this->session->userdata('email')])->row_array();
-            if ($anggota['active'] == 1) {
-                $data['judul'] = "Index";
-                $data['anggota'] = $this->db->get_where('anggota', ['email' => $this->session->userdata('email')])->row_array();
-
-                $this->load->view('anggota/template/header', $data);
-                $this->load->view('anggota/index');
-                $this->load->view('anggota/template/footer');
-            } else {
-                redirect('auth/login_anggota');
-            }
-        } else {
-            redirect('anggota');
+            $this->load->view('anggota/template/header' , $data);
+            $this->load->view('anggota/index');
+            $this->load->view('anggota/template/footer');
+        }
+        else {
+           redirect('anggota');
         }
     }
 

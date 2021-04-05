@@ -234,16 +234,16 @@ class Admin extends CI_Controller
     { 
         $data['judul'] = "Berita Acara";
         $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
-     //   $this->Barang_model->tambahBarangKeluar();
+        // $this->Barang_model->tambahBarangKeluar();
         $dataBarcode = [];
         $barcode = $this->input->post('barcode');
-        $data['pihak_pertama'] = $this->Barang_model->ambilPihakPertama();
         for ($i=0; $i < count($barcode); $i++) { 
             $getBarcode = $this->Barang_model->detailBarangById($barcode[$i]);
             array_push($dataBarcode, $getBarcode);
         }
 
             $data = array(
+                'pihak_pertama' => $this->Barang_model->ambilPihakPertama(),
                 'tanggal_BA' => $this->input->post('tanggal_BA'),
                 'nama' => $this->input->post('nama'),
                 'nip' => $this->input->post('nip'),
@@ -254,7 +254,7 @@ class Admin extends CI_Controller
                 'jumlah_keluar' => $this->input->post('jumlah_keluar'),
                 'merk'=>$this->input->post('merk')
             );
-
+    //    $this->Barang_model->tambahBarangKeluar();         
        $this->load->view('admin/print_BA', $data);
        
     }
@@ -315,7 +315,7 @@ class Admin extends CI_Controller
     {
         if (logged_in()) {
             $data['judul'] = "Pihak Pertama";
-            $data['pihak_pertama'] = $this->Barang_model->ambilPihakPertama();
+            $data['post'] = $this->Barang_model->ambilPihakPertama();
             $this->load->view('admin/template/header_data', $data);
             $this->load->view('admin/pihak_pertama', $data);
         } else {

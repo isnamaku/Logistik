@@ -331,8 +331,11 @@
                         <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px; margin-left:140px;">PIHAK PERTAMA</span>
                     </div>
                     <div ><br><br>
-                        <br><span style="font-family:Arial, Helvetica, sans-serif; text-decoration:underline; font-size:22px;margin-left:70px;">Drs. BIWARA YUSWANTANA, M.Si.</span><br>
-                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;margin-left:100px;">NIP. 19681009 199603 1 003</span>
+                    <?php if (isset($pihak_pertama)) {
+        foreach ($pihak_pertama as $pihak_pertama) { ?>
+                        <br><span style="font-family:Arial, Helvetica, sans-serif; text-decoration:underline; font-size:22px;margin-left:70px;"><?php echo $pihak_pertama['nama'];?></span><br>
+                        <span style="font-family:Arial, Helvetica, sans-serif; font-size:22px;margin-left:125px;">NIP. <?php echo $pihak_pertama['NIP'];?></span>
+                        <?php } }?>
                     </div>
                 </td>
             </tr>
