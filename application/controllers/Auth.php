@@ -178,6 +178,31 @@ public function login_Anggota()
                 redirect('Beranda');
             }
         }
+
+        //Update Profil
+        public function profil($id)
+          {
+             if (logged_in()) {
+            $data['judul'] = "Profil";
+            $data['anggota'] = $this->Auth_model->ambilAnggotaById($id);
+
+            $this->load->view('anggota/template/header_data', $data);
+            $this->load->view('anggota/profil', $data);
+            } else {
+            redirect('Beranda');
+             }
+        }
+
+        public function update_profil($id)
+        {
+        if (logged_in()) {
+            $this->Auth_model->updateProfil($id);
+
+            redirect(base_url() . "Anggota/index");
+        } else {
+            redirect('Beranda');
+        }
+        }
     
 
 

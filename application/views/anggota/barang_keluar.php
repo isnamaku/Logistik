@@ -102,7 +102,7 @@
 <div class="card shadow my-4 mb-4">
  <div class="card-body">
      <div class="table-responsive">
-         <table class="table table-bordered" id="dataTable" width="200%" cellspacing="0">
+         <table class="table table-bordered" id="dataTable" width="150%" cellspacing="0">
              <thead>
                  <tr>
                      <th>No</th>
@@ -130,7 +130,7 @@
                         $date =$date[2].'-'.$date[1].'-'.$date[0]; ?>
                          <tr>
                              <td><?= $i++; ?></td>
-                             <td> <?= $data; ?></td>
+                             <td> <?= $date; ?></td>
                              <td> <?= $post['sumber_2'] ?> </td>
                              <td><?= $instansi; ?></td>
                              <td> <?= $post['nama_penerima'] ?> </td>
