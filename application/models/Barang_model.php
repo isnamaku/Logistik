@@ -287,6 +287,72 @@ public function tambahBarangKeluar()
         $this->db->insert('distribusi', $data4);
     }
 
+    public function tambahBarangKeluarOtomatis(){
+
+        $data = array (
+            'id_penerima' => '',
+            'nama_penerima' => $this->input->post('nama'),
+            'nip_penerima' => $this->input->post('nip'),
+            'jabatan_penerima' => $this->input->post('jabatan'),
+            'instansi_penerima' => $this->input->post('instansi'),
+            'telp_penerima' => $this->input->post('telepon')
+        );
+        $this->db->insert('penerima', $data);
+        $last_row = $this->db->select('id_penerima')->order_by('id_penerima', "desc")->limit(1)->get('penerima')->row();
+        
+        $barcode = $this->input->post('barcode');
+        $barang = $this->db->select('*')->where('barcode =',$barcode[0])->get('barang')->row();
+
+        $keteragan = $this->input->post('keterangan');
+        $jumlahKeluar = $this->input->post('jumlah_keluar');
+        $data3 = array(
+            'id_distribusi' => '',
+            'tanggal_keluar' => $this->input->post('tanggal_BA'),
+            'jumlah_keluar' => $jumlahKeluar[0],
+            'id_penerima' => $last_row->id_penerima,
+            'id_barang' => $barang->id_barang,
+            'satuan' => $barang->satuan
+        );
+        // var_dump($data3);
+        // die;
+        $this->db->insert('distribusi', $data3);
+
+        //update stock
+        $stock = (int)$barang->stock- ((int)$jumlahKeluar[0]);
+        $this->db
+        ->set('stock', $stock)
+        ->where('id_barang', $barang->id_barang)
+        ->update('barang');
+
+
+    }
+
+    public function filterBarangKeluar ($tanggal_awal = null, $tanggal_akhir = null, $nama_barang = null, $sumber = null){
+    
+        $data = array(
+        'tanggal_awal'=> $this->input->post('tanggal_awal'),
+        'tanggal_akhir' => $this->input->post('tanggal_akhir'),
+        'nama_barang' => $this->input->post('nama_barang'),
+        'sumber' => $this->input->post('sumber')
+
+    );
+
+        $this->db->select('*');
+        $this->db->from('distribusi tm'); 
+        $this->db->join('barang b', 'tm.id_barang=b.id_barang');
+        $this->db->join('penerima p', 'tm.id_penerima=p.id_penerima');  
+        $this->db->where('tm.tanggal_keluar >=',$data['tanggal_awal']);
+        $this->db->where('tm.tanggal_keluar <=',$data['tanggal_akhir']);
+        $this->db->like('b.nama_barang',$data['nama_barang']);
+  
+
+        
+        $query = $this->db->get();
+        $result = $query->result_array();
+        return $result;
+
+    }
+
     public function detailBarangById($id)
     {	
         $this->db->select('*');

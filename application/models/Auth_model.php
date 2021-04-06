@@ -26,4 +26,22 @@ class Auth_model extends CI_Model
             ->where('id', $id)
             ->update('anggota');
     }
+
+    public function ambilAnggota()
+    {
+        return $this->db->get('anggota')->result_array();
+    }
+
+    public function updateProfil($id)
+    {
+        $data = array(
+            'nama'     => $this->input->post('nama'),
+            'email'    => $this->input->post('email'),
+            'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT)
+        );
+
+        $this->db
+            ->where('id', $id)
+            ->update('anggota', $data);
+    }
 }
