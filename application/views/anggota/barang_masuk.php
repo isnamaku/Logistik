@@ -112,10 +112,6 @@
                      <th>Nama Barang</th>
                      <th>Stock</th>
                      <th>Satuan</th>
-                     <th>Nama Pengirim</th>
-                     <th>Perusahaan Pengirim</th>
-                     <th>Kolom</th>
-                     <th>Kode</th>
                      <th>Harga</th>
                      <th>Jumlah</th>
                      <th>Keterangan</th>
@@ -139,10 +135,6 @@
                              <td> <?= $post['nama_barang'] ?> </td>
                              <td> <?= $post['stock'] ?> </td>
                              <td> <?= $post['satuan'] ?> </td>
-                             <td> <?= $post['sumber'] ?></td>
-                             <td> <?= $post['sumber_2'] ?></td>
-                             <td> <?= $post['column'] ?></td>
-                             <td> <?= $post['kode_sumber'] ?></td>
                              <td> Rp <?= $post['harga'] ?></td>
                              <td> Rp <?= $jumlah ?></td>
                              <td> <?= $post['keterangan'] ?></td>

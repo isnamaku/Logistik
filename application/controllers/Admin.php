@@ -235,10 +235,11 @@ class Admin extends CI_Controller
         $data['judul'] = "Berita Acara";
         $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
         $dataBarcode = [];
-        $barcode = $this->input->post('barcode');
+        $barcode = $this->input->post('barcode[]');
         for ($i=0; $i < count($barcode); $i++) { 
             $getBarcode = $this->Barang_model->detailBarangById($barcode[$i]);
             array_push($dataBarcode, $getBarcode);
+            $this->Barang_model->tambahBarangKeluarOtomatis();
         }
 
             $data = array(
@@ -253,8 +254,9 @@ class Admin extends CI_Controller
                 'jumlah_keluar' => $this->input->post('jumlah_keluar'),
                 'merk'=>$this->input->post('merk')
             );
-       $this->Barang_model->tambahBarangKeluarOtomatis();         
+            
        $this->load->view('admin/print_BA', $data);
+      
        
     }
 

@@ -31,7 +31,7 @@
     </div>
 
 
-    <form action="<?= base_url('admin/proses_tambah_barang_masuk'); ?>" method="POST">
+    <form action="<?= base_url('admin/proses_tambah_barang_masuk'); ?>" method="POST" >
 
     <!-- Proses Panggi Barcode -->
     <?php if (isset($_GET['test'])) {
@@ -66,9 +66,7 @@
                     <label style="color:#000000; font-weight:bold">Kode Barang</label>
                     <input type="text" style="background-color: #E5E5E5" class="form-control" name="barcode" id="barcode" value=" <?php if (isset($_GET['test'])) {
                                                                                                                                         echo $newKode;
-                                                                                                                                    } else {
-                                                                                                                                        echo  "Pilih jenis barang terlebih dahulu!";
-                                                                                                                                    }
+                                                                                                                }
                                                                                                                                     ?>">
                 </div>
                 <div class="form-group">
@@ -79,39 +77,24 @@
                     <label style="color:#000000; font-weight:bold">Stock Masuk</label>
                     <input type="text" style="background-color: #E5E5E5" class="form-control" name="stock" id="stock">
                 </div>
+
+            </div>
+            <div class="col-md-6">
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Satuan</label>
                     <input type="text" style="background-color: #E5E5E5" class="form-control" name="satuan" id="satuan">
+                </div>
+                <div class="form-group">
+                    <label style="color:#000000; font-weight:bold">Harga</label>
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="harga" id="harga">
                 </div>
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Keterangan</label>
                     <input type="text" style="background-color: #E5E5E5" class="form-control" name="keterangan" id="keterangan">
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label style="color:#000000; font-weight:bold">Nama Pengirim</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="sumber" id="sumber">
-                </div>
-                <div class="form-group">
-                    <label style="color:#000000; font-weight:bold">Perusahaan Pengirim</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="sumber_2" id="sumber_2">
-                </div>
-                <div class="form-group">
-                    <label style="color:#000000; font-weight:bold">Kolom</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="column" id="column">
-                </div>
-                <div class="form-group">
-                    <label style="color:#000000; font-weight:bold">Kode</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="kode" id="kode">
-                </div>
-                <div class="form-group">
-                    <label style="color:#000000; font-weight:bold">Harga</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="harga" id="harga">
-                </div>
-            </div>
         </div>
-        <button type="submit" href="<?= base_url() ?>admin/barang_masuk" class="btn" style="background-color: #FF8C00; color:#000000; font-weight:bold; float:right;">Tambah</button>
-        <a href="<?= base_url() ?>admin/barang_masuk" class="btn mr-3" style="background-color: #FF8C00; color:#000000; font-weight:bold; float:right;">Batal</a>
+        <button type="submit" href="<?= base_url() ?>admin/barang_masuk" class="btn" style="background-color: #FF8C00; color:#000000; font-weight:bold; float:right; margin-bottom:100px;">Tambah</button>
+        <a href="<?= base_url() ?>admin/barang_masuk" class="btn mr-3" style="background-color: #FF8C00; color:#000000; font-weight:bold; float:right; margin-bottom:100px;">Batal</a>
     </form>
 </div>

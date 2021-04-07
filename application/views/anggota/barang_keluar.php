@@ -107,7 +107,6 @@
                  <tr>
                      <th>No</th>
                      <th>Tanggal</th>
-                     <th>Sumber</th>
                      <th>Pengirim</th>
                      <th>Nama Penerima</th>
                      <th>Jabatan Penerima</th>

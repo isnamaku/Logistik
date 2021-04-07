@@ -259,36 +259,35 @@
                         </div>
                         <span style="font-family: Arial; font-size:22px;">&emsp; Dengan ini <b>PIHAK KESATU</b> telah menyerahkan barang sesuai dengan list dalam tabel di bawah ini kepada <b>PIHAK KEDUA</b>, sebagai bantuan dalam rangka penanganan bencana di DIY.</span>
  
-                        <table class="table table-bordered mt-3" style="color: black; font-size:22px;">
+                        <table class="table table-bordered mt-3" style="color: black; font-size:22px; width:100%;">
                             <thead>
                                 <tr>
-                                    <th scope="col" style="text-align: center;">No</th>
-                                    <th scope="col" style="text-align: center;">Nama Barang</th>
-                                    <th scope="col" style="text-align: center;">Merk/Type/Ukuran</th>
-                                    <th scope="col" style="text-align: center;">Volume</th>
-                                    <th scope="col" style="text-align: center;">Keterangan</th>
+                                    <th scope="col" style="text-align: center; width:10%;">No</th>
+                                    <th scope="col" style="text-align: center; width:35%;">Nama Barang</th>
+                                    <th scope="col" style="text-align: center; width:15%;">Kode Barang</th>
+                                    <th scope="col" style="text-align: center; width:15%;">Volume</th>
+                                    <th scope="col" style="text-align: center; width:25%;">Keterangan</th>
                                 </tr>
                                 <tr>
-                                    <th scope="col" style="text-align: center;">1</th>
-                                    <th scope="col" style="text-align: center;">2</th>
-                                    <th scope="col" style="text-align: center;">3</th>
-                                    <th scope="col" style="text-align: center;">4</th>
-                                    <th scope="col" style="text-align: center;">5</th>
+                                    <th scope="col" style="text-align: center; width:10%;">1</th>
+                                    <th scope="col" style="text-align: center; width:35%;">2</th>
+                                    <th scope="col" style="text-align: center; width:15%;">3</th>
+                                    <th scope="col" style="text-align: center; width:15%;">4</th>
+                                    <th scope="col" style="text-align: center; width:25%;">5</th>
                                 </tr>
                             </thead>
                             <tbody style="font-family:Arial, Helvetica, sans-serif; font-size:22px; text-align:center;" id='#add-item-barcode'>
 
                                 <?php 
                                 $count = count($barcode);
-                          
                                     foreach($barcode as $i=>$b): ?>
                                     <tr>
                                         <td><?= $i+1 ?></td>
                                         
                                         <td><?php echo $b[0]['nama_barang'] ?></td>
-                                        <td><?php echo $merk[$i] ?></td>
-                                        <td><?php echo $jumlah_keluar[$i] ?> <?php echo $b[0]['satuan'] ?></td>
                                         <td><?php echo $b[0]['barcode'] ?></td>
+                                        <td><?php echo $jumlah_keluar[$i] ?> <?php echo $b[0]['satuan'] ?></td>
+                                        <td> </td>
                                         
                                         </tr>
                                     <?php endforeach ?>

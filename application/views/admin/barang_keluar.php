@@ -14,7 +14,6 @@
                      <tr>
                          <th>No</th>
                          <th>Tanggal</th>
-                         <th>Sumber</th>
                          <th>Pengirim</th>
                          <th>Nama Penerima</th>
                          <th>Jabatan Penerima</th>
@@ -39,7 +38,6 @@
                              <tr>
                                  <td><?= $i++; ?></td>
                                  <td> <?= $date; ?></td>
-                                 <td> <?= $post['sumber_2'] ?> </td>
                                  <td><?= $instansi; ?></td>
                                  <td> <?= $post['nama_penerima'] ?> </td>
                                  <td> <?= $post['jabatan_penerima'] ?> </td>
@@ -50,9 +48,9 @@
                                  <td> <?= $post['satuan'] ?></td>
                                  <td> <?= $post['keterangan'] ?></td>
                                  <td>
-                                     <a href="<?= base_url() ?>admin/info_barang_keluar/<?= $post['id_distribusi'] ?>" class="btn btn-sm" style="background-color: #FFB800; color: #FFFFFF;"><span class="far fa-question-circle"></span></a>
-                                     <a href="<?= base_url() ?>admin/edit_barang_keluar/<?= $post['id_distribusi'] ?>" class="btn btn-sm" style="background-color: #2CB162; color: #FFFFFF"><span class="far fa-edit"></span></a>
-                                     <a href="<?= base_url() ?>admin/hapus_barang_keluar/<?= $post['id_distribusi'] ?>" class="btn btn-sm" style="background-color: #FF0000; color: #FFFFFF" onclick="return confirm('Yakin ingin menghapus post?')"><span class="far fa-trash-alt"></span></a>
+                                     <a href="<?= base_url() ?>admin/info_barang_keluar/<?= $post['id_distribusi'] ?>" class="btn btn-xs" style="background-color: #FFB800; color: #FFFFFF;"><span class="far fa-question-circle"></span></a>
+                                     <a href="<?= base_url() ?>admin/edit_barang_keluar/<?= $post['id_distribusi'] ?>" class="btn btn-xs" style="background-color: #2CB162; color: #FFFFFF"><span class="far fa-edit"></span></a>
+                                     <a href="<?= base_url() ?>admin/hapus_barang_keluar/<?= $post['id_distribusi'] ?>" class="btn btn-xs" style="background-color: #FF0000; color: #FFFFFF" onclick="return confirm('Yakin ingin menghapus post?')"><span class="far fa-trash-alt"></span></a>
                                  </td>
                              </tr>
                          <?php } ?>
