@@ -40,6 +40,20 @@ class Barang_model extends CI_Model
 
     }
 
+    public function ambilBarangMasuk()
+    {
+        $this->db->select('*');
+        $this->db->from('transaksi_masuk tm');
+        $this->db->join('barang b', 'tm.id_barang=b.id_barang');
+        $query = $this->db->get();
+        if ($query->num_rows() != 0) {
+            return $query;
+        } else {
+            return false;
+        }
+        return $this->db->get('transaksi_masuk');
+    }
+
     public function countAllBarangMasuk()
     {
         return $this->db->get('transaksi_masuk')->num_rows();
@@ -117,7 +131,7 @@ class Barang_model extends CI_Model
 
         $this->db->where('id_barang', $last_row->id_barang);
         $this->db->update('barang', $data);
-        this->db->update('transaksi_masuk', $data2);
+        $this->db->update('transaksi_masuk', $data2);
        
     }
 
@@ -220,32 +234,32 @@ public function updateBarangKeluar($id)
 
 public function tambahBarangKeluar()
     {
+        $barcode  = $this->input->post('barcode');
+        $barang = $this->db->select('*')->where('barcode =',$barcode)->get('barang')->row();
+ 
         $data = array(
-            'nama_barang'     => $this->input->post('nama_barang'),
-            'barcode'    => $this->input->post('barcode'),
-            'satuan' => $this->input->post('satuan')
-        ); 
-        $this->db->insert('barang', $data);
-        $last_row = $this->db->select('id_barang')->order_by('id_barang', "desc")->limit(1)->get('barang')->row();
- 
- 
-        $data3 = array(
             'nama_penerima'      => $this->input->post('nama_penerima'),
             'jabatan_penerima'      => $this->input->post('jabatan_penerima'),
             'instansi_penerima'      => $this->input->post('instansi_penerima')
         );
-        $this->db->insert('penerima', $data3);
-        $last_row3 = $this->db->select('id_penerima')->order_by('id_penerima', "desc")->limit(1)->get('penerima')->row();
+        $this->db->insert('penerima', $data);
+        $last_row = $this->db->select('id_penerima')->order_by('id_penerima', "desc")->limit(1)->get('penerima')->row();
  
-        $data4 = array(
-            'id_barang' => $last_row->id_barang,
-            'id_penerima' => $last_row3->id_penerima,
+        $data2 = array(
+            'id_barang' => $barang->id_barang,
+            'id_penerima' => $last_row->id_penerima,
             'tanggal_keluar'     => $this->input->post('tanggal_keluar'),
             'jumlah_keluar' => $this->input->post('jumlah_keluar'),
-            'satuan' => $this->input->post('satuan'),
             'keterangan' => $this->input->post('keterangan')
         );
-        $this->db->insert('distribusi', $data4);
+        $this->db->insert('distribusi', $data2);
+        
+        //Update stock
+        $stock = (int)$barang->stock- ((int)$data2['jumlah_keluar']);
+        $this->db
+        ->set('stock', $stock)
+        ->where('id_barang', $barang->id_barang)
+        ->update('barang');
     }
 
     public function tambahBarangKeluarOtomatis(){
@@ -258,12 +272,11 @@ public function tambahBarangKeluar()
             'instansi_penerima' => $this->input->post('instansi'),
             'telp_penerima' => $this->input->post('telepon')
         );
-       $this->db->insert('penerima', $data);
+        $this->db->insert('penerima', $data);
         $last_row = $this->db->select('id_penerima')->order_by('id_penerima', "desc")->limit(1)->get('penerima')->row();
         
         $barcode = $this->input->post('barcode');
 
-        $keteragan = $this->input->post('keterangan');
         $jumlahKeluar = $this->input->post('jumlah_keluar[]');
 
         for($i = 0; $i< count($jumlahKeluar); $i++){
@@ -277,7 +290,7 @@ public function tambahBarangKeluar()
                 'satuan' => $barang->satuan
             );
 
-                    //update stock
+        //update stock
         $stock = (int)$barang->stock- ((int)$jumlahKeluar[$i]);
         $this->db
         ->set('stock', $stock)
@@ -287,11 +300,6 @@ public function tambahBarangKeluar()
         $this->db->insert('distribusi', $data3);
         }
  
-    
-        // var_dump($data3);
-        // die;
-
-
     }
 
     public function filterBarangKeluar ($tanggal_awal = null, $tanggal_akhir = null, $nama_barang = null, $sumber = null){
