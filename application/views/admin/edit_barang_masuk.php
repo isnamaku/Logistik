@@ -26,38 +26,20 @@
                     <label style="color:#000000; font-weight:bold">Stock</label>
                     <input type="text" style="background-color: #E5E5E5" class="form-control" name="stock" id="stock" value="<?= $post['stock'] ?>">
                 </div>
-                <div class="form-group">
+            </div>
+            <div class="col-md-6">
+            <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Satuan</label>
                     <input type="text" style="background-color: #E5E5E5" class="form-control" name="satuan" id="satuan" value="<?= $post['satuan'] ?>">
+                </div>
+                <div class="form-group">
+                            <label style="color:#000000; font-weight:bold">Harga</label>
+                            <input type="text" style="background-color: #E5E5E5" class="form-control" name="harga" id="harga" value="<?= $post['harga'] ?>">
                 </div>
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Keterangan</label>
                     <input type="text" style="background-color: #E5E5E5" class="form-control" name="keterangan" id="keterangan" value="<?= $post['keterangan'] ?>">
                 </div>
-            </div>
-            <div class="col-md-6">
- 
-                <div class="form-group">
-                    <label style="color:#000000; font-weight:bold">Nama Pengirim</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="sumber" id="sumber" value="<?= $post['sumber'] ?>">
-                </div>
-                <div class="form-group">
-                    <label style="color:#000000; font-weight:bold">Perusahaan Pengirim</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="sumber_2" id="sumber_2" value="<?= $post['sumber_2'] ?>">
-                </div>
-                <div class="form-group">
-                        <label style="color:#000000; font-weight:bold">Kolom</label>
-                        
-                        <input type="text" style="background-color: #E5E5E5" class="form-control" name="column" id="column" value="<?= $post['column'] ?>">
-                </div>
-                        <div class="form-group">
-                            <label style="color:#000000; font-weight:bold">Kode Sumber</label>
-                            <input type="text" style="background-color: #E5E5E5" class="form-control" name="kode_sumber" id="kode_sumber" value="<?= $post['kode_sumber'] ?>">
-                        </div>
-                        <div class="form-group">
-                            <label style="color:#000000; font-weight:bold">Harga</label>
-                            <input type="text" style="background-color: #E5E5E5" class="form-control" name="harga" id="harga" value="<?= $post['harga'] ?>">
-                        </div>
             </div>
         </div>
         <button type="submit" class="btn" style="background-color: #FF8C00; color:#000000; font-weight:bold; float:right;">Simpan</button>

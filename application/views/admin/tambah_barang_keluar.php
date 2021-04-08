@@ -7,28 +7,6 @@
     <form action="<?= base_url('admin/proses_tambah_barang_keluar'); ?>" method="POST">
         <div class="row">
             <div class="col-md-6">
-                <div class="form-group">
-                    <label style="color:#000000; font-weight:bold">Tanggal Keluar</label>
-                    <input type="date" style="background-color: #E5E5E5" class="form-control" name="tanggal_keluar" id="tanggal_keluar">
-                </div>
-                <div class="form-group">
-                    <label style="color:#000000; font-weight:bold">Sumber Pengirim</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="sumber_2" id="sumber_2">
-                </div>
-                <div class="form-group">
-                    <label style="color:#000000; font-weight:bold">Nama Penerima</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="nama_penerima" id="nama_penerima">
-                </div>
-                <div class="form-group">
-                    <label style="color:#000000; font-weight:bold">Jabatan Penerima</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="jabatan_penerima" id="jabatan_penerima">
-                </div>
-                <div class="form-group">
-                    <label style="color:#000000; font-weight:bold">Instansi Penerima</label>
-                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="instansi_penerima" id="instansi_penerima">
-                </div>
-            </div>
-            <div class="col-md-6">
  
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Kode Barang</label>
@@ -49,6 +27,24 @@
                 <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Keterangan</label>
                     <input type="text" style="background-color: #E5E5E5" class="form-control" name="keterangan" id="keterangan">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label style="color:#000000; font-weight:bold">Tanggal Keluar</label>
+                    <input type="date" style="background-color: #E5E5E5" class="form-control" name="tanggal_keluar" id="tanggal_keluar">
+                </div>
+                <div class="form-group">
+                    <label style="color:#000000; font-weight:bold">Nama Penerima</label>
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="nama_penerima" id="nama_penerima">
+                </div>
+                <div class="form-group">
+                    <label style="color:#000000; font-weight:bold">Jabatan Penerima</label>
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="jabatan_penerima" id="jabatan_penerima">
+                </div>
+                <div class="form-group">
+                    <label style="color:#000000; font-weight:bold">Instansi Penerima</label>
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="instansi_penerima" id="instansi_penerima">
                 </div>
             </div>
         </div>

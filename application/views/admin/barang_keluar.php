@@ -14,7 +14,6 @@
                      <tr>
                          <th>No</th>
                          <th>Tanggal</th>
-                         <th>Sumber</th>
                          <th>Pengirim</th>
                          <th>Nama Penerima</th>
                          <th>Jabatan Penerima</th>
@@ -29,30 +28,29 @@
                  </thead>
                  <tbody>
                         <?php if(isset($post)) {
-                            $i = 1;
+                            $no = 1;
                             $instansi = "BPBD DIY";
-                                    foreach ($post as $post) { 
-                                        $date = $post['tanggal_keluar'];
+                                    for($i=0; $i<count($post); $i++) { 
+                                        $date = $post[$i]['tanggal_keluar'];
                                         $date = explode('-', $date);
                                         $date =$date[2].'-'.$date[1].'-'.$date[0];   
                                         ?>
                              <tr>
-                                 <td><?= $i++; ?></td>
+                                 <td><?= $no++; ?></td>
                                  <td> <?= $date; ?></td>
-                                 <td> <?= $post['sumber_2'] ?> </td>
                                  <td><?= $instansi; ?></td>
-                                 <td> <?= $post['nama_penerima'] ?> </td>
-                                 <td> <?= $post['jabatan_penerima'] ?> </td>
-                                 <td> <?= $post['instansi_penerima'] ?></td>
-                                 <td> <?= $post['barcode'] ?></td>
-                                 <td> <?= $post['nama_barang'] ?></td>
-                                 <td> <?= $post['jumlah_keluar'] ?></td>
-                                 <td> <?= $post['satuan'] ?></td>
-                                 <td> <?= $post['keterangan'] ?></td>
+                                 <td> <?= $post[$i]['nama_penerima'] ?> </td>
+                                 <td> <?= $post[$i]['jabatan_penerima'] ?> </td>
+                                 <td> <?= $post[$i]['instansi_penerima'] ?></td>
+                                 <td> <?= $post[$i]['barcode'] ?></td>
+                                 <td> <?= $post[$i]['nama_barang'] ?></td>
+                                 <td> <?= $post[$i]['jumlah_keluar'] ?></td>
+                                 <td> <?= $post[$i]['satuan'] ?></td>
+                                 <td> <?= $post[$i]['keterangan'] ?></td>
                                  <td>
-                                     <a href="<?= base_url() ?>admin/info_barang_keluar/<?= $post['id_distribusi'] ?>" class="btn btn-sm" style="background-color: #FFB800; color: #FFFFFF;"><span class="far fa-question-circle"></span></a>
-                                     <a href="<?= base_url() ?>admin/edit_barang_keluar/<?= $post['id_distribusi'] ?>" class="btn btn-sm" style="background-color: #2CB162; color: #FFFFFF"><span class="far fa-edit"></span></a>
-                                     <a href="<?= base_url() ?>admin/hapus_barang_keluar/<?= $post['id_distribusi'] ?>" class="btn btn-sm" style="background-color: #FF0000; color: #FFFFFF" onclick="return confirm('Yakin ingin menghapus post?')"><span class="far fa-trash-alt"></span></a>
+                                     <a href="<?= base_url() ?>admin/info_barang_keluar/<?= $post[$i]['id_distribusi'] ?>" class="btn btn-xs" style="background-color: #FFB800; color: #FFFFFF;"><span class="far fa-question-circle"></span></a>
+                                     <a href="<?= base_url() ?>admin/edit_barang_keluar/<?= $post[$i]['id_distribusi'] ?>" class="btn btn-xs" style="background-color: #2CB162; color: #FFFFFF"><span class="far fa-edit"></span></a>
+                                     <a href="<?= base_url() ?>admin/hapus_barang_keluar/<?= $post[$i]['id_distribusi'] ?>" class="btn btn-xs" style="background-color: #FF0000; color: #FFFFFF" onclick="return confirm('Yakin ingin menghapus post?')"><span class="far fa-trash-alt"></span></a>
                                  </td>
                              </tr>
                          <?php } ?>
