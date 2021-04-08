@@ -239,9 +239,9 @@ class Admin extends CI_Controller
         for ($i=0; $i < count($barcode); $i++) { 
             $getBarcode = $this->Barang_model->detailBarangById($barcode[$i]);
             array_push($dataBarcode, $getBarcode);
-            $this->Barang_model->tambahBarangKeluarOtomatis();
+           
         }
-
+        $this->Barang_model->tambahBarangKeluarOtomatis();
             $data = array(
                 'pihak_pertama' => $this->Barang_model->ambilPihakPertama(),
                 'tanggal_BA' => $this->input->post('tanggal_BA'),
@@ -252,11 +252,9 @@ class Admin extends CI_Controller
                 'telepon' => $this->input->post('telepon'),
                 'barcode' => $dataBarcode,
                 'jumlah_keluar' => $this->input->post('jumlah_keluar'),
-                'merk'=>$this->input->post('merk')
             );
             
        $this->load->view('admin/print_BA', $data);
-      
        
     }
 

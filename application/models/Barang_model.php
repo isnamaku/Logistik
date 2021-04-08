@@ -262,30 +262,34 @@ public function tambahBarangKeluar()
         $last_row = $this->db->select('id_penerima')->order_by('id_penerima', "desc")->limit(1)->get('penerima')->row();
         
         $barcode = $this->input->post('barcode');
-        $barang = $this->db->select('*')->where('barcode =',$barcode[0])->get('barang')->row();
 
         $keteragan = $this->input->post('keterangan');
         $jumlahKeluar = $this->input->post('jumlah_keluar[]');
 
-                $data3 = array(
-                    'id_distribusi' => '',
-                    'tanggal_keluar' => $this->input->post('tanggal_BA'),
-                    'jumlah_keluar' => $jumlahKeluar[0],
-                    'id_penerima' => $last_row->id_penerima,
-                    'id_barang' => $barang->id_barang,
-                    'satuan' => $barang->satuan
-                );
-    
-        // var_dump($data3);
-        // die;
-        $this->db->insert('distribusi', $data3);
+        for($i = 0; $i< count($jumlahKeluar); $i++){
+            $barang = $this->db->select('*')->where('barcode =',$barcode[$i])->get('barang')->row();
+            $data3 = array(
+                'id_distribusi' => '',
+                'tanggal_keluar' => $this->input->post('tanggal_BA'),
+                'jumlah_keluar' => $jumlahKeluar[$i],
+                'id_penerima' => $last_row->id_penerima,
+                'id_barang' => $barang->id_barang,
+                'satuan' => $barang->satuan
+            );
 
-        //update stock
-        $stock = (int)$barang->stock- ((int)$jumlahKeluar[0]);
+                    //update stock
+        $stock = (int)$barang->stock- ((int)$jumlahKeluar[$i]);
         $this->db
         ->set('stock', $stock)
         ->where('id_barang', $barang->id_barang)
         ->update('barang');
+
+        $this->db->insert('distribusi', $data3);
+        }
+ 
+    
+        // var_dump($data3);
+        // die;
 
 
     }

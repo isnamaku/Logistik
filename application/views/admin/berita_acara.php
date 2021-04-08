@@ -147,11 +147,6 @@ function showResult(str) {
                                     <tr>
                                     <td>&nbsp</td>
                                     </tr>
-                                    <tr>
-                                        <td>Merk/Type/Ukuran</td>
-                                        <td>&nbsp:&nbsp</td>
-                                        <td><input type="text" name="merk[]" ></td>
-                                    </tr>
                                     </table>
                     
                          </div>
