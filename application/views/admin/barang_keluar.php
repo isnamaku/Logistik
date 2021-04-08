@@ -26,7 +26,7 @@
                          <th>Aksi</th>
                      </tr>
                  </thead>
-                 <tbody>
+                 <tbody>      
                         <?php if(isset($post)) {
                             $no = 1;
                             $instansi = "BPBD DIY";
@@ -35,8 +35,8 @@
                                         $date = explode('-', $date);
                                         $date =$date[2].'-'.$date[1].'-'.$date[0];   
                                         ?>
-                             <tr>
-                                 <td><?= $no++; ?></td>
+                             <tr>                                
+                                 <td><?= $post[$i]['id_distribusi'] ?></td>
                                  <td> <?= $date; ?></td>
                                  <td><?= $instansi; ?></td>
                                  <td> <?= $post[$i]['nama_penerima'] ?> </td>

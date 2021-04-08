@@ -1,4 +1,10 @@
 <?php
+require('./application/third_party/phpoffice/vendor/autoload.php');
+
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx as WriterXlsx;
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
@@ -329,6 +335,112 @@ class Admin extends CI_Controller
         $this->Barang_model->updatePihakPertama();
         redirect(base_url() . "admin/pihak_pertama");
     }
-    
+    // Excel
+    public function export_transaksi_masuk()
+    {
+        $data['transaksi_masuk'] = $this->Barang_model->ambilBarang();
+        $this->load->view('admin/export_excel', $data);
+    }
+
+    public function export_distribusi()
+    {
+        $data['distribusi'] = $this->Barang_model->ambilBarangKeluar();
+        $this->load->view('admin/export_excel_distribusi', $data);
+    }
+
+    public function proses_export_transaksi_masuk()
+    {
+        $transaksi_masuk = $this->Barang_model->ambilBarangMasuk()->result();
+
+        $spreadsheet = new Spreadsheet;
+
+        $spreadsheet->setActiveSheetIndex(0)
+            ->setCellValue('A1', 'No')
+            ->setCellValue('B1', 'tanggal_masuk')
+            ->setCellValue('C1', 'barcode')
+            ->setCellValue('D1', 'nama_barang')
+            ->setCellValue('E1', 'stock')
+            ->setCellValue('F1', 'satuan');
+
+        $kolom = 2;
+        $nomor = 1;
+        if (isset($transaksi_masuk)) {
+            foreach ($transaksi_masuk as $transaksi_masuk) {
+
+                $spreadsheet->setActiveSheetIndex(0)
+                    ->setCellValue('A' . $kolom, $nomor)
+                    ->setCellValue('B' . $kolom, date('j F Y', strtotime($transaksi_masuk->tanggal_masuk)))
+                    ->setCellValue('C' . $kolom, $transaksi_masuk->barcode)
+                    ->setCellValue('D' . $kolom, $transaksi_masuk->nama_barang)
+                    ->setCellValue('E' . $kolom, $transaksi_masuk->stock)
+                    ->setCellValue('F' . $kolom, $transaksi_masuk->satuan);
+
+                $kolom++;
+                $nomor++;
+            }
+        }
+
+        $writer = new WriterXlsx($spreadsheet);
+
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="Barang_Masuk_Logistik.xlsx"');
+        header('Cache-Control: max-age=0');
+
+        $writer->save('php://output');
+    }
+
+    public function proses_export_distribusi()
+    {
+        $distribusi = $this->Barang_model->ambilBarangKeluar2()->result();
+
+        $spreadsheet = new Spreadsheet;
+
+        $spreadsheet->setActiveSheetIndex(0)
+            ->setCellValue('A1', 'No')
+            ->setCellValue('B1', 'tanggal_keluar')
+            ->setCellValue('C1', 'sumber_2')
+            ->setCellValue('D1', 'pengirim')
+            ->setCellValue('E1', 'nama_penerima')
+            ->setCellValue('F1', 'jabatan_penerima')
+            ->setCellValue('G1', 'instansi_penerima')
+            ->setCellValue('H1', 'barcode')
+            ->setCellValue('I1', 'nama_barang')
+            ->setCellValue('J1', 'jumlah_keluar')
+            ->setCellValue('K1', 'satuan')
+            ->setCellValue('L1', 'keterangan');;
+
+        $kolom = 2;
+        $nomor = 1;
+        $pengirim = 'BPBD DIY';
+        if (isset($distribusi)) {
+            foreach ($distribusi as $distribusi) {
+
+                $spreadsheet->setActiveSheetIndex(0)
+                    ->setCellValue('A' . $kolom, $nomor)
+                    ->setCellValue('B' . $kolom, date('j F Y', strtotime($distribusi->tanggal_keluar)))
+                    ->setCellValue('C' . $kolom, $distribusi->sumber_2)
+                    ->setCellValue('D' . $kolom, $pengirim)
+                    ->setCellValue('E' . $kolom, $distribusi->nama_penerima)
+                    ->setCellValue('F' . $kolom, $distribusi->jabatan_penerima)
+                    ->setCellValue('G' . $kolom, $distribusi->instansi_penerima)
+                    ->setCellValue('H' . $kolom, $distribusi->barcode)
+                    ->setCellValue('I' . $kolom, $distribusi->nama_barang)
+                    ->setCellValue('J' . $kolom, $distribusi->jumlah_keluar)
+                    ->setCellValue('K' . $kolom, $distribusi->satuan)
+                    ->setCellValue('L' . $kolom, $distribusi->keterangan);
+
+                $kolom++;
+                $nomor++;
+            }
+        }
+
+        $writer = new WriterXlsx($spreadsheet);
+
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="Distribusi.xlsx"');
+        header('Cache-Control: max-age=0');
+
+        $writer->save('php://output');
+    }
 
 }

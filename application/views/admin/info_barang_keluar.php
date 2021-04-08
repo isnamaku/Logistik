@@ -14,10 +14,6 @@
                             <input type="date" style="background-color: #E5E5E5" class="form-control" name="tanggal_keluar" id="tanggal_keluar" value="<?= $post['tanggal_keluar'] ?>" disabled>
                         </div>
                         <div class="form-group">
-                            <label style="color:#000000; font-weight:bold">Sumber Pengirim</label>
-                            <input type="text" style="background-color: #E5E5E5" class="form-control" name="sumber_2" id="sumber_2" value="<?= $post['sumber_2'] ?>" disabled>
-                        </div>
-                        <div class="form-group">
                             <label style="color:#000000; font-weight:bold">Nama Penerima</label>
                             <input type="text" style="background-color: #E5E5E5" class="form-control" name="nama_penerima" id="nama_penerima" value="<?= $post['nama_penerima'] ?>" disabled>
                         </div>

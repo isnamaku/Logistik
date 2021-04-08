@@ -14,7 +14,7 @@
                             <button class="btn-primary" type="button" id="submit-barcode">Pilih</button>
                             </div>
                         </div> 
-            <form action="<?= base_url()?>admin/a_print" method="POST" >
+            <form action="<?= base_url()?>admin/a_print" target="_blank" method="POST" >
                         <div class="row" id="add-item-barcode">
                         </div>
                 </div>
@@ -51,7 +51,7 @@
                                 <input type="text" style="background-color: #E5E5E5" class="form-control" name="telepon" id="telepon">
                             </div>
                         </div>
-                    <button type="submit" href="<?= base_url('admin/print'); ?>" type= "submit" class="btn btn-user" style="background-color: #F69133; color: #000000;font-weight:bold; float:right;" target=_blank><i class="fas fa-print"></i> Cetak</button>
+                    <button type="submit" href="<?= base_url('admin/a_print'); ?>" type= "submit" class="btn btn-user" style="background-color: #F69133; color: #000000;font-weight:bold; float:right;" target=_blank><i class="fas fa-print"></i> Cetak</button>
                         <a href="<?= base_url() ?>admin/barang_masuk" class="btn mr-3" style="background-color: #F69133; color:#000000; font-weight:bold; float:right;">Batal</a>
                     </form>
 
