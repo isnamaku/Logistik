@@ -24,6 +24,9 @@
     <!-- Custom styles for this page -->
     <link href="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <!-- Logo -->
+    <link href="<?= base_url('assets/'); ?>img/logo.png" rel="shortcut icon">
+
 </head>
 <body>
     <!-- Page Wrapper -->
@@ -33,18 +36,19 @@
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #F69133;">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('admin/'); ?>index">
                 <div class="">
-                    <img src="<?= base_url('assets/'); ?>img/logo.png" style="width: 70px; height: 60px;">
+                    <img src="<?= base_url('assets/'); ?>img/logo.png" style="width: 70px; height: 60px;" >
                 </div>
-                <div class="sidebar-brand-text mx-3"  style="color: black;">Logistik BPBD DIY</div>
+                <div class="sidebar-brand-text mx-3"  style="color: black;" href="<?= base_url('admin/'); ?>index">Logistik BPBD DIY</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li <?= $this->uri->segment(2) == 'index' || $this->uri->segment(2) == '' ? 'class="nav-item active"' : 'class="nav-item"'  ?> >
+        
                 <a class="nav-link" href="<?= base_url('admin/'); ?>index">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span style="font-size: 16px; font-color: white;">Dashboard</span></a>
@@ -59,7 +63,7 @@
             </div>
 
             <!-- Nav Item - Pages Barang Masuk -->
-            <li class="nav-item" >
+            <li <?= $this->uri->segment(2) == 'barang_masuk' || $this->uri->segment(2) == '' ? 'class="nav-item active"' : 'class="nav-item"'  ?> >
                 <a class="nav-link collapsed" href="<?= base_url('admin/'); ?>barang_masuk" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo" >
                     <i class="fas fa-fw fa-table"></i>
@@ -69,7 +73,7 @@
             </li>
 
             <!-- Nav Item - Pages Barang Keluar -->
-            <li class="nav-item">
+            <li <?= $this->uri->segment(2) == 'barang_keluar' || $this->uri->segment(2) == '' ? 'class="nav-item active"' : 'class="nav-item"'  ?>>
                 <a class="nav-link collapsed" href="<?= base_url('admin/'); ?>barang_keluar"  data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-table"></i>
@@ -77,8 +81,8 @@
                 </a>
             </li>
 
-            <!-- Nav Item - Pages Laporan-->
-            <li class="nav-item">
+            <!-- Nav Item - Pages Berita Acara-->
+            <li <?= $this->uri->segment(2) == 'berita_acara' || $this->uri->segment(2) == '' ? 'class="nav-item active"' : 'class="nav-item"'  ?>>
                 <a class="nav-link collapsed" href="<?= base_url('admin/'); ?>berita_acara"  data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-file-alt"></i>

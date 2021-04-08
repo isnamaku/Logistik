@@ -24,6 +24,9 @@
     <!-- Custom styles for this page -->
     <link href="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <!-- Logo -->
+    <link href="<?= base_url('assets/'); ?>img/logo.png" rel="shortcut icon">
+
 </head>
 <body>
     <!-- Page Wrapper -->

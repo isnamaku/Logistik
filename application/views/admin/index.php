@@ -63,24 +63,14 @@
                                         foreach ($post as $post) {
 
                                             $jumlah = $post['harga'] * $post['stock'];
-                                            // echo $jumlah;
 
                                             $total = $total + $jumlah;
-
-                                            // $stock = $post['stock'];
-
-                                            // $total = 0;
-                                            // $tot_harga = 0;
-
-                                            // // total adalah hasil dari harga x qty
-                                            // $total = $harga * $stock;
-                                            // // total bayar adalah penjumlahan dari keseluruhan total
-                                            // $tot_harga += $total;
+                                            $angka_format = number_format($total);
                                     ?>
                                     <?php }
                                     } ?>
 
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"> <?php echo $total; ?> </div>
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"> Rp. <?php echo $angka_format; ?> </div>
 
                                 </div>
                             </div>
