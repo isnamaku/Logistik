@@ -135,6 +135,7 @@
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
+
                                 <a class="dropdown-item" href="<?= base_url("/admin/aktivasi_anggota") ?>">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Aktivasi Anggota
@@ -142,6 +143,7 @@
                                 <a class="dropdown-item" href="<?= base_url("/admin/pihak_pertama") ?>">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Pengaturan Pihak Pertama
+
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
