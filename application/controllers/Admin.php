@@ -209,9 +209,10 @@ class Admin extends CI_Controller
         }
     }
 
-    public function edit_barang_keluar(){
+    public function edit_barang_keluar($id){
         if (logged_in()){
             $data['judul'] = "Barang Keluar";
+            $data['post'] = $this->Barang_model->ambilBarangKeluarById($id);
             $this->load->view('admin/template/header_data', $data);
             $this->load->view('admin/edit_barang_keluar');
         }
@@ -219,6 +220,7 @@ class Admin extends CI_Controller
             redirect('Beranda');
         }
     }
+
 
     // Berita Acara
 
@@ -441,6 +443,22 @@ class Admin extends CI_Controller
         header('Cache-Control: max-age=0');
 
         $writer->save('php://output');
+    }
+
+    public function print_barcode($id)
+    {
+        $data['post'] = $this->Barang_model->ambilBarangById($id);
+        $last_row_barcode = $this->db->select('barcode')->order_by('barcode', "desc")->limit(1)->get('barang')->row();
+
+        $noUrut = (int)substr($last_row_barcode->barcode, 2, 6);
+        $noUrut++;
+
+        $str = '51';
+        $newKode = $str . sprintf('%04s', $noUrut);
+
+        $generator = new \Picqer\Barcode\BarcodeGeneratorPNG();
+
+        $this->load->view('admin/barcode', $data, $generator);
     }
 
 }
