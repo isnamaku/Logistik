@@ -44,4 +44,11 @@ class Auth_model extends CI_Model
             ->where('id', $id)
             ->update('anggota', $data);
     }
+
+    public function hapusAnggota($id)
+    {
+        $this->db
+            ->where('id', $id)
+            ->delete('anggota');
+    }
 }

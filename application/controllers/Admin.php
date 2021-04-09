@@ -104,10 +104,12 @@ class Admin extends CI_Controller
 
     }
 
-    public function info_barang_masuk($id){
-        if (logged_in()){
+    public function info_barang_masuk($id)
+    {
+        if (logged_in()) {
             $data['judul'] = "Info Barang";
             $data['post'] = $this->Barang_model->ambilBarangById($id);
+
             $last_row_barcode = $this->db->select('barcode')->order_by('barcode', "desc")->limit(1)->get('barang')->row();
 
             $noUrut = (int)substr($last_row_barcode->barcode, 2, 6);
@@ -118,10 +120,9 @@ class Admin extends CI_Controller
 
             $generator = new \Picqer\Barcode\BarcodeGeneratorPNG();
 
-            $this->load->view('admin/template/header_data', $data. $generator);
+            $this->load->view('admin/template/header_data', $data, $generator);
             $this->load->view('admin/info_barang_masuk');
-        }
-        else {
+        } else {
             redirect('Beranda');
         }
     }
@@ -459,6 +460,13 @@ class Admin extends CI_Controller
         $generator = new \Picqer\Barcode\BarcodeGeneratorPNG();
 
         $this->load->view('admin/barcode', $data, $generator);
+    }
+
+    //hapus anggota
+    public function hapus_anggota($id)
+    {
+        $this->Auth_model->hapusAnggota($id);
+        redirect(base_url() . "admin/aktivasi_anggota");
     }
 
 }

@@ -36,6 +36,7 @@
                                                                         }   ?>>
                                         <span class="slider round"></span>
                                     </a>
+                                     <a href="<?= base_url() ?>admin/hapus_anggota/<?= $post['id'] ?>" class="btn btn" style="background-color: #FF0000; color: #FFFFFF; margin-left:5px;" onclick="return confirm('Yakin ingin menghapus akun ini?')"><span class="far fa-trash-alt"></span></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

@@ -145,7 +145,7 @@
                                     Aktivasi Anggota
                                 </a>
                                 <a class="dropdown-item" href="<?= base_url("/admin/pihak_pertama") ?>">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    <i class="fas fa-cog fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Pengaturan Pihak Pertama
 
                                 </a>
