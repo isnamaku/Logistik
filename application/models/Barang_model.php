@@ -83,24 +83,35 @@ class Barang_model extends CI_Model
         return $this->db->get('distribusi')->num_rows();
     }
 
-    public function filterBarang ($tanggal_awal = null, $tanggal_akhir = null, $nama_barang = null, $sumber = null){
+    public function countHargaBarangKeluar()
+    {
+        $this->db->select('*');
+        $this->db->from('distribusi db');
+        $this->db->join('barang b', 'db.id_barang=b.id_barang');
+        $query = $this->db->get();
+        if ($query->num_rows() != 0) {
+            return $query->result_array();
+        } else {
+            return false;
+        }
+        return $this->db->get('distribusi')->result_array();
+    }
+
+    public function filterBarang ($tanggal_awal = null, $tanggal_akhir = null, $nama_barang = null){
     
         $data = array(
         'tanggal_awal'=> $this->input->post('tanggal_awal'),
         'tanggal_akhir' => $this->input->post('tanggal_akhir'),
         'nama_barang' => $this->input->post('nama_barang'),
-        'sumber' => $this->input->post('sumber')
 
     );
 
         $this->db->select('*');
         $this->db->from('transaksi_masuk tm'); 
         $this->db->join('barang b', 'tm.id_barang=b.id_barang');
-        $this->db->join('pengirim p', 'tm.id=p.id');  
         $this->db->where('tm.tanggal_masuk >=',$data['tanggal_awal']);
         $this->db->where('tm.tanggal_masuk <=',$data['tanggal_akhir']);
         $this->db->like('b.nama_barang',$data['nama_barang']);
-        $this->db->like('p.sumber',$data['sumber']);
 
         
         $query = $this->db->get();
