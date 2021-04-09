@@ -7,7 +7,7 @@
 <div class="table-responsive">
     <div>
         <a style="background-color: #F69133; color:#000000;" name="age" id="age" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-warning"><i class="fas fa-filter"></i> Filter</a>
-        <a href="<?= base_url('anggota/print'); ?>" class="btn btn-user" style="background-color: #F69133; color: #000000;"><i class="fas fa-print"></i></i> Cetak</a>
+        <a href="<?= base_url('anggota/print'); ?>" class="btn btn-user" style="background-color: #F69133; color: #000000; margin-left:10px;"><i class="fas fa-print"></i></i> Cetak</a>
     </div>
 </div>
 

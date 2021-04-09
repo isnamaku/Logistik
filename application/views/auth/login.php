@@ -32,6 +32,7 @@
                                     <div class="form-group">
                                         <label style="color:#000000; font-weight:bold">Kata Sandi</label>
                                         <input type="password" style="background-color: #E5E5E5" class="form-control" name="password" id="password">
+                                        <input type="checkbox" onclick="myFunction()" style="margin-top: 20px;"> Lihat Password
                                     </div>
 
                                     <button type="submit" style="background-color: #FF8C00; color:#000000; font-weight:bold" class="btn btn-block">
@@ -81,6 +82,7 @@
                                 <div class="form-group">
                                     <label style="color:#000000; font-weight:bold">Kata Sandi</label>
                                     <input type="password" style="background-color: #E5E5E5" class="form-control" name="password" id="password">
+                                    <input type="checkbox" onclick="myFunction()" style="margin-top: 20px;"> Lihat Password
                                 </div>
 
                                 <button type="submit" style="background-color: #FF8C00; color:#000000; font-weight:bold" class="btn btn-block">
@@ -109,3 +111,14 @@
 <?php
 }
 }?>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>

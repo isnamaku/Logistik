@@ -467,4 +467,29 @@ class Admin extends CI_Controller
         redirect(base_url() . "admin/aktivasi_anggota");
     }
 
+    //Profil Admin
+    public function profil($id)
+    {
+        if (logged_in()) {
+            $data['judul'] = "Profil";
+            $data['admin'] = $this->Auth_model->ambilAdminById($id);
+
+            $this->load->view('admin/template/header_data', $data);
+            $this->load->view('admin/profil', $data);
+        } else {
+            redirect('Beranda');
+        }
+    }
+
+    public function update_profil($id)
+    {
+        if (logged_in()) {
+            $this->Auth_model->updateProfilAdmin($id);
+
+            redirect(base_url() . "Admin/index");
+        } else {
+            redirect('Beranda');
+        }
+    }
+
 }

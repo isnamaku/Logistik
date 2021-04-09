@@ -7,6 +7,7 @@ class Anggota extends CI_Controller
     {
         Parent::__construct();
         $this->load->model('Barang_model');
+        $this->load->model('Auth_model');
     }
 
     public function index()
@@ -90,6 +91,31 @@ class Anggota extends CI_Controller
     
         $this->load->view('admin/print_BA', $data);
        
+    }
+
+    //Profil Anggota
+    public function profil($id)
+    {
+        if (logged_in()) {
+            $data['judul'] = "Profil";
+            $data['anggota'] = $this->Auth_model->ambilAnggotaById($id);
+
+            $this->load->view('Anggota/template/header_data', $data);
+            $this->load->view('Anggota/profil_anggota', $data);
+        } else {
+            redirect('Beranda');
+        }
+    }
+
+    public function update_profil($id)
+    {
+        if (logged_in()) {
+            $this->Auth_model->updateProfil($id);
+
+            redirect(base_url() . "Anggota/index");
+        } else {
+            redirect('Beranda');
+        }
     }
 
 
