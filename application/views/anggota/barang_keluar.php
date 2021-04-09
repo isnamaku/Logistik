@@ -130,7 +130,6 @@
                          <tr>
                              <td><?= $i++; ?></td>
                              <td> <?= $date; ?></td>
-                             <td> <?= $post['sumber_2'] ?> </td>
                              <td><?= $instansi; ?></td>
                              <td> <?= $post['nama_penerima'] ?> </td>
                              <td> <?= $post['jabatan_penerima'] ?> </td>

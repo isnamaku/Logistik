@@ -13,7 +13,7 @@
                     <div class="row">
 
                         <!-- Jumlah Barang Masuk -->
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-2 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -24,37 +24,21 @@
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-archive fa-2x text-gray-300"></i>
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Jumlah Barang Keluar -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Jumlah Barang Keluar</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_barangkeluar ?></div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-archive fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Total Harga -->
+        
+        <!-- Total Harga Barang Masuk-->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total harga
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Harga Barang Masuk
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
@@ -83,8 +67,52 @@
             </div>
         </div>
 
+
+        <!-- Jumlah Barang Keluar -->
+        <div class="col-xl-2 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Jumlah Barang Keluar</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_barangkeluar ?></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-archive fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          <!-- Total Harga Barang Masuk-->
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Harga Barang Keluar
+                            </div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                    
+
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"> Rp.</div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-file-invoice-dollar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+
         <!-- Jumlah Anggota -->
-        <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-2 col-md-6 mb-4">
             <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
