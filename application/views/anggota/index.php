@@ -96,9 +96,19 @@
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                    
+                                <?php if (isset($post2)) {
+                                        $total = 0;
+                                        foreach ($post2 as $post2) {
+                                            
+                                            $jumlah = $post2['harga'] * $post2['stock'];
 
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"> Rp.</div>
+                                            $total = $total + $jumlah;
+                                            $angka_format = number_format($total);
+                                    ?>
+                                    <?php }
+                                    } ?>
+
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"> Rp. <?php echo $angka_format; ?> </div>
 
                                 </div>
                             </div>

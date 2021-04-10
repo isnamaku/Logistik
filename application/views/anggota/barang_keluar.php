@@ -39,9 +39,7 @@
                          <label>Nama Barang</label>
                          <input type="text" name="nama_barang" id="nama_barang" class="form-control" />
                          <br />
-                         <label>Sumber Pengirim</label>
-                         <input type="text" name="sumber" id="sumber" class="form-control" />
-                         <br />
+
                          <!-- <div class="form-group">
                      <label for="" class="col-sm-2 control-label">Country</label>
                      <div class="col-sm-4">
