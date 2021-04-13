@@ -19,19 +19,36 @@
                                 $barcode = $post['barcode'];
                                 $generator = new \Picqer\Barcode\BarcodeGeneratorPNG();
                             ?>
-                                <div class="form-group">
-                                    <div style="box-sizing: border-box; width: 230px; height: 155px; padding: 5px; border: 1px solid black; margin-left:30px;">
+<div class="form-group">
+                                    <div style="box-sizing: border-box; width: 250px; height: 155px; padding: 5px; border: 1px solid black; margin-left:30px;">
                                         <div align="center">
-                                            <a style="color: black; font-size:12px;"><b>BPBD DIY</b></a><br>
-                                            <a style="color: black; font-size:14px;"><?= $post['nama_barang'] ?></a>
+                                            <a style="color: black;"><b>BPBD DIY</b></a><br>
+                                            <a style="color: black; font-size:small;"><?= $post['nama_barang'] ?></a>
+                                            <?php echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($barcode, $generator::TYPE_CODE_128)) . '">'; ?>
                                         </div>
-                                        <?php echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($barcode, $generator::TYPE_CODE_128)) . '">'; ?>
-                                        <br>
                                         <div align="center">
                                             <a style="color:#000000;"> <?php echo $barcode;  ?> </a><br>
                                         </div>
                                         <div align="left" style="display: inline;">
-                                            <a style="color:#000000; "> 20001 </a>
+                                            <a style="color:#000000; ">
+                                                <?php
+                                                if (preg_match("/^BNPB/i", $post['nama_barang'])) {
+                                                    echo '200001';
+                                                } else if (preg_match("/^APBD/i", $post['nama_barang'])) {
+                                                    echo '200002';
+                                                } else if (preg_match("/^PERU/i", $post['nama_barang'])) {
+                                                    echo '200005';
+                                                } else if (preg_match("/^MASY/i", $post['nama_barang'])) {
+                                                    echo '200006';
+                                                } else if (preg_match("/^BTT/i", $post['nama_barang'])) {
+                                                    echo '200007';
+                                                } else if (preg_match("/^BLKPP/i", $post['nama_barang'])) {
+                                                    echo '200008';
+                                                } else {
+                                                    echo '200009';
+                                                }
+                                                ?>
+                                            </a>
                                         </div>
                                         <div align="right" style="display: inline; float:right;">
                                             <a style="color:#000000;">Rp.<?= $post['harga'] ?> </a>
@@ -51,19 +68,36 @@
                                 $barcode = $post['barcode'];
                                 $generator = new \Picqer\Barcode\BarcodeGeneratorPNG();
                             ?>
-                                <div class="form-group">
-                                    <div style="box-sizing: border-box; width: 220px; height: 155px; padding: 5px; border: 1px solid black; margin-left:30px;">
+<div class="form-group">
+                                    <div style="box-sizing: border-box; width: 250px; height: 155px; padding: 5px; border: 1px solid black; margin-left:30px;">
                                         <div align="center">
                                             <a style="color: black;"><b>BPBD DIY</b></a><br>
                                             <a style="color: black; font-size:small;"><?= $post['nama_barang'] ?></a>
+                                            <?php echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($barcode, $generator::TYPE_CODE_128)) . '">'; ?>
                                         </div>
-                                        <?php echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($barcode, $generator::TYPE_CODE_128)) . '">'; ?>
-                                        <br>
                                         <div align="center">
                                             <a style="color:#000000;"> <?php echo $barcode;  ?> </a><br>
                                         </div>
                                         <div align="left" style="display: inline;">
-                                            <a style="color:#000000; "> 20001 </a>
+                                            <a style="color:#000000; ">
+                                                <?php
+                                                if (preg_match("/^BNPB/i", $post['nama_barang'])) {
+                                                    echo '200001';
+                                                } else if (preg_match("/^APBD/i", $post['nama_barang'])) {
+                                                    echo '200002';
+                                                } else if (preg_match("/^PERU/i", $post['nama_barang'])) {
+                                                    echo '200005';
+                                                } else if (preg_match("/^MASY/i", $post['nama_barang'])) {
+                                                    echo '200006';
+                                                } else if (preg_match("/^BTT/i", $post['nama_barang'])) {
+                                                    echo '200007';
+                                                } else if (preg_match("/^BLKPP/i", $post['nama_barang'])) {
+                                                    echo '200008';
+                                                } else {
+                                                    echo '200009';
+                                                }
+                                                ?>
+                                            </a>
                                         </div>
                                         <div align="right" style="display: inline; float:right;">
                                             <a style="color:#000000;">Rp.<?= $post['harga'] ?> </a>
@@ -83,20 +117,36 @@
                                 $barcode = $post['barcode'];
                                 $generator = new \Picqer\Barcode\BarcodeGeneratorPNG();
                             ?>
-
-                                <div class="form-group">
-                                    <div style="box-sizing: border-box; width: 220px; height: 155px; padding: 5px; border: 1px solid black; margin-left:30px;">
+<div class="form-group">
+                                    <div style="box-sizing: border-box; width: 250px; height: 155px; padding: 5px; border: 1px solid black; margin-left:30px;">
                                         <div align="center">
                                             <a style="color: black;"><b>BPBD DIY</b></a><br>
                                             <a style="color: black; font-size:small;"><?= $post['nama_barang'] ?></a>
+                                            <?php echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($barcode, $generator::TYPE_CODE_128)) . '">'; ?>
                                         </div>
-                                        <?php echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($barcode, $generator::TYPE_CODE_128)) . '">'; ?>
-                                        <br>
                                         <div align="center">
                                             <a style="color:#000000;"> <?php echo $barcode;  ?> </a><br>
                                         </div>
                                         <div align="left" style="display: inline;">
-                                            <a style="color:#000000; "> 20001 </a>
+                                            <a style="color:#000000; ">
+                                                <?php
+                                                if (preg_match("/^BNPB/i", $post['nama_barang'])) {
+                                                    echo '200001';
+                                                } else if (preg_match("/^APBD/i", $post['nama_barang'])) {
+                                                    echo '200002';
+                                                } else if (preg_match("/^PERU/i", $post['nama_barang'])) {
+                                                    echo '200005';
+                                                } else if (preg_match("/^MASY/i", $post['nama_barang'])) {
+                                                    echo '200006';
+                                                } else if (preg_match("/^BTT/i", $post['nama_barang'])) {
+                                                    echo '200007';
+                                                } else if (preg_match("/^BLKPP/i", $post['nama_barang'])) {
+                                                    echo '200008';
+                                                } else {
+                                                    echo '200009';
+                                                }
+                                                ?>
+                                            </a>
                                         </div>
                                         <div align="right" style="display: inline; float:right;">
                                             <a style="color:#000000;">Rp.<?= $post['harga'] ?> </a>

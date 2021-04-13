@@ -39,15 +39,15 @@
 
             $last_row = $this->db->select('barcode')->order_by('barcode', "desc")->limit(1)->get('barang')->row();
 
-            $noUrut = (int)substr($last_row->barcode, 2, 6);
+            $noUrut = (int)substr($last_row->barcode, 4, 6);
             $noUrut++;
 
             if ($test == '1') {
                 $str = '50';
-                $newKode = $str . sprintf('%04s', $noUrut);
+                $newKode = $str . sprintf('%07s', $noUrut);
             } else {
                 $str = '51';
-                $newKode = $str . sprintf('%04s', $noUrut);
+                $newKode = $str . sprintf('%07s', $noUrut);
             }
         }
         ?>

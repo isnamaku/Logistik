@@ -121,7 +121,6 @@ class Barang_model extends CI_Model
     }
 
     
-
     public function updateBarang($id)
     {
         $data = array(
@@ -147,10 +146,16 @@ class Barang_model extends CI_Model
     }
 
 
-    public function hapusBarangMasuk($id){
-        $this->db
-        ->where('id_transaksi_masuk', $id)
-        ->delete('transaksi_masuk');
+    public function hapusBarangMasuk($id)
+    {
+        $this->db->where('id_transaksi_masuk', $id);
+        $this->db->delete('transaksi_masuk');
+    }
+
+    public function hapusBarang($id)
+    {
+        $this->db->where('id_barang', $id);
+        $this->db->delete('barang');
     }
 
     public function tambahBarangMasuk()
@@ -179,7 +184,7 @@ class Barang_model extends CI_Model
         $this->db->from('distribusi');
         $this->db->join('penerima', 'distribusi.id_penerima = penerima.id_penerima');
         $this->db->join('barang', 'distribusi.id_barang = barang.id_barang');
- 
+        $this->db->order_by('id_distribusi', "asc");
         $query = $this->db->get();
         if ($query->num_rows() != 0) {
             return $query->result_array();
@@ -205,6 +210,38 @@ public function ambilBarangKeluarById($id)
             return false;
         }
         return $this->db->get('distribusi')->result_array();
+    }
+
+    public function ambilBarangKeluar2()
+    {
+        $this->db->select('*');
+        $this->db->from('distribusi');
+        $this->db->join('penerima', 'distribusi.id_penerima = penerima.id_penerima');
+        $this->db->join('barang', 'distribusi.id_barang = barang.id_barang');
+
+        $query = $this->db->get();
+        if ($query->num_rows() != 0) {
+            return $query;
+        } else {
+            return false;
+        }
+        return $this->db->get('distribusi');
+    }
+
+    public function hapusBarangKeluar($id){
+        $id_barang = $this->db->select('id_barang')->where('id_distribusi', $id)->get('distribusi')->row();
+        $barang = $this->db->select('*')->where('id_barang =',$id_barang->id_barang)->get('barang')->row();
+        $jumlah_keluar = $this->db->select('jumlah_keluar')->where('id_distribusi', $id)->get('distribusi')->row();
+        $stock = ((int)$barang->stock) + ((int)$jumlah_keluar->jumlah_keluar);
+        $this->db
+        ->set('stock', $stock)
+        ->where('id_barang', $barang->id_barang)
+        ->update('barang');
+
+        $this->db
+        ->where('id_distribusi', $id)
+        ->delete('distribusi');
+
     }
 
 
@@ -348,13 +385,12 @@ public function tambahBarangKeluar()
         }
     }
 
-    public function filterBarangKeluar ($tanggal_awal = null, $tanggal_akhir = null, $nama_barang = null, $sumber = null){
+    public function filterBarangKeluar ($tanggal_awal = null, $tanggal_akhir = null, $nama_barang = null){
     
         $data = array(
         'tanggal_awal'=> $this->input->post('tanggal_awal'),
         'tanggal_akhir' => $this->input->post('tanggal_akhir'),
         'nama_barang' => $this->input->post('nama_barang'),
-        'sumber' => $this->input->post('sumber')
 
     );
 
