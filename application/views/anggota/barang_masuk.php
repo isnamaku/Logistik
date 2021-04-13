@@ -7,7 +7,7 @@
 <div class="table-responsive">
     <div>
         <a style="background-color: #F69133; color:#000000;" name="age" id="age" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-warning"><i class="fas fa-filter"></i> Filter</a>
-        <a href="<?= base_url('anggota/print'); ?>" class="btn btn-user" style="background-color: #F69133; color: #000000; margin-left:10px;"><i class="fas fa-print"></i></i> Cetak</a>
+        
     </div>
 </div>
 
@@ -121,17 +121,22 @@
                     $i = 1;
                     foreach ($post as $post) {
                         $jumlah = $post['harga'] * $post['stock'];
+                        $total_format = number_format($jumlah);
+                        $harga_format = number_format($post['harga']);
+                        $date = $post['tanggal_masuk'];
+                        $date = explode('-', $date);
+                        $date =$date[2].'-'.$date[1].'-'.$date[0];
                 ?>
                         <tr>
                             <td>
-                                <?= $i++; ?></td>
-                            <td> <?= $post['tanggal_masuk'] ?></td>
+                            <?= $i++; ?></td>
+                            <td><?= $date;?></td>
                             <td> <?= $post['barcode'] ?> </td>
                             <td> <?= $post['nama_barang'] ?> </td>
                             <td> <?= $post['stock'] ?> </td>
                             <td> <?= $post['satuan'] ?> </td>
-                            <td> Rp <?= $post['harga'] ?></td>
-                            <td> Rp <?= $jumlah ?></td>
+                            <td> Rp <?= $harga_format ?></td>
+                            <td> Rp <?= $total_format ?></td>
                             <td> <?= $post['keterangan'] ?></td>
                         </tr>
 

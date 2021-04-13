@@ -14,7 +14,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <div align="left">
-                        <h4>Cari Data</h4>
+                        <h4>Filter Data</h4>
                     </div>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
@@ -113,6 +113,8 @@
                                     $i=1;
                                     foreach ($post as $post) {  
                                         $jumlah = $post['harga'] * $post['stock'];
+                                        $total_format = number_format($jumlah);
+                                        $harga_format = number_format($post['harga']);
                                         $date = $post['tanggal_masuk'];
                                         $date = explode('-', $date);
                                         $date =$date[2].'-'.$date[1].'-'.$date[0];
@@ -125,8 +127,8 @@
                                                 <td> <?= $post['nama_barang'] ?> </td>
                                                 <td> <?= $post['stock'] ?> </td>
                                                 <td> <?= $post['satuan'] ?> </td>
-                                                <td> Rp <?= $post['harga'] ?></td>
-                                                <td> Rp <?= $jumlah ?></td>
+                                                <td> Rp <?= $harga_format ?></td>
+                                                <td> Rp <?= $total_format ?></td>
                                                 <td> <?= $post['keterangan'] ?></td>
        
                                         <td>

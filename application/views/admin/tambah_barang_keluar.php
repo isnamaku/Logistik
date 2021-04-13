@@ -30,6 +30,10 @@
                     <input type="text" style="background-color: #E5E5E5" class="form-control" name="nama_penerima" id="nama_penerima">
                 </div>
                 <div class="form-group">
+                    <label style="color:#000000; font-weight:bold">NIP Penerima</label>
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="nip_penerima" id="jabatan_penerima">
+                </div>
+                <div class="form-group">
                     <label style="color:#000000; font-weight:bold">Jabatan Penerima</label>
                     <input type="text" style="background-color: #E5E5E5" class="form-control" name="jabatan_penerima" id="jabatan_penerima">
                 </div>
@@ -37,9 +41,13 @@
                     <label style="color:#000000; font-weight:bold">Instansi Penerima</label>
                     <input type="text" style="background-color: #E5E5E5" class="form-control" name="instansi_penerima" id="instansi_penerima">
                 </div>
+                <div class="form-group">
+                    <label style="color:#000000; font-weight:bold">Telepon Penerima</label>
+                    <input type="text" style="background-color: #E5E5E5" class="form-control" name="telp_penerima" id="instansi_penerima">
+                </div>
             </div>
         </div>
-        <button type="submit" class="btn" style="background-color: #FF8C00; color:#000000; font-weight:bold; float:right;">Tambah</button>
-        <a href="<?= base_url() ?>Admin/barang_keluar" class="btn mr-3" style="background-color: #FF8C00; color:#000000; font-weight:bold; float:right;">Batal</a>
+        <button type="submit" class="btn" style="background-color: #FF8C00; color:#000000; font-weight:bold; float:right; margin-top:15px;">Tambah</button>
+        <a href="<?= base_url() ?>Admin/barang_keluar" class="btn mr-3" style="background-color: #FF8C00;margin-top:15px; color:#000000; font-weight:bold; float:right;">Batal</a>
     </form>
 </div>

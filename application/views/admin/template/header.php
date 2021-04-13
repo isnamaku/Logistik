@@ -51,7 +51,7 @@
         
                 <a class="nav-link" href="<?= base_url('admin/'); ?>index">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span style="font-size: 16px; font-color: white;">Dashboard</span></a>
+                    <span style="font-size: 16px; color: white;">Dashboard</span></a>
             </li>
 
             <!-- Divider -->
@@ -67,7 +67,7 @@
                 <a class="nav-link collapsed" href="<?= base_url('admin/'); ?>barang_masuk" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo" >
                     <i class="fas fa-fw fa-table"></i>
-                    <span style="font-size: 16px; font-color: white;">Barang Masuk</span>
+                    <span style="font-size: 16px; color: white;">Barang Masuk</span>
                 </a>
 
             </li>
@@ -77,7 +77,7 @@
                 <a class="nav-link collapsed" href="<?= base_url('admin/'); ?>barang_keluar"  data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-table"></i>
-                    <span style="font-size: 16px; font-color: white;">Barang Keluar</span>
+                    <span style="font-size: 16px; color: white;">Barang Keluar</span>
                 </a>
             </li>
 
@@ -86,7 +86,7 @@
                 <a class="nav-link collapsed" href="<?= base_url('admin/'); ?>berita_acara"  data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-file-alt"></i>
-                    <span style="font-size: 16px; font-color: white;">&nbsp;Berita Acara</span>
+                    <span style="font-size: 16px; color: white;">&nbsp;Berita Acara</span>
                 </a>
             </li>
 

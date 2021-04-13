@@ -70,7 +70,8 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-
+                    <div class="form-group" style="margin-top: 220px;">
+                    </div>
                         <div class="form-group">
                             <label style="color:#000000; font-weight:bold">Harga</label>
                             <input type="text" style="background-color: #E5E5E5" class="form-control" name="pengirim" id="pengirim" value="<?= $post['harga'] ?>" disabled>

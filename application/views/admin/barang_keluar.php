@@ -92,15 +92,17 @@
  <div class="card shadow my-4 mb-4">
      <div class="card-body">
          <div class="table-responsive">
-             <table class="table table-bordered" id="dataTable" width="180%" cellspacing="0">
+             <table class="table table-bordered" id="dataTable" width="210%" cellspacing="0">
                  <thead>
                      <tr>
                          <th>No</th>
                          <th>Tanggal</th>
                          <th>Pengirim</th>
                          <th>Nama Penerima</th>
+                         <th>NIP Penerima</th>
                          <th>Jabatan Penerima</th>
                          <th>Instansi Penerima</th>
+                         <th>Telepon Penerima</th>
                          <th>Barcode</th>
                          <th>Barang</th>
                          <th>Jumlah</th>
@@ -123,8 +125,10 @@
                                  <td> <?= $date; ?></td>
                                  <td><?= $instansi; ?></td>
                                  <td> <?= $post[$i]['nama_penerima'] ?> </td>
+                                 <td> <?= $post[$i]['nip_penerima'] ?> </td>
                                  <td> <?= $post[$i]['jabatan_penerima'] ?> </td>
                                  <td> <?= $post[$i]['instansi_penerima'] ?></td>
+                                 <td> <?= $post[$i]['telp_penerima'] ?></td>
                                  <td> <?= $post[$i]['barcode'] ?></td>
                                  <td> <?= $post[$i]['nama_barang'] ?></td>
                                  <td> <?= $post[$i]['jumlah_keluar'] ?></td>

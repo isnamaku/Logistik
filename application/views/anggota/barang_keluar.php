@@ -6,6 +6,7 @@
  <div class="table-responsive">
      <div>
          <a style="background-color: #F69133; color:#000000;" name="age" id="age" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-warning"><i class="fas fa-filter"></i> Filter</a>
+         <a href="<?= base_url('anggota/berita_acara'); ?>" class="btn btn-user" style="background-color: #F69133; color: #000000; margin-left:10px;"><i class="fas fa-print"></i></i> Cetak</a>
      </div>
  </div>
 
@@ -107,8 +108,10 @@
                      <th>Tanggal</th>
                      <th>Pengirim</th>
                      <th>Nama Penerima</th>
+                     <th>NIP Penerima</th>
                      <th>Jabatan Penerima</th>
                      <th>Instansi Penerima</th>
+                     <th>Telepon Penerima</th>
                      <th>Barcode</th>
                      <th>Barang</th>
                      <th>Jumlah</th>
@@ -130,8 +133,10 @@
                              <td> <?= $date; ?></td>
                              <td><?= $instansi; ?></td>
                              <td> <?= $post['nama_penerima'] ?> </td>
+                             <td> <?= $post['nip_penerima'] ?> </td>
                              <td> <?= $post['jabatan_penerima'] ?> </td>
                              <td> <?= $post['instansi_penerima'] ?></td>
+                             <td> <?= $post['telp_penerima'] ?> </td>
                              <td> <?= $post['barcode'] ?></td>
                              <td> <?= $post['nama_barang'] ?></td>
                              <td> <?= $post['jumlah_keluar'] ?></td>

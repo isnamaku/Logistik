@@ -47,36 +47,36 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li <?= $this->uri->segment(2) == 'index' || $this->uri->segment(2) == '' ? 'class="nav-item active"' : 'class="nav-item"'  ?>>
                 <a class="nav-link" href="<?= base_url('anggota/'); ?>index">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span style="font-size: 16px; font-color: white;">Dashboard</span></a>
+                    <span style="font-size: 16px; color: white;">Dashboard</span></a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            <div class="sidebar-heading" style="font-size:14px;">
                 Data Barang
             </div>
 
             <!-- Nav Item - Pages Barang Masuk -->
-            <li class="nav-item" >
+            <li <?= $this->uri->segment(2) == 'barang_masuk' || $this->uri->segment(2) == '' ? 'class="nav-item active"' : 'class="nav-item"'  ?> >
                 <a class="nav-link collapsed" href="<?= base_url('anggota/'); ?>barang_masuk" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo" >
                     <i class="fas fa-fw fa-table"></i>
-                    <span style="font-size: 16px; font-color: white;">Barang Masuk</span>
+                    <span style="font-size: 16px; color: white;">Barang Masuk</span>
                 </a>
 
             </li>
 
             <!-- Nav Item - Pages Barang Keluar -->
-            <li class="nav-item">
+            <li <?= $this->uri->segment(2) == 'barang_keluar' || $this->uri->segment(2) == '' ? 'class="nav-item active"' : 'class="nav-item"'  ?>>
                 <a class="nav-link collapsed" href="<?= base_url('anggota/'); ?>barang_keluar"  data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-table"></i>
-                    <span style="font-size: 16px; font-color: white;">Barang Keluar</span>
+                    <span style="font-size: 16px; color: white;">Barang Keluar</span>
                 </a>
             </li>
 

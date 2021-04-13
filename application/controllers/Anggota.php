@@ -111,6 +111,41 @@ class Anggota extends CI_Controller
         }
     }
 
+    public function berita_acara(){
+
+        $data['judul'] = "Berita Acara";
+        $data['anggota'] = $this->db->get_where('anggota', ['email' => $this->session->userdata('email')])->row_array();
+            $this->load->view('anggota/template/header', $data);
+            $this->load->view('anggota/berita_acara',$data);
+            $this->load->view('anggota/template/footer' );
+    }
+
+    public function a_print()
+    { 
+        $data['anggota'] = $this->db->get_where('anggota', ['email' => $this->session->userdata('email')])->row_array();
+        $dataBarcode = [];
+        $barcode = $this->input->post('barcode[]');
+        for ($i=0; $i < count($barcode); $i++) { 
+            $getBarcode = $this->Barang_model->detailBarangById($barcode[$i]);
+            array_push($dataBarcode, $getBarcode);
+           
+        }
+        $this->Barang_model->tambahBarangKeluarAnggotaOtomatis();
+            $data = array(
+                'pihak_pertama' => $this->Barang_model->ambilPihakPertama(),
+                'tanggal_BA' => $this->input->post('tanggal_BA'),
+                'nama' => $this->input->post('nama'),
+                'nip' => $this->input->post('nip'),
+                'jabatan' => $this->input->post('jabatan'),
+                'instansi' => $this->input->post('instansi'),
+                'telepon' => $this->input->post('telepon'),
+                'barcode' => $dataBarcode,
+                'jumlah_keluar' => $this->input->post('jumlah_keluar'),
+            );
+    
+       $this->load->view('anggota/print_BA', $data);
+       
+    }
 
 
 

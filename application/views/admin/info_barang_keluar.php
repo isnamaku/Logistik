@@ -18,12 +18,20 @@
                             <input type="text" style="background-color: #E5E5E5" class="form-control" name="nama_penerima" id="nama_penerima" value="<?= $post['nama_penerima'] ?>" disabled>
                         </div>
                         <div class="form-group">
+                            <label style="color:#000000; font-weight:bold">NIP Penerima</label>
+                            <input type="text" style="background-color: #E5E5E5" class="form-control" name="nip_penerima" id="nip_penerima" value="<?= $post['nip_penerima'] ?>" disabled>
+                        </div>
+                        <div class="form-group">
                             <label style="color:#000000; font-weight:bold">Jabatan Penerima</label>
                             <input type="text" style="background-color: #E5E5E5" class="form-control" name="jabatan_penerima" id="jabatan_penerima" value="<?= $post['jabatan_penerima'] ?>" disabled>
                         </div>
                         <div class="form-group">
                             <label style="color:#000000; font-weight:bold">Instansi Penerima</label>
                             <input type="text" style="background-color: #E5E5E5" class="form-control" name="instansi_penerima" id="instansi_penerima" value="<?= $post['instansi_penerima'] ?>" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label style="color:#000000; font-weight:bold">Telepon Penerima</label>
+                            <input type="text" style="background-color: #E5E5E5" class="form-control" name="telp_penerima" id="telp_penerima" value="<?= $post['telp_penerima'] ?>" disabled>
                         </div>
                     </div>
                     <div class="col-md-6">

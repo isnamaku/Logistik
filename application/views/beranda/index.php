@@ -35,7 +35,7 @@
       <img class="d-block w-100" src="assets/img/beranda1.jpg" alt="First slide" style="height: 600px;">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="assets/img/beranda2.jpg" alt="Second slide" style="height: 600px;">
+      <img class="d-block w-100" src="assets/img/beranda3.jpg" alt="Second slide" style="height: 600px;">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

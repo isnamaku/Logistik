@@ -264,7 +264,6 @@ class Admin extends CI_Controller
  // Print Beirta Acara
     public function a_print()
     { 
-        $data['judul'] = "Berita Acara";
         $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
         $dataBarcode = [];
         $barcode = $this->input->post('barcode[]');
@@ -285,7 +284,7 @@ class Admin extends CI_Controller
                 'barcode' => $dataBarcode,
                 'jumlah_keluar' => $this->input->post('jumlah_keluar'),
             );
-            
+    
        $this->load->view('admin/print_BA', $data);
        
     }
@@ -362,7 +361,7 @@ class Admin extends CI_Controller
 
     // Excel
     public function export_transaksi_masuk()
-    {
+    {    
         $data['judul'] = "Ekspor Barang Masuk";
         $data['transaksi_masuk'] = $this->Barang_model->ambilBarang();
         $this->load->view('admin/template/head', $data);
@@ -410,9 +409,9 @@ class Admin extends CI_Controller
         }
 
         $writer = new WriterXlsx($spreadsheet);
-
+        $tgl=date('d-m-Y');
         header('Content-Type: application/vnd.ms-excel');
-        header('Content-Disposition: attachment;filename="Barang_Masuk_Logistik.xlsx"');
+        header('Content-Disposition: attachment;filename=Barang_Masuk_Logistik_'.$tgl.'.xlsx');
         header('Cache-Control: max-age=0');
 
         $writer->save('php://output');
@@ -464,7 +463,9 @@ class Admin extends CI_Controller
         $writer = new WriterXlsx($spreadsheet);
 
         header('Content-Type: application/vnd.ms-excel');
-        header('Content-Disposition: attachment;filename="Distribusi.xlsx"');
+
+        $tgl=date('d-m-Y');
+        header('Content-Disposition: attachment;filename="Distribusi_'.$tgl.'.xlsx');
         header('Cache-Control: max-age=0');
 
         $writer->save('php://output');
