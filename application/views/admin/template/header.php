@@ -59,7 +59,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Data Barang
+                <p style="font-size:14px;">Data Barang</p>
             </div>
 
             <!-- Nav Item - Pages Barang Masuk -->

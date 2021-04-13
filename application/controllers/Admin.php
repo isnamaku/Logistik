@@ -40,7 +40,12 @@ class Admin extends CI_Controller
         if (logged_in()){
             $data['judul'] = "Barang Masuk";
             $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
-            $data['post'] = $this->Barang_model->ambilBarang();
+           
+            if (isset($_POST['submit'])) {
+                $data['post'] = $this->Barang_model->filterBarang();
+            } else {
+                $data['post'] = $this->Barang_model-> ambilBarang();
+            }
 
             $this->load->view('admin/template/header', $data);
             $this->load->view('admin/barang_masuk', $data);
@@ -132,12 +137,14 @@ class Admin extends CI_Controller
             if (logged_in()) {
             $data['judul'] = "Hapus Barang";
             $this->Barang_model->hapusBarangMasuk($id);
+            $this->Barang_model->hapusBarang($id);
             redirect(base_url() . "admin/barang_masuk");
         }
         else {
             redirect('admin/barang_masuk');
         }
     }
+
 
     public function no_barang(){
         if (logged_in()) {
@@ -158,7 +165,13 @@ class Admin extends CI_Controller
         if (logged_in()) {
             $data['judul'] = "Barang Keluar";
             $data['admin'] = $this->db->get_where('admin', ['email' => $this->session->userdata('email')])->row_array();
-            $data['post'] = $this->Barang_model->ambilBarangKeluar();
+            
+            if (isset($_POST['submit'])) {
+                $data['post'] = $this->Barang_model->filterBarangKeluar();
+            } else {
+                $data['post'] = $this->Barang_model-> ambilBarangKeluar();
+            }
+
  
             $this->load->view('admin/template/header', $data);
             $this->load->view('admin/barang_keluar');
@@ -185,6 +198,16 @@ class Admin extends CI_Controller
         redirect(base_url() . "admin/barang_keluar");
     }
 
+    public function hapus_barang_keluar($id)
+    {
+        if (logged_in()) {
+            $data['judul'] = "Hapus Barang";
+            $this->Barang_model->hapusBarangKeluar($id);
+            redirect(base_url() . "admin/barang_keluar");
+        } else {
+            redirect('admin/barang_keluar');
+        }
+    }
 
     public function update_barang_keluar($id)
     {
@@ -338,16 +361,21 @@ class Admin extends CI_Controller
         $this->Barang_model->updatePihakPertama();
         redirect(base_url() . "admin/pihak_pertama");
     }
+
     // Excel
     public function export_transaksi_masuk()
     {
+        $data['judul'] = "Ekspor Barang Masuk";
         $data['transaksi_masuk'] = $this->Barang_model->ambilBarang();
+        $this->load->view('admin/template/head', $data);
         $this->load->view('admin/export_excel', $data);
     }
 
     public function export_distribusi()
-    {
+    {   
+        $data['judul'] = "Ekspor Barang Keluar";
         $data['distribusi'] = $this->Barang_model->ambilBarangKeluar();
+        $this->load->view('admin/template/head', $data);
         $this->load->view('admin/export_excel_distribusi', $data);
     }
 
@@ -401,16 +429,15 @@ class Admin extends CI_Controller
         $spreadsheet->setActiveSheetIndex(0)
             ->setCellValue('A1', 'No')
             ->setCellValue('B1', 'tanggal_keluar')
-            ->setCellValue('C1', 'sumber_2')
-            ->setCellValue('D1', 'pengirim')
-            ->setCellValue('E1', 'nama_penerima')
-            ->setCellValue('F1', 'jabatan_penerima')
-            ->setCellValue('G1', 'instansi_penerima')
-            ->setCellValue('H1', 'barcode')
-            ->setCellValue('I1', 'nama_barang')
-            ->setCellValue('J1', 'jumlah_keluar')
-            ->setCellValue('K1', 'satuan')
-            ->setCellValue('L1', 'keterangan');;
+            ->setCellValue('C1', 'pengirim')
+            ->setCellValue('D1', 'nama_penerima')
+            ->setCellValue('E1', 'jabatan_penerima')
+            ->setCellValue('F1', 'instansi_penerima')
+            ->setCellValue('G1', 'barcode')
+            ->setCellValue('H1', 'nama_barang')
+            ->setCellValue('I1', 'jumlah_keluar')
+            ->setCellValue('J1', 'satuan')
+            ->setCellValue('K1', 'keterangan');;
 
         $kolom = 2;
         $nomor = 1;
@@ -421,16 +448,15 @@ class Admin extends CI_Controller
                 $spreadsheet->setActiveSheetIndex(0)
                     ->setCellValue('A' . $kolom, $nomor)
                     ->setCellValue('B' . $kolom, date('j F Y', strtotime($distribusi->tanggal_keluar)))
-                    ->setCellValue('C' . $kolom, $distribusi->sumber_2)
-                    ->setCellValue('D' . $kolom, $pengirim)
-                    ->setCellValue('E' . $kolom, $distribusi->nama_penerima)
-                    ->setCellValue('F' . $kolom, $distribusi->jabatan_penerima)
-                    ->setCellValue('G' . $kolom, $distribusi->instansi_penerima)
-                    ->setCellValue('H' . $kolom, $distribusi->barcode)
-                    ->setCellValue('I' . $kolom, $distribusi->nama_barang)
-                    ->setCellValue('J' . $kolom, $distribusi->jumlah_keluar)
-                    ->setCellValue('K' . $kolom, $distribusi->satuan)
-                    ->setCellValue('L' . $kolom, $distribusi->keterangan);
+                    ->setCellValue('C' . $kolom, $pengirim)
+                    ->setCellValue('D' . $kolom, $distribusi->nama_penerima)
+                    ->setCellValue('E' . $kolom, $distribusi->jabatan_penerima)
+                    ->setCellValue('F' . $kolom, $distribusi->instansi_penerima)
+                    ->setCellValue('G' . $kolom, $distribusi->barcode)
+                    ->setCellValue('H' . $kolom, $distribusi->nama_barang)
+                    ->setCellValue('I' . $kolom, $distribusi->jumlah_keluar)
+                    ->setCellValue('J' . $kolom, $distribusi->satuan)
+                    ->setCellValue('K' . $kolom, $distribusi->keterangan);
 
                 $kolom++;
                 $nomor++;
@@ -447,7 +473,8 @@ class Admin extends CI_Controller
     }
 
     public function print_barcode($id)
-    {
+    {   $data['judul'] = "Print Barcode";
+
         $data['post'] = $this->Barang_model->ambilBarangById($id);
         $last_row_barcode = $this->db->select('barcode')->order_by('barcode', "desc")->limit(1)->get('barang')->row();
 
@@ -458,7 +485,7 @@ class Admin extends CI_Controller
         $newKode = $str . sprintf('%04s', $noUrut);
 
         $generator = new \Picqer\Barcode\BarcodeGeneratorPNG();
-
+        $this->load->view('admin/template/head', $data);
         $this->load->view('admin/barcode', $data, $generator);
     }
 
@@ -493,5 +520,7 @@ class Admin extends CI_Controller
             redirect('Beranda');
         }
     }
+
+  
 
 }
